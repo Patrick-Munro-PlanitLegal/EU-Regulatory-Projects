@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EU AI Act: Interactive Implementation Timeline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #0ea5e9, #0f766e);
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 3rem 0;
+            opacity: 0;
+            animation: fadeInSlide 0.8s ease-out forwards;
+        }
+
+        .timeline-item:nth-child(odd) {
+            animation-delay: 0.2s;
+        }
+
+        .timeline-item:nth-child(even) {
+            animation-delay: 0.4s;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 0 3rem;
+            position: relative;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 55%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 55%;
+        }
+
+        .timeline-date {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(45deg, #0ea5e9, #0f766e);
+            color: white;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+            z-index: 10;
+        }
+
+        .timeline-date.current {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            animation: pulse 2s infinite;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        .timeline-date.future {
+            background: linear-gradient(45deg, #1e40af, #0f172a);
+        }
+
+        .date-day {
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .date-month {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .date-year {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .timeline-content h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .timeline-content p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .obligations-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .obligations-list li {
+            background: #f8f9fa;
+            margin: 0.5rem 0;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border-left: 4px solid #0ea5e9;
+            transition: all 0.3s ease;
+        }
+
+        .obligations-list li:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .penalty-highlight {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            background: linear-gradient(45deg, #1e3a8a, #0f766e);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .link-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .status-active {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .status-upcoming {
+            background: #1e40af;
+            color: white;
+        }
+
+        .status-past {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: white;
+            padding: 2rem;
+            background: rgba(0,0,0,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-date {
+                left: 30px;
+                width: 100px;
+                height: 100px;
+                font-size: 0.8rem;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 80px;
+                margin-right: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇪🇺 EU AI Act Implementation Timeline</h1>
+            <p>High-level overview of key implementation dates and relevant official sources</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    <div class="date-day">1</div>
+                    <div class="date-month">Aug</div>
+                    <div class="date-year">2024</div>
+                </div>
+                <div class="timeline-content">
+                    <div class="status-badge status-past">✅ Complete</div>
+                    <h3>AI Act Enters into Force</h3>
+                    <p>The EU Artificial Intelligence Act was officially published in the Official Journal and entered into force, marking the beginning of the world's first comprehensive AI regulation.</p>
+                    <div class="links">
+                        <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" class="link-btn" target="_blank">
+                            📄 Official Text
+                        </a>
+                        <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" class="link-btn" target="_blank">
+                            🏛️ Commission Info
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    <div class="date-day">2</div>
+                    <div class="date-month">Feb</div>
+                    <div class="date-year">2025</div>
+                </div>
+                <div class="timeline-content">
+                    <div class="status-badge status-past">✅ Complete</div>
+                    <h3>Prohibited AI Systems Ban</h3>
+                    <p>The first substantive obligations came into effect, banning AI systems with unacceptable risk levels.</p>
+                    <ul class="obligations-list">
+                        <li>🚫 Social scoring systems by public authorities</li>
+                        <li>🚫 Real-time biometric identification in public spaces</li>
+                        <li>🚫 AI systems exploiting vulnerabilities</li>
+                        <li>🚫 Subliminal techniques causing harm</li>
+                    </ul>
+                    <div class="penalty-highlight">
+                        💰 Penalties: Up to €35M or 7% of global turnover
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date current">
+                    <div class="date-day">2</div>
+                    <div class="date-month">Aug</div>
+                    <div class="date-year">2025</div>
+                </div>
+                <div class="timeline-content">
+                    <div class="status-badge status-active">🔥 Active Today</div>
+                    <h3>GPAI Obligations Launch</h3>
+                    <p>General Purpose AI model obligations become legally binding, with the GPAI Code of Practice providing voluntary compliance guidance.</p>
+                    <ul class="obligations-list">
+                        <li>📋 Technical documentation requirements</li>
+                        <li>📊 Transparency reports on capabilities & risks</li>
+                        <li>📚 Training data summaries (including copyright)</li>
+                        <li>🔒 Systemic risk models: additional safety measures</li>
+                        <li>🏛️ EU AI Office becomes operational</li>
+                    </ul>
+                    <div class="links">
+                        <a href="https://digital-strategy.ec.europa.eu/en/policies/ai-code-practice" class="link-btn" target="_blank">
+                            📜 Code of Practice
+                        </a>
+                        <a href="https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers" class="link-btn" target="_blank">
+                            📋 Provider Guidelines
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date future">
+                    <div class="date-day">2</div>
+                    <div class="date-month">Aug</div>
+                    <div class="date-year">2026</div>
+                </div>
+                <div class="timeline-content">
+                    <div class="status-badge status-upcoming">⏳ Coming Soon</div>
+                    <h3>High-Risk AI Systems & Full Enforcement</h3>
+                    <p>The AI Act becomes generally applicable with comprehensive obligations for high-risk AI systems and full enforcement powers.</p>
+                    <ul class="obligations-list">
+                        <li>⚠️ High-risk AI systems obligations (Annex III)</li>
+                        <li>🔍 Member state enforcement authorities operational</li>
+                        <li>🏖️ AI regulatory sandboxes established</li>
+                        <li>💰 Full penalty regime in effect</li>
+                        <li>🏷️ AI-generated content labeling requirements</li>
+                    </ul>
+                    <div class="penalty-highlight">
+                        ⚖️ Full enforcement powers: Fines up to €35M or 7% global turnover
+                    </div>
+                    <div class="links">
+                        <a href="https://artificialintelligenceact.eu/implementation-timeline/" class="link-btn" target="_blank">
+                            📅 Full Timeline
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date future">
+                    <div class="date-day">2</div>
+                    <div class="date-month">Aug</div>
+                    <div class="date-year">2027</div>
+                </div>
+                <div class="timeline-content">
+                    <div class="status-badge status-upcoming">⏳ Final Deadline</div>
+                    <h3>Full Compliance Requirement</h3>
+                    <p>All AI systems, including legacy GPAI models and high-risk AI systems, must achieve full compliance.</p>
+                    <ul class="obligations-list">
+                        <li>🕐 Legacy GPAI models (pre-Aug 2025) must comply</li>
+                        <li>🔧 High-risk AI systems with 3rd-party assessments</li>
+                        <li>🗂️ Large-scale IT systems integration</li>
+                    </ul>
+                    <div class="links">
+                        <a href="https://artificialintelligenceact.eu/" class="link-btn" target="_blank">
+                            📖 Complete Resource
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>📊 Key Statistics</h3>
+            <p><strong>1000+</strong> stakeholders participated in GPAI Code of Practice development</p>
+            <p><strong>€35M or 7%</strong> maximum penalties for non-compliance</p>
+            <p><strong>27</strong> EU Member States implementing enforcement frameworks</p>
+            <br>
+            <p><em>This timeline provides key implementation dates based on official EU sources. For legal advice regarding AI Act compliance, please contact <strong><a href="https://planit.legal/team/" style="color: #0ea5e9; text-decoration: none;">Patrick Munro at PLANIT//LEGAL</a></strong>.</em></p>
+            <p><strong>Last Updated:</strong> August 2, 2025</p>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling animation on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
+
+            // Add click analytics for links (placeholder)
+            document.querySelectorAll('.link-btn').forEach(link => {
+                link.addEventListener('click', function() {
+                    console.log('External link clicked:', this.href);
+                });
+            });
+
+            // Add current date highlighting
+            const today = new Date();
+            const currentDate = today.toISOString().split('T')[0];
+            
+            // Highlight today's obligations
+            if (currentDate === '2025-08-02') {
+                document.querySelector('.timeline-date.current').style.animationDuration = '1s';
+            }
+        });
+
+        // Add interactive hover effects
+        document.querySelectorAll('.timeline-content').forEach(content => {
+            content.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 1)';
+            });
+            
+            content.addEventListener('mouseleave', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.95)';
+            });
+        });
+    </script>
+</body>
+</html>
