@@ -1,0 +1,2674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive EU Data Act compliance guide and requirements checker by Planit Legal">
+    <meta name="author" content="Planit Legal - Patrick Munro">
+    <meta name="keywords" content="EU Data Act, compliance, legal, data governance, GDPR, digital regulation">
+    <title>Data Act Deal Card 2.0 | Planit Legal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Planit Legal Brand Colors */
+            --planit-primary: #1B365D;
+            --planit-secondary: #2B4F73;
+            --planit-accent: #4A90A4;
+            --planit-gold: #D4AF37;
+            --planit-red: #C8102E;
+            --planit-dark: #0F1F30;
+            
+            /* Enhanced Color Palette */
+            --primary-color: var(--planit-primary);
+            --primary-light: var(--planit-secondary);
+            --primary-dark: var(--planit-dark);
+            --secondary-color: var(--planit-accent);
+            --accent-color: var(--planit-gold);
+            --warning-color: var(--planit-red);
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            
+            /* Neutral Grays */
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            
+            /* Semantic Colors */
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --background: #ffffff;
+            --surface: #ffffff;
+            --border: #e2e8f0;
+            
+            /* Enhanced Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            
+            /* Design System */
+            --border-radius: 0.75rem;
+            --border-radius-sm: 0.5rem;
+            --border-radius-lg: 1rem;
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        [data-theme="dark"] {
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --background: #111827;
+            --surface: #1f2937;
+            --border: #374151;
+            --gray-50: #111827;
+            --gray-100: #1f2937;
+            --gray-200: #374151;
+            --gray-300: #4b5563;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family-sans);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+            min-height: 100vh;
+            transition: var(--transition);
+            font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* Enhanced Header with Planit Legal Branding */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 50%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-xl);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(45deg, #ffffff, #e0f2fe, var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.025em;
+        }
+
+        .header-subtitle {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            max-width: 600px;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Enhanced Search */
+        .search-container {
+            position: relative;
+            flex: 1;
+            max-width: 450px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.875rem 1rem 0.875rem 3rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(12px);
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.125rem;
+            height: 1.125rem;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        /* Enhanced Theme Toggle */
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(12px);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--accent-color);
+            transform: translateY(-1px);
+        }
+
+        /* Enhanced Navigation Cards */
+        .navigation {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-card {
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transform: scaleX(0);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-light);
+        }
+
+        .nav-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .nav-card.active {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            color: white;
+        }
+
+        .nav-card.active::before {
+            transform: scaleX(1);
+            background: var(--accent-color);
+        }
+
+        .nav-card-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .nav-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.015em;
+        }
+
+        .nav-card p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+
+        /* Enhanced Panels */
+        .panel {
+            display: none;
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+            animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .panel.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .panel-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .panel-header h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .panel-subtitle {
+            opacity: 0.9;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .panel-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            backdrop-filter: blur(12px);
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .panel-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        .panel-content {
+            padding: 2.5rem;
+            max-height: 75vh;
+            overflow-y: auto;
+        }
+
+        /* Enhanced Tables */
+        .table-container {
+            background: var(--surface);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            border: 2px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+            color: var(--text-primary);
+            padding: 1.25rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        td {
+            padding: 1.5rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            transition: var(--transition);
+        }
+
+        tr:hover td {
+            background: var(--gray-50);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Enhanced Interactive Elements */
+        .highlight {
+            font-weight: 600;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .highlight:hover::after {
+            width: 100%;
+        }
+
+        .interactive-term {
+            color: var(--primary-color);
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+            border-bottom: 1px dotted var(--primary-color);
+            padding: 0.125rem 0.25rem;
+            border-radius: 0.25rem;
+        }
+
+        .interactive-term:hover {
+            color: var(--primary-dark);
+            background: linear-gradient(135deg, rgba(27, 54, 93, 0.1), rgba(212, 175, 55, 0.1));
+            border-bottom: 2px solid var(--accent-color);
+            transform: translateY(-1px);
+        }
+
+        /* Enhanced Lists and Boxes */
+        .negotiable-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .negotiable-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.875rem;
+            transition: var(--transition);
+        }
+
+        .negotiable-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 0.875rem;
+            top: 0.125rem;
+        }
+
+        .negotiable-list li:hover {
+            color: var(--primary-color);
+            transform: translateX(4px);
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+            border-left: 4px solid var(--success-color);
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .example-box::before {
+            content: '💡';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            opacity: 0.3;
+            font-size: 1.25rem;
+        }
+
+        .implementation-box {
+            background: linear-gradient(135deg, #fffbeb 0%, #fefce8 100%);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .implementation-box::before {
+            content: '🔧';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            opacity: 0.3;
+            font-size: 1.25rem;
+        }
+
+        /* Enhanced Definition Modal */
+        .definition-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .definition-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--surface);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-xl);
+            max-width: 700px;
+            max-height: 85vh;
+            overflow-y: auto;
+            border: 2px solid var(--border);
+            animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -40%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .definition-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 1.75rem;
+            position: relative;
+        }
+
+        .definition-header h3 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin: 0;
+            letter-spacing: -0.015em;
+        }
+
+        .definition-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            backdrop-filter: blur(12px);
+            font-size: 1.125rem;
+        }
+
+        .definition-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        .definition-body {
+            padding: 2rem;
+            white-space: pre-wrap;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Enhanced Progress Indicator */
+        .progress-container {
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 1.25rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .progress-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            height: 0.75rem;
+            background: var(--gray-200);
+            border-radius: 0.375rem;
+            overflow: hidden;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0%;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Enhanced Footer */
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem 2rem;
+            border-top: 2px solid var(--border);
+            background: linear-gradient(135deg, var(--surface) 0%, var(--gray-50) 100%);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .footer a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .footer-tagline {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        /* Enhanced Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 2rem 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 2.25rem;
+            }
+
+            .navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .panel-content {
+                padding: 1.5rem;
+                max-height: 65vh;
+            }
+
+            .definition-content {
+                margin: 1rem;
+                max-width: calc(100% - 2rem);
+                max-height: calc(100% - 2rem);
+            }
+
+            .header-controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.75rem;
+            }
+
+            .search-container {
+                max-width: none;
+            }
+
+            table, th, td {
+                font-size: 0.875rem;
+            }
+
+            th, td {
+                padding: 1rem 0.75rem;
+            }
+        }
+
+        /* Enhanced Print Styles */
+        @media print {
+            .header-controls,
+            .navigation,
+            .panel-close,
+            .definition-modal {
+                display: none !important;
+            }
+
+            .panel {
+                display: block !important;
+                break-inside: avoid;
+                margin-bottom: 2rem;
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            .container {
+                max-width: none;
+                padding: 0;
+            }
+        }
+
+        /* Enhanced Scrollbar Styles */
+        .panel-content::-webkit-scrollbar,
+        .definition-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .panel-content::-webkit-scrollbar-track,
+        .definition-content::-webkit-scrollbar-track {
+            background: var(--gray-100);
+            border-radius: 4px;
+        }
+
+        .panel-content::-webkit-scrollbar-thumb,
+        .definition-content::-webkit-scrollbar-thumb {
+            background: var(--gray-400);
+            border-radius: 4px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .panel-content::-webkit-scrollbar-thumb:hover,
+        .definition-content::-webkit-scrollbar-thumb:hover {
+            background: var(--gray-500);
+        }
+
+        /* Loading and Utility Classes */
+        .loading {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--accent-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Enhanced Utility Classes */
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .font-bold { font-weight: 600; }
+        .font-semibold { font-weight: 500; }
+        .text-sm { font-size: 0.875rem; }
+        .text-xs { font-size: 0.75rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mt-4 { margin-top: 1rem; }
+        .hidden { display: none; }
+        .block { display: block; }
+        .sr-only { 
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus Styles for Accessibility */
+        *:focus-visible {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Enhanced Header with Planit Legal Branding -->
+        <header class="header" role="banner">
+            <div class="header-content">
+                <h1>Data Act Deal Card 2.0</h1>
+                <p class="header-subtitle">Your high-level overview of EU Data Act compliance and regulatory requirements</p>
+                <div class="header-controls">
+                    <div class="search-container">
+                        <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                        <input 
+                            type="text" 
+                            class="search-input" 
+                            placeholder="Search regulations, terms, examples..." 
+                            id="searchInput"
+                            aria-label="Search Data Act content"
+                        >
+                    </div>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        🌙 Dark Mode
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Enhanced Progress Indicator -->
+        <div class="progress-container" role="progressbar" aria-label="Reading progress">
+            <div class="progress-label">Reading Progress</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <!-- Enhanced Navigation -->
+        <nav class="navigation" id="navigation" role="navigation" aria-label="Main sections">
+            <div class="nav-card active" data-section="core-requirements" role="button" tabindex="0">
+                <svg class="nav-card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <h3>I. Core Data Act Requirements</h3>
+                <p>Essential obligations including data access, sharing, and contractual requirements</p>
+            </div>
+            <div class="nav-card" data-section="definitions" role="button" tabindex="0">
+                <svg class="nav-card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+                <h3>II. Key Data Act Definitions</h3>
+                <p>Official definitions of key terms and concepts from the regulation</p>
+            </div>
+            <div class="nav-card" data-section="exemptions" role="button" tabindex="0">
+                <svg class="nav-card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                </svg>
+                <h3>III. Exemptions</h3>
+                <p>Scenarios where Data Act obligations may not apply or are limited</p>
+            </div>
+            <div class="nav-card" data-section="enforcement" role="button" tabindex="0">
+                <svg class="nav-card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+                </svg>
+                <h3>IV. Enforcement and Penalties</h3>
+                <p>Authority powers, investigation procedures, and penalty frameworks</p>
+            </div>
+            <div class="nav-card" data-section="dispute-resolution" role="button" tabindex="0">
+                <svg class="nav-card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                <h3>V. Dispute Resolution</h3>
+                <p>Mechanisms for resolving conflicts and disagreements under the Data Act</p>
+            </div>
+            <div class="nav-card" data-section="interaction" role="button" tabindex="0">
+                <svg class="nav-card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                </svg>
+                <h3>VI. Interaction with Other Regulations</h3>
+                <p>How the Data Act relates to GDPR, DMA, and other EU regulations</p>
+            </div>
+        </nav>
+
+        <!-- Core Requirements Panel -->
+        <section id="core-requirements" class="panel active" role="tabpanel" aria-labelledby="core-requirements-heading">
+            <div class="panel-header">
+                <h2 id="core-requirements-heading">I. Core Data Act Requirements</h2>
+                <p class="panel-subtitle">Essential obligations for data holders and connected product manufacturers</p>
+                <button class="panel-close" aria-label="Close panel">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="table-container">
+                    <table role="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Requirement</th>
+                                <th scope="col">Required Response</th>
+                                <th scope="col">Negotiable Aspects</th>
+                                <th scope="col">Examples & Implementation Guidance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="highlight">Pre-Contract Information Requirements</span><br>
+                                    <small>Article 3(2), (3)</small>
+                                </td>
+                                <td>
+                                    Before sale/lease/rental contract conclusion, provide clear information about:<br><br>
+                                    1) <span class="interactive-term" data-term="Data">data</span> types, formats, and volumes,<br><br>
+                                    2) real-time capability,<br><br>
+                                    3) storage location and duration,<br><br>
+                                    4) access methods/conditions
+                                </td>
+                                <td>
+                                    <ul class="negotiable-list">
+                                        <li>Level of detail beyond minimum requirements</li>
+                                        <li>Documentation format and presentation</li>
+                                        <li>Visual representations and diagrams</li>
+                                        <li>Supplementary explanations and training</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Before contract signing for industrial equipment, we must provide comprehensive documentation detailing sensor <span class="interactive-term" data-term="Data">data</span> types, volumes, and access methods.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Prior to cloud service contract, we must explain what data will be generated, stored, and how the customer can access it.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Create standardized data sheets for each product/service. Include data dictionaries and sample datasets. Proactively provide updates when data capabilities change. Consider implementing automated data cataloging systems.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="highlight">Access to Generated Data</span><br>
+                                    <small>Article 4(1)</small>
+                                </td>
+                                <td>
+                                    Must provide user access to their <span class="interactive-term" data-term="Product Data">Product Data</span> free of charge, easily, securely, in a comprehensive, structured, commonly used, and machine-readable format and where relevant, directly and in real-time
+                                </td>
+                                <td>
+                                    <ul class="negotiable-list">
+                                        <li>Format details beyond minimum requirements</li>
+                                        <li>Advanced access methods and APIs</li>
+                                        <li>Enhanced security features and authentication</li>
+                                        <li>Additional support services and training</li>
+                                        <li>Data transformation and analytics services</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: <span class="interactive-term" data-term="Consumer">Consumer</span> using our MRI scanner must be able to access operational <span class="interactive-term" data-term="Product Data">Product Data</span> in standard format.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Factory owner using our production equipment must be able to access <span class="interactive-term" data-term="Product Data">Product Data</span>.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Set up secure API or customer portal with robust authentication. Ensure metadata is included to make data interpretable. Where technically feasible, provide real-time access. Implement proper error handling and rate limiting for APIs.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="highlight">Data Sharing with Third Parties</span><br>
+                                    <small>Article 5(1)</small>
+                                </td>
+                                <td>
+                                    Must allow <span class="interactive-term" data-term="User">User</span> to share their data with third parties of their choice, providing data in same quality available to <span class="interactive-term" data-term="Data Holder">Data Holder</span>, free of charge to user
+                                </td>
+                                <td>
+                                    <ul class="negotiable-list">
+                                        <li>Technical implementation details and standards</li>
+                                        <li>Authentication mechanisms and security protocols</li>
+                                        <li>Additional security measures and monitoring</li>
+                                        <li>Advanced integration support and APIs</li>
+                                        <li>Documentation quality and developer resources</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Manufacturing customer wants to share equipment data with third-party <span class="interactive-term" data-term="Data Recipient">Data Recipient</span> for predictive maintenance.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Energy company wants to share our grid equipment data with analytics firm for optimization.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Create secure third-party sharing mechanism with OAuth 2.0 or similar authentication. Document API comprehensively for third parties. Cannot refuse sharing if third party provides adequate confidentiality guarantees, unless data would be used to develop a competing product. Implement audit logging for all data sharing activities.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="highlight">Trade Secret Protection</span><br>
+                                    <small>Article 4(6,7), 5(9,10)</small>
+                                </td>
+                                <td>
+                                    Must protect <span class="interactive-term" data-term="Trade Secret">Trade Secret</span> when sharing data, agreeing on necessary technical/organizational measures with user/third party before disclosure
+                                </td>
+                                <td>
+                                    <ul class="negotiable-list">
+                                        <li>Specific protective measures and implementation</li>
+                                        <li>Confidentiality agreement terms and scope</li>
+                                        <li>Access controls and permission levels</li>
+                                        <li>Monitoring systems and audit trails</li>
+                                        <li>Verification methods and compliance checks</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Our industrial equipment contains algorithmic <span class="interactive-term" data-term="Trade Secret">Trade Secret</span> visible in operational data outputs.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Our financial software contains proprietary risk models visible in data outputs.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Systematically identify all trade secrets in data flows using classification tools. Document necessary protective measures including encryption, access controls, and NDAs. Can refuse access in exceptional cases where disclosure would cause severe economic harm despite protections, with proper notification to competent authority. Maintain trade secret register and protection evidence.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="highlight">Unfair Contract Terms</span><br>
+                                    <small>Article 13</small>
+                                </td>
+                                <td>
+                                    Contractual terms concerning data access and use, liability, and remedies for breach or termination of data-related obligations that are unilaterally imposed by one enterprise on another enterprise are not binding if the terms are 'unfair'.
+                                    <br><br>
+                                    <strong>Fairness Assessment</strong>
+                                    <br><br>
+                                    <strong>A. General Unfairness Test</strong>
+                                    <br><br>
+                                    A contractual term is unfair if it has been unilaterally imposed and its nature <strong>grossly deviates from good commercial practice</strong> in data access and use, or is <strong>contrary to good faith and fair dealing</strong>.
+                                    <br><br>
+                                    <strong>B. Terms Always Considered Unfair (Article 13(4))</strong>
+                                    <br><br>
+                                    1. Terms that <strong>exclude or limit liability</strong> for <strong>intentional acts or gross negligence</strong><br>
+                                    2. Terms that <strong>exclude remedies</strong> for non-performance or breach<br>
+                                    3. Terms giving <strong>exclusive interpretive rights</strong> to the imposing party
+                                    <br><br>
+                                    <strong>C. Terms Presumed Unfair (Article 13(5))</strong>
+                                    <br><br>
+                                    1. Inappropriately limiting remedies or extending liability<br>
+                                    2. Allowing access to other party's data detrimentally<br>
+                                    3. Preventing other party from using their own data<br>
+                                    4. Preventing reasonable contract termination<br>
+                                    5. Preventing data copy access post-termination<br>
+                                    6. Enabling unreasonably short notice termination<br>
+                                    7. Allowing substantial price changes without cause
+                                </td>
+                                <td>
+                                    <ul class="negotiable-list">
+                                        <li>Alternative balanced contract structures</li>
+                                        <li>Reciprocal liability arrangements</li>
+                                        <li>Mutual termination rights and procedures</li>
+                                        <li>Transparent pricing and change mechanisms</li>
+                                        <li>Documentation of genuine negotiations</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Terms that exclude liability for intentional acts or gross negligence are always unfair and unenforceable.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Terms that prevent a customer from accessing data they generated during contract term are presumed unfair.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Conduct comprehensive contract review using unfairness checklist. Document genuine negotiation of all potentially limiting terms. Avoid unilateral imposition - burden of proof lies with term supplier. Consider implementing contract fairness assessment tools and regular legal reviews. Train contract teams on unfairness indicators.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="highlight">Cloud Service Switching</span><br>
+                                    <small>Articles 23, 25</small>
+                                </td>
+                                <td>
+                                    Must facilitate <span class="interactive-term" data-term="Switching">Switching</span> to another provider or back to <span class="interactive-term" data-term="On-premises ICT Infrastructure">on-premises infrastructure</span> within 30-day transition period (after notice period not exceeding two months), maintain service continuity, and eliminate barriers
+                                </td>
+                                <td>
+                                    <ul class="negotiable-list">
+                                        <li>Additional migration support services</li>
+                                        <li>Data transformation and validation services</li>
+                                        <li>Extended transition periods by mutual agreement</li>
+                                        <li>Integration assistance and testing support</li>
+                                        <li>Training and knowledge transfer services</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Customer wants to migrate from our cloud storage to competitor's platform with full data integrity.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Financial institution wants to migrate from our platform to on-premises solution.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Document comprehensive offboarding processes with clear timelines. Provide data in industry-standard formats (JSON, XML, CSV). Maintain functional equivalence for IaaS services. <strong>May charge reduced switching fees until January 12, 2027, after which switching fees are prohibited (Article 29).</strong> Implement automated export tools and validation procedures. Provide migration testing environments.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="highlight">Public Authority Data Requests</span><br>
+                                    <small>Articles 14, 15, 17</small>
+                                </td>
+                                <td>
+                                    Must provide data to <span class="interactive-term" data-term="Public Sector Body">public authorities</span>, Commission, ECB or <span class="interactive-term" data-term="Union Bodies">Union bodies</span> in cases of exceptional need (<span class="interactive-term" data-term="Public Emergency">Public Emergency</span> or specific public interest tasks)
+                                    <br><br>
+                                    <strong>Exceptional Need Criteria (Article 15)</strong>
+                                    <br><br>
+                                    1. <strong>Public Emergency Response</strong>: Data necessary to respond to public emergency when requestor cannot obtain data through alternative means timely and effectively
+                                    <br><br>
+                                    2. <strong>Specific Public Interest Tasks</strong> (non-personal data only): Public body acting under legal authority for tasks explicitly provided by law, having exhausted all other means including market purchases
+                                    <br><br>
+                                    <strong>SME Protection</strong>: <span class="interactive-term" data-term="Microenterprise">Microenterprises</span> and <span class="interactive-term" data-term="Small Enterprise">small enterprises</span> exempt from public interest tasks (scenario 2), but must comply with emergency requests
+                                </td>
+                                <td>
+                                    <ul class="negotiable-list">
+                                        <li>Data format specifications and delivery methods</li>
+                                        <li>Technical delivery mechanisms and security</li>
+                                        <li>Support services and documentation</li>
+                                        <li>Compensation structures (for SMEs)</li>
+                                        <li>Data scope delineation and filtering</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Health authority requests device data during pandemic emergency with demonstrated exceptional need.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Statistical office requests anonymized data for official statistics, having demonstrated they exhausted market options.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Establish verification protocols for authority requests with documented procedures. Verify legitimacy of emergency claims and exceptional need evidence. Document all data transfers to authorities with audit trails. For non-emergency requests, verify they've exhausted alternative sources. Implement secure data transfer mechanisms. For disputed requests, engage competent authority review process. Maintain emergency response procedures for rapid compliance.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="highlight">Interoperability Requirements</span><br>
+                                    <small>Article 33</small>
+                                </td>
+                                <td>
+                                    Data space participants must meet essential requirements for <span class="interactive-term" data-term="Interoperability">Interoperability</span>, including comprehensive data description, structure documentation, and technical access means
+                                </td>
+                                <td>
+                                    <ul class="negotiable-list">
+                                        <li>Implementation approach and timeline</li>
+                                        <li>Specific technical standards adoption</li>
+                                        <li>Documentation methods and detail level</li>
+                                        <li>Integration support and developer tools</li>
+                                        <li>Enhanced metadata and semantic descriptions</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Our manufacturing platform must provide comprehensive API documentation for interoperability with industry data spaces.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Our energy monitoring system must support standard protocols for data exchange.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Document data structures using standard schemas (JSON Schema, OpenAPI). Support established interoperability standards (REST APIs, GraphQL). Provide comprehensive metadata for data interpretation including units, accuracy, and context. Enable automated data access where feasible. Implement semantic interoperability using standard ontologies. Participate in relevant data space initiatives.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="highlight">International Data Access Protection</span><br>
+                                    <small>Article 32</small>
+                                </td>
+                                <td>
+                                    Must take reasonable technical, organizational and legal measures to prevent international government access to non-personal data that would contradict EU/Member State law
+                                </td>
+                                <td>
+                                    <ul class="negotiable-list">
+                                        <li>Specific security implementation details</li>
+                                        <li>Enhanced contractual safeguards</li>
+                                        <li>Advanced technical protection measures</li>
+                                        <li>Customer notification procedures</li>
+                                        <li>Legal challenge and response protocols</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Cloud service storing EU customer data must implement protection against unauthorized foreign government access requests.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Connected product data transmitted internationally must be protected against unlawful government interception.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Implement end-to-end encryption and robust access controls. Document all international data flows with risk assessments. Establish protocols for responding to foreign government demands including legal challenge procedures. Notify customers when legally permitted about government requests. Consider data localization strategies. Implement data sovereignty controls and monitoring systems. Train staff on international data protection requirements.
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Definitions Panel -->
+        <section id="definitions" class="panel" role="tabpanel" aria-labelledby="definitions-heading">
+            <div class="panel-header">
+                <h2 id="definitions-heading">II. Key Data Act Definitions</h2>
+                <p class="panel-subtitle">Official definitions of key terms and concepts from the regulation</p>
+                <button class="panel-close" aria-label="Close panel">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="table-container">
+                    <table role="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Term</th>
+                                <th scope="col">Definition Source</th>
+                                <th scope="col">Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Data</strong></td>
+                                <td>Article 2(1)</td>
+                                <td>Any digital representation of acts, facts or information and any compilation of such acts, facts or information, including in the form of sound, visual or audio-visual recording</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Personal Data</strong></td>
+                                <td>Article 4(1) GDPR</td>
+                                <td>Any information relating to an identified or identifiable natural person ('data subject'); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Connected Product</strong></td>
+                                <td>Article 2(5)</td>
+                                <td>An item that obtains, generates or collects data concerning its use or environment and that is able to communicate product data via an electronic communications service, physical connection or on-device access, and whose primary function is not the storing, processing or transmission of data on behalf of any party other than the user</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Related Service</strong></td>
+                                <td>Article 2(6)</td>
+                                <td>A digital service, other than an electronic communications service, including software, which is connected with the product at the time of the purchase, rent or lease in such a way that its absence would prevent the connected product from performing one or more of its functions, or which is subsequently connected to the product by the manufacturer or a third party to add to, update or adapt the functions of the connected product</td>
+                            </tr>
+                            <tr>
+                                <td><strong>User</strong></td>
+                                <td>Article 2(12)</td>
+                                <td>A natural or legal person that owns a connected product or to whom temporary rights to use that connected product have been contractually transferred, or that receives related services</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Holder</strong></td>
+                                <td>Article 2(13)</td>
+                                <td>A natural or legal person that has the right or obligation, in accordance with this Regulation, applicable Union law or national legislation adopted in accordance with Union law, to use and make available data, including, where contractually agreed, product data or related service data which it has retrieved or generated during the provision of a related service</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Recipient</strong></td>
+                                <td>Article 2(14)</td>
+                                <td>A natural or legal person, acting for purposes which are related to that person's trade, business, craft or profession, other than the user of a connected product or related service, to whom the data holder makes data available, including a third party following a request by the user to the data holder or in accordance with a legal obligation under Union law or national legislation adopted in accordance with Union law</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Product Data</strong></td>
+                                <td>Article 2(15)</td>
+                                <td>Data generated by the use of a connected product that the manufacturer designed to be retrievable, via an electronic communications service, physical connection or on-device access, by a user, data holder or a third party, including, where relevant, the manufacturer</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Related Service Data</strong></td>
+                                <td>Article 2(16)</td>
+                                <td>Data representing the digitisation of user actions or of events related to the connected product, recorded intentionally by the user or generated as a by-product of the user's action during the provision of a related service by the provider</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Readily Available Data</strong></td>
+                                <td>Article 2(17)</td>
+                                <td>Product data and related service data that a data holder lawfully obtains or can lawfully obtain from the connected product or related service, without disproportionate effort going beyond a simple operation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Trade Secret</strong></td>
+                                <td>Article 2(18) with reference to Article 2(1) of Directive (EU) 2016/943 (Note: In Germany, transposed via GeschGehG § 2(1))</td>
+                                <td>Information which meets all of the following requirements:
+                                <br><br>
+                                a) it is secret in the sense that it is not, as a body or in the precise configuration and assembly of its components, generally known among or readily accessible to persons within the circles that normally deal with the kind of information in question;
+                                <br><br>
+                                b) it has commercial value because it is secret;
+                                <br><br>
+                                c) it has been subject to reasonable steps under the circumstances, by the person lawfully in control of the information, to keep it secret</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Trade Secret Holder</strong></td>
+                                <td>Article 2(19) with reference to Article 2(2) of Directive (EU) 2016/943 (GeschGehG § 2(2))</td>
+                                <td>Any natural or legal person lawfully controlling a trade secret</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Consumer</strong></td>
+                                <td>Article 2(23)</td>
+                                <td>Any natural person who is acting for purposes which are outside that person's trade, business, craft or profession</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Enterprise</strong></td>
+                                <td>Article 2(24)</td>
+                                <td>A natural or legal person that, in relation to contracts and practices covered by this Regulation, is acting for purposes which are related to that person's trade, business, craft or profession</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Small Enterprise</strong></td>
+                                <td>Article 2(25) with reference to Article 2(2) of the Annex to Recommendation 2003/361/EC</td>
+                                <td>An enterprise which employs fewer than 50 persons and whose annual turnover and/or annual balance sheet total does not exceed EUR 10 million</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Microenterprise</strong></td>
+                                <td>Article 2(26) with reference to Article 2(3) of the Annex to Recommendation 2003/361/EC</td>
+                                <td>An enterprise which employs fewer than 10 persons and whose annual turnover and/or annual balance sheet total does not exceed EUR 2 million</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Public Sector Body</strong></td>
+                                <td>Article 2(28)</td>
+                                <td>National, regional or local authorities of the Member States and bodies governed by public law of the Member States, or associations formed by one or more such authorities or one or more such bodies</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Public Emergency</strong></td>
+                                <td>Article 2(29)</td>
+                                <td>An exceptional situation, limited in time, such as a public health emergency, an emergency resulting from natural disasters, a human-induced major disaster, including a major cybersecurity incident, negatively affecting the population of the Union or the whole or part of a Member State, with a risk of serious and lasting repercussions for living conditions or economic stability, financial stability, or the substantial and immediate degradation of economic assets in the Union or the relevant Member State and which is determined or officially declared in accordance with the relevant procedures under Union or national law</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Union Bodies</strong></td>
+                                <td>Article 2(27)</td>
+                                <td>The Union bodies, offices and agencies set up by or pursuant to acts adopted on the basis of the Treaty on European Union, the TFEU or the Treaty establishing the European Atomic Energy Community</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Customer</strong></td>
+                                <td>Article 2(30)</td>
+                                <td>A natural or legal person that has entered into a contractual relationship with a provider of data processing services with the objective of using one or more data processing services</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Virtual Assistants</strong></td>
+                                <td>Article 2(31)</td>
+                                <td>Software that can process demands, tasks or questions including those based on audio, written input, gestures or motions, and that, based on those demands, tasks or questions, provides access to other services or controls the functions of connected products</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Digital Assets</strong></td>
+                                <td>Article 2(32)</td>
+                                <td>Elements in digital form, including applications, for which the customer has the right of use, independently from the contractual relationship with the data processing service it intends to switch from</td>
+                            </tr>
+                            <tr>
+                                <td><strong>On-premises ICT Infrastructure</strong></td>
+                                <td>Article 2(33)</td>
+                                <td>ICT infrastructure and computing resources owned, rented or leased by the customer, located in the data centre of the customer itself and operated by the customer or by a third-party</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Switching</strong></td>
+                                <td>Article 2(34)</td>
+                                <td>The process involving a source provider of data processing services, a customer of a data processing service and, where relevant, a destination provider of data processing services, whereby the customer of a data processing service changes from using one data processing service to using another data processing service of the same service type, or other service, offered by a different provider of data processing services, or to an on-premises ICT infrastructure, including through extracting, transforming and uploading the data</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Egress Charges</strong></td>
+                                <td>Article 2(35)</td>
+                                <td>Data transfer fees charged to customers for extracting their data through the network from the ICT infrastructure of a provider of data processing services to the system of a different provider or to on-premises ICT infrastructure</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Switching Charges</strong></td>
+                                <td>Article 2(36)</td>
+                                <td>Charges, other than standard service fees or early termination penalties, imposed by a provider of data processing services on a customer for the actions mandated by this Regulation for switching to the system of a different provider or to on-premises ICT infrastructure, including data egress charges</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Functional Equivalence</strong></td>
+                                <td>Article 2(37)</td>
+                                <td>Re-establishing on the basis of the customer's exportable data and digital assets, a minimum level of functionality in the environment of a new data processing service of the same service type after the switching process, where the destination data processing service delivers a materially comparable outcome in response to the same input for shared features supplied to the customer under the contract</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Exportable Data</strong></td>
+                                <td>Article 2(38)</td>
+                                <td>For the purpose of Articles 23 to 31 and Article 35, the input and output data, including metadata, directly or indirectly generated, or cogenerated, by the customer's use of the data processing service, excluding any assets or data protected by intellectual property rights, or constituting a trade secret, of providers of data processing services or third parties</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Smart Contract</strong></td>
+                                <td>Article 2(39)</td>
+                                <td>A computer program used for the automated execution of an agreement or part thereof, using a sequence of electronic data records and ensuring their integrity and the accuracy of their chronological ordering</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Interoperability</strong></td>
+                                <td>Article 2(40)</td>
+                                <td>The ability of two or more data spaces or communication networks, systems, connected products, applications, data processing services or components to exchange and use data in order to perform their functions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Open Interoperability Specification</strong></td>
+                                <td>Article 2(41)</td>
+                                <td>A technical specification in the field of information and communication technologies which is performance oriented towards achieving interoperability between data processing services</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Common Specifications</strong></td>
+                                <td>Article 2(42)</td>
+                                <td>A document, other than a standard, containing technical solutions providing a means to comply with certain requirements and obligations established under this Regulation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Harmonised Standard</strong></td>
+                                <td>Article 2(43) with reference to Article 2, point (1)(c) of Regulation (EU) No 1025/2012</td>
+                                <td>A European standard adopted on the basis of a request made by the Commission for the application of Union harmonisation legislation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Metadata</strong></td>
+                                <td>Article 2(2)</td>
+                                <td>A structured description of the contents or the use of data facilitating the discovery or use of that data</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Non-personal Data</strong></td>
+                                <td>Article 2(4)</td>
+                                <td>Data other than personal data</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Processing</strong></td>
+                                <td>Article 2(7)</td>
+                                <td>Any operation or set of operations which is performed on data or on sets of data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination, or other means of making them available, alignment or combination, restriction, erasure or destruction</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Processing Service</strong></td>
+                                <td>Article 2(8)</td>
+                                <td>A digital service that is provided to a customer and that enables ubiquitous and on-demand network access to a shared pool of configurable, scalable and elastic computing resources of a centralised, distributed or highly distributed nature that can be rapidly provisioned and released with minimal management effort or service provider interaction</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Same Service Type</strong></td>
+                                <td>Article 2(9)</td>
+                                <td>A set of data processing services that share the same primary objective, data processing service model and main functionalities</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Intermediation Service</strong></td>
+                                <td>Article 2(10)</td>
+                                <td>Data intermediation service as defined in Article 2, point (11), of Regulation (EU) 2022/868</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Subject</strong></td>
+                                <td>Article 2(11)</td>
+                                <td>Data subject as referred to in Article 4, point (1), of Regulation (EU) 2016/679</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Making Available on the Market</strong></td>
+                                <td>Article 2(21)</td>
+                                <td>Any supply of a connected product for distribution, consumption or use on the Union market in the course of a commercial activity, whether in return for payment or free of charge</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Placing on the Market</strong></td>
+                                <td>Article 2(22)</td>
+                                <td>The first making available of a connected product on the Union market</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Profiling</strong></td>
+                                <td>Article 2(20)</td>
+                                <td>Profiling as defined in Article 4, point (4), of Regulation (EU) 2016/679</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exemptions Panel -->
+        <section id="exemptions" class="panel" role="tabpanel" aria-labelledby="exemptions-heading">
+            <div class="panel-header">
+                <h2 id="exemptions-heading">III. Exemptions</h2>
+                <p class="panel-subtitle">Scenarios where Data Act obligations may not apply or are limited</p>
+                <button class="panel-close" aria-label="Close panel">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="table-container">
+                    <table role="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Exemption Scenario</th>
+                                <th scope="col">Legal Basis</th>
+                                <th scope="col">Application Conditions</th>
+                                <th scope="col">Examples & Implementation Guidance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Micro and Small Enterprise Exemption</strong></td>
+                                <td>Article 7(1)</td>
+                                <td>Applies to <span class="interactive-term" data-term="Microenterprise">microenterprises</span>/<span class="interactive-term" data-term="Small Enterprise">small enterprises</span> that manufacture or design <span class="interactive-term" data-term="Connected Product">connected products</span> or provide <span class="interactive-term" data-term="Related Service">related services</span>, unless they are partner/linked enterprises with non-exempt companies or are subcontractors for larger companies</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Startup with 30 employees making smart devices is exempt from obligation to design for data access.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Small software company with 40 employees providing industrial monitoring services is exempt.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Verify company size (under 50 employees and annual turnover/balance sheet ≤€10M). Check for parent company relationships that might disqualify exemption. Document size status at time of product development. Exemption does not apply if working as subcontractor for larger company.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Temporary Medium Enterprise Exemption</strong></td>
+                                <td>Article 7(1)</td>
+                                <td>Applies to medium enterprises (under Art. 2 of Annex to Recommendation 2003/361/EC) for one year from classification as medium enterprise, and for connected products for one year after being placed on market</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: Company recently growing to 100 employees has one-year transition period before compliance required.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Document growth transition dates. Track market introduction dates for products. Does not apply if company has partner/linked enterprises that aren't small or micro enterprises.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Legacy Product Exemption</strong></td>
+                                <td>Article 50</td>
+                                <td>Design obligation in Article 3(1) only applies to connected products placed on market after September 12, 2026</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Smart factory equipment sold in 2025 isn't subject to design obligation for easy data access.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Medical devices marketed before September 2026 aren't covered by design requirements.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Document market release dates for all products. Maintain records of design specifications for pre-/post-compliance versions. Consider voluntary compliance for product lines spanning the cutoff date.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Legacy Contract Exemption</strong></td>
+                                <td>Article 50</td>
+                                <td>Unfair contract terms provisions in Chapter IV apply to contracts concluded after September 12, 2025, and to earlier contracts only from <strong>September 12, 2027 (if indefinite or lasting until at least January 11, 2034)</strong></td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Cloud service contract from 2024 isn't subject to unfair contract terms restrictions until 2027.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Data licensing agreement from 2023 with 5-year term isn't covered by unfair terms provisions at all.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Catalog existing contracts with dates and durations. Plan compliance transition for indefinite and long-term contracts. Consider early alignment for customer goodwill.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Custom Cloud Service Exemption</strong></td>
+                                <td>Article 31(1)</td>
+                                <td>Cloud services where most core features are tailored to specific <span class="interactive-term" data-term="Customer">customer</span> needs or all components developed for single customer (and thus are not offered commercially at scale) are exempt from:
+                                <br><br>
+                                - <span class="interactive-term" data-term="Functional Equivalence">Functional Equivalence</span> Obligation (Article 23 lit. d)
+                                <br><br>
+                                - Gradual Withdrawal of <span class="interactive-term" data-term="Switching Charges">Switching Charges</span> (Article 29)
+                                <br><br>
+                                - Technical Facilitation for IaaS Providers (Article 30(1))
+                                <br><br>
+                                - Standards Compatibility Requirement (Article 30(3))</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Custom-built cloud environment for specific government agency doesn't require full <span class="interactive-term" data-term="Functional Equivalence">functional equivalence</span>.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Bespoke data processing service developed for single <span class="interactive-term" data-term="Customer">customer</span> doesn't require <span class="interactive-term" data-term="Functional Equivalence">functional equivalence</span>.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Document customization specifics that qualify for exemption. Maintain evidence the service isn't offered at commercial scale. Disclose exemption clearly to customers before contracting.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Test/Evaluation Service Exemption</strong></td>
+                                <td>Article 31(2)</td>
+                                <td>Cloud services provided for limited time for testing/evaluation purposes, not as full versions, are exempt from <span class="interactive-term" data-term="Switching">switching</span> obligations</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: 30-day free trial cloud environment is exempt from switching requirements.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Beta test version of data processing service doesn't require full switching capabilities.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Clearly mark test/evaluation services. Document limited nature and duration. Disclose exemption status to customers upfront.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Trade Secret Exception</strong></td>
+                                <td>Article 4(6-8), 5(9-11)</td>
+                                <td>May refuse/suspend data sharing if user/third party doesn't agree to necessary measures to protect <span class="interactive-term" data-term="Trade Secret">trade secrets</span>, or in exceptional cases where severe economic harm would result despite protections
+                                <br><br>
+                                (Note: Invoking the 'trade secret exemption' requires notification of the <span class="interactive-term" data-term="Data Holder">data holder</span> to the competent authority)</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Industrial process algorithms in manufacturing equipment data can be protected with appropriate <span class="interactive-term" data-term="Trade Secret">trade secret</span> measures.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Can refuse access to proprietary financial models in data if disclosure would cause severe economic harm despite protections.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Identify and document all trade secrets. Implement technical and contractual protections. For refusals, provide written justification to requestor and notify competent authority. Severe economic harm exception requires objective evidence and should be used only in exceptional cases.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Security-Critical Data Exception</strong></td>
+                                <td>Article 4(2)</td>
+                                <td>May contractually restrict data access if it would impact security requirements and lead to serious adverse effects on health or safety</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Vehicle security systems data can be restricted if sharing would create security vulnerabilities.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: Medical device security parameters can be restricted if access would compromise safety.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Document security-critical systems with clear justification. Implement alternative access to non-security-critical data. Notify relevant authority of any access refusals. Must notify competent authority when invoking this exception.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Content and IP Exclusion</strong></td>
+                                <td>Recitals 15-16</td>
+                                <td>Data related to recording, transmitting, displaying content (especially IP-protected content) is excluded from scope</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Media content displayed on smart TVs isn't subject to access requirements.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: E-books accessed through connected e-reader aren't covered by data access provisions.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Clearly separate content data from operational/usage data. Document IP protections that apply. Provide access to non-excluded data categories.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gatekeeper Platform Exclusion</strong></td>
+                                <td>Article 5(3)</td>
+                                <td>Companies designated as gatekeepers under Digital Markets Act (Regulation (EU) 2022/1925) cannot request or receive <span class="interactive-term" data-term="Data">data</span> as third parties</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Major tech platform designated as gatekeeper cannot request data access as third party.
+                                    </div>
+                                    <div class="example-box">
+                                        <strong>Example 2</strong>: User cannot be incentivized to share data with gatekeeper platform.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Track official gatekeeper designations. Implement controls to prevent data sharing with designated gatekeepers. Document any gatekeeper relationship verification procedures.
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enforcement Panel -->
+        <section id="enforcement" class="panel" role="tabpanel" aria-labelledby="enforcement-heading">
+            <div class="panel-header">
+                <h2 id="enforcement-heading">IV. Enforcement and Penalties</h2>
+                <p class="panel-subtitle">Authority powers, investigation procedures, and penalty frameworks</p>
+                <button class="panel-close" aria-label="Close panel">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="table-container">
+                    <table role="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Enforcement Element</th>
+                                <th scope="col">Legal Basis</th>
+                                <th scope="col">Key Requirements</th>
+                                <th scope="col">Examples & Implementation Guidance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Competent Authorities</strong></td>
+                                <td>Article 37</td>
+                                <td>Member States must designate one or more competent authorities responsible for application and enforcement of the regulation. If multiple authorities, a Data Coordinator must be designated.</td>
+                                <td>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Identify the relevant national authorities for each EU country where you operate. Document their contact information and specific competencies. Create internal escalation procedures that align with each authority's requirements.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Investigation Powers</strong></td>
+                                <td>Article 37(5)</td>
+                                <td>Competent authorities can request information, conduct investigations, and access relevant documentation. They can take action based on complaints or on their own initiative.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: German authority might request documentation of your <span class="interactive-term" data-term="Data">data</span> sharing mechanisms following <span class="interactive-term" data-term="Customer">customer</span> complaint.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Prepare compliance documentation packages that can be quickly assembled in response to authority inquiries. Maintain detailed records of all data sharing activities.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Financial Penalties</strong></td>
+                                <td>Article 40</td>
+                                <td>Member States determine sanctions that must be "<em>effective, proportionate and dissuasive.</em>" Financial penalties can include fines and potentially periodic penalty payments.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: French authority could impose substantial fines for systematically refusing data access requests without legitimate basis.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Monitor sanction regimes in all operating jurisdictions. Consider potential financial exposure in compliance risk assessments. Some violations involving personal data could trigger GDPR-level fines.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Corrective Actions</strong></td>
+                                <td>Article 37(5)(d)</td>
+                                <td>Authorities can order cessation of infringements and impose corrective measures to bring operations into compliance.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: Italian authority might order immediate implementation of data access mechanisms.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Develop rapid response plans for implementing required changes. Build flexible systems that can be quickly modified to address compliance gaps.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cross-Border Cooperation</strong></td>
+                                <td>Article 37(15-16)</td>
+                                <td>Authorities must cooperate across borders to handle multi-jurisdictional issues. Data coordinators facilitate this cooperation.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: For cloud services across multiple EU countries, <span class="interactive-term" data-term="Public Sector Body">authorities</span> coordinate enforcement actions.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: For pan-European operations, prepare for coordinated authority actions. Document which national entities of your organization are responsible for which data.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Individual Complaints</strong></td>
+                                <td>Article 38</td>
+                                <td>Natural and legal persons have the right to lodge complaints with competent authorities when they believe their rights have been violated.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: Manufacturing customer complains about refusal to share equipment data with third-party service provider.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Establish clear response procedures for customer complaints. Document justification for all data access decisions. Consider internal appeal processes before authority involvement.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Judicial Remedies</strong></td>
+                                <td>Article 39</td>
+                                <td>Anyone affected has the right to effective judicial remedy against decisions of competent authorities or when authorities fail to act on complaints.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: Customer challenges authority decision regarding trade secret exemption claim.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Understand court procedures in each jurisdiction. Prepare for potential litigation by maintaining comprehensive compliance documentation.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Representative Requirements</strong></td>
+                                <td>Article 37(11-13)</td>
+                                <td>Non-EU entities providing connected products or services in the EU must designate an EU representative.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: US manufacturer of connected industrial equipment must designate EU representative for Data Act compliance matters.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Formally designate and document EU representatives. Ensure representatives have necessary information and authority to respond to competent authorities.
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dispute Resolution Panel -->
+        <section id="dispute-resolution" class="panel" role="tabpanel" aria-labelledby="dispute-resolution-heading">
+            <div class="panel-header">
+                <h2 id="dispute-resolution-heading">V. Dispute Resolution</h2>
+                <p class="panel-subtitle">Mechanisms for resolving conflicts and disagreements under the Data Act</p>
+                <button class="panel-close" aria-label="Close panel">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="table-container">
+                    <table role="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Dispute Type</th>
+                                <th scope="col">Resolution Mechanism</th>
+                                <th scope="col">Process Requirements</th>
+                                <th scope="col">Examples & Implementation Guidance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Data Access Disputes</strong><br><small>Article 10</small></td>
+                                <td>Certified Dispute Resolution Bodies</td>
+                                <td>Specialized bodies certified by Member States to resolve disputes about data access, conditions or compensation. <strong>Shall decide within 90 days</strong>.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Manufacturing company disputes fair compensation for providing specialized data to competitor.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Identify certified bodies in relevant jurisdictions before disputes arise. Develop standard position papers for common dispute types. <strong>Decisions are binding only if parties agree in advance.</strong>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Trade Secret Disputes</strong><br><small>Article 4(9), 5(12)</small></td>
+                                <td>Competent Authority Review</td>
+                                <td>When data holder refuses access based on trade secret concerns, user/third party can file complaint with competent authority for urgent review.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Chemical process data withheld due to claimed <span class="interactive-term" data-term="Trade Secret">trade secret</span> status.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Document trade secret identification and protection measures. Prepare detailed justifications for any refusal based on trade secrets. Develop expedited response process for authority inquiries. Must notify authority when refusing data access based on trade secrets.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Contract Term Fairness</strong><br><small>Article 13</small></td>
+                                <td>Court Proceedings</td>
+                                <td>Courts determine whether unilaterally imposed contractual terms are unfair and therefore non-binding.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Cloud provider's terms limiting data portability challenged as unfair.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Review all contracts for potentially unfair terms. Document negotiation process for key terms to demonstrate they weren't unilaterally imposed. Maintain evidence of industry standard practices to demonstrate terms aren't deviating from good commercial practice.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cloud Switching Disputes</strong><br><small>Articles 23-30</small></td>
+                                <td>Technical Expert Resolution</td>
+                                <td>Technical disagreements about switching feasibility may require expert assessment regarding technical feasibility, transition periods, and reasonable charges.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example 1</strong>: Dispute over technical feasibility of 30-day migration timeline.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Document technical constraints with objective evidence. Prepare alternative solutions that demonstrate good faith. Maintain detailed records of all switching support offered. May need to justify extended transition periods with technical documentation.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Compensation Disputes</strong><br><small>Article 9</small></td>
+                                <td>Competent Authority Review</td>
+                                <td>Disagreements about appropriate compensation for data provision can be reviewed by competent authorities.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: <span class="interactive-term" data-term="Small Enterprise">Small enterprise</span> challenges excessive compensation demanded by <span class="interactive-term" data-term="Data Holder">Data Holder</span>.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Document cost basis for all compensation requested. For data provided to <span class="interactive-term" data-term="Small Enterprise">small enterprises</span> and <span class="interactive-term" data-term="Microenterprise">microenterprises</span>, ensure charges don't exceed costs. Maintain transparent pricing structures that demonstrate non-discrimination.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Public Authority Data Requests</strong><br><small>Article 18(5)</small></td>
+                                <td>Competent Authority Review</td>
+                                <td>When <strong>either a <span class="interactive-term" data-term="Public Sector Body">public authority</span> challenges a <span class="interactive-term" data-term="Data Holder">data holder's</span> refusal</strong> to provide requested data, <strong>or</strong> <strong>a <span class="interactive-term" data-term="Data Holder">data holder</span> challenges the legitimacy of a data request</strong>, and the matter cannot be resolved through request modification, <strong>the dispute must be referred to the competent authority</strong> in the Member State where the data holder is established for resolution.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: Cloud provider challenges purported emergency need for <span class="interactive-term" data-term="Customer">customer</span> data.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Verify legitimacy of all public authority requests. Document assessment of claimed exceptional need. Establish clear processes for handling cross-border authority requests.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Multi-Jurisdictional Disputes</strong><br><small>Article 39</small></td>
+                                <td>Judicial Proceedings</td>
+                                <td>Complex disputes involving parties in multiple jurisdictions may require court resolution.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: <span class="interactive-term" data-term="Connected Product">Connected Product</span> vehicle manufacturer in Germany disputes with service provider in France and <span class="interactive-term" data-term="Customer">customer</span> in Italy.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Consider jurisdiction clauses in contracts. Document which national law applies to different aspects of service. Prepare for potentially complex legal proceedings.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Informal Resolution</strong></td>
+                                <td>Direct Negotiation</td>
+                                <td>Before formal mechanisms, parties can negotiate directly to resolve disputes.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: Manufacturing company and third-party service provider negotiate acceptable terms for <span class="interactive-term" data-term="Related Service Data">Related Service Data</span> access.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Create escalation procedures that encourage negotiated solutions. Document all negotiation attempts before invoking formal mechanisms. Consider establishing standardized mediation procedures.
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interaction Panel -->
+        <section id="interaction" class="panel" role="tabpanel" aria-labelledby="interaction-heading">
+            <div class="panel-header">
+                <h2 id="interaction-heading">VI. Interaction with Other Regulations</h2>
+                <p class="panel-subtitle">How the Data Act relates to GDPR, DMA, and other EU regulations</p>
+                <button class="panel-close" aria-label="Close panel">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="table-container">
+                    <table role="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Regulation</th>
+                                <th scope="col">Relationship with Data Act</th>
+                                <th scope="col">Key Considerations</th>
+                                <th scope="col">Examples & Implementation Guidance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>GDPR (2016/679)</strong><br><small>Article 1(5)</small></td>
+                                <td>Complementary but subordinate</td>
+                                <td>Data Act supplements but doesn't override GDPR. <strong>Any processing of <span class="interactive-term" data-term="Personal Data">personal data</span> must comply with GDPR</strong>, including having a valid legal basis.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: Vehicle telematics data containing driver behavior requires GDPR compliance alongside Data Act obligations.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Map <span class="interactive-term" data-term="Personal Data">personal data</span> flows within connected products. Ensure data access mechanisms include appropriate GDPR safeguards. Design data sharing with privacy by design principles. Personal data can only be shared if GDPR requirements are met.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Digital Markets Act (2022/1925)</strong><br><small>Article 5(3)</small></td>
+                                <td>Restriction</td>
+                                <td>Companies designated as <strong>"gatekeepers" under DMA</strong> <strong>cannot request or receive data under the Data Act's third-party data sharing provisions.</strong></td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: Major technology platform designated as gatekeeper cannot receive industrial equipment data as third party.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Track official gatekeeper designations. Implement verification measures before sharing data with potential gatekeepers. Document procedures to prevent data flows to designated gatekeepers.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>ePrivacy Directive (2002/58/EC)</strong><br>Note: Transposed in Germany under UWG and TDDDG<br><small>Article 1(5), Recital 36</small></td>
+                                <td>Complementary prerequisite</td>
+                                <td>Access to data stored on end devices requires consent per ePrivacy rules, unless necessary for explicitly requested service.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: Connected home device requires proper consent before sharing usage data.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Ensure connected products obtain and document required consent. Design connected products with privacy-friendly defaults. Consider implementing consent management systems that work across product ecosystems.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Free Flow of Non-Personal Data Regulation (2018/1807)</strong><br><small>Article 1(7)</small></td>
+                                <td>Complementary</td>
+                                <td>Data Act builds on and enhances data portability aspects introduced in this regulation, particularly for cloud services.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: Cloud switching provisions extend beyond self-regulatory codes promoted in 2018 regulation.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Update cloud exit strategies to align with enhanced requirements. Document how your solutions go beyond the self-regulatory framework. Ensure proper data portability for both personal and non-personal data.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Governance Act (2022/868)</strong><br><small>Recital 70</small></td>
+                                <td>Complementary, but separate scope</td>
+                                <td>DGA focuses on data intermediaries and data altruism; Data Act establishes who can access and use data in specific contexts.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: <span class="interactive-term" data-term="Data">Data</span> sharing through certified data intermediary must comply with both regulations.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: When using data intermediaries, ensure they meet DGA requirements. Align data sharing frameworks to work with certified intermediaries. Consider how data spaces developed under DGA connect with your data sharing mechanisms.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sector-Specific Regulations</strong><br><small>Article 44</small></td>
+                                <td>Priority for Specifics</td>
+                                <td>Sector-specific regulations (e.g., automotive, medical, energy) may impose additional or more specific requirements that take precedence.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: Medical device <span class="interactive-term" data-term="Data">data</span> sharing must comply with both Data Act and medical device regulations.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Create compliance matrices showing intersection of horizontal (Data Act) and vertical (sector-specific) requirements. Document where sector rules prevail. Design compliance frameworks that address the most restrictive applicable requirements.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Trade Secrets Directive (2016/943)</strong><br><small>Article 4(6-8), 5(9-11), Recital 31</small></td>
+                                <td>Balance</td>
+                                <td>Data Act balances data access rights with protection of trade secrets, allowing refusal under specific conditions.</td>
+                                <td>
+                                    <div class="example-box">
+                                        <strong>Example</strong>: Manufacturing process data containing proprietary algorithms must be protected while providing necessary operational data.
+                                    </div>
+                                    <div class="implementation-box">
+                                        <strong>Implementation</strong>: Document <span class="interactive-term" data-term="Trade Secret">trade secret</span> identification procedures. Implement technical measures to protect confidential aspects while sharing required <span class="interactive-term" data-term="Data">data</span>. Maintain records of third-party confidentiality agreements.
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Definition Modal -->
+        <div class="definition-modal" id="definitionModal" role="dialog" aria-labelledby="definitionTitle" aria-modal="true">
+            <div class="definition-content">
+                <div class="definition-header">
+                    <h3 id="definitionTitle">Term Definition</h3>
+                    <button class="definition-close" id="definitionClose" aria-label="Close definition">×</button>
+                </div>
+                <div class="definition-body" id="definitionBody">
+                    Definition will appear here.
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Footer -->
+        <footer class="footer" role="contentinfo">
+            <p>Created by <a href="https://planit.legal/team/" target="_blank" rel="noopener noreferrer">Patrick Munro</a>, enhanced and polished by Claude with constitutional precision.</p>
+            <p class="footer-tagline">Enhanced Data Act Deal Card 2.0 - Your high-level overview of EU Data Act compliance</p>
+            <p class="text-sm" style="margin-top: 1rem; opacity: 0.7;">
+                <strong>Disclaimer:</strong> This tool is for educational purposes only and does not constitute legal advice. 
+                For specific legal guidance, please contact Patrick Munro directly at 
+                <a href="mailto:patrick.munro.ext@planit.legal">patrick.munro.ext@planit.legal</a> 
+                or reach out to our team at Planit Legal: <a href="mailto:mail@planit.legal">mail@planit.legal</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Enhanced JavaScript functionality for Data Act Deal Card 2.0
+        class DataActCard {
+            constructor() {
+                this.definitions = {
+                    "Data": {
+                        title: "Data",
+                        definition: "Any digital representation of acts, facts or information and any compilation of such acts, facts or information, including in the form of sound, visual or audio-visual recording (Article 2(1) Data Act)"
+                    },
+                    "Metadata": {
+                        title: "Metadata",
+                        definition: "A structured description of the contents or the use of data facilitating the discovery or use of that data (Article 2(2) Data Act)"
+                    },
+                    "Personal Data": {
+                        title: "Personal Data",
+                        definition: "Personal data as defined in Article 4, point (1), of Regulation (EU) 2016/679 (Article 2(3) Data Act)"
+                    },
+                    "Non-personal Data": {
+                        title: "Non-personal Data",
+                        definition: "Data other than personal data (Article 2(4) Data Act)"
+                    },
+                    "Processing": {
+                        title: "Processing",
+                        definition: "Any operation or set of operations which is performed on data or on sets of data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination, or other means of making them available, alignment or combination, restriction, erasure or destruction (Article 2(7) Data Act)"
+                    },
+                    "Data Processing Service": {
+                        title: "Data Processing Service",
+                        definition: "A digital service that is provided to a customer and that enables ubiquitous and on-demand network access to a shared pool of configurable, scalable and elastic computing resources of a centralised, distributed or highly distributed nature that can be rapidly provisioned and released with minimal management effort or service provider interaction (Article 2(8) Data Act)"
+                    },
+                    "Same Service Type": {
+                        title: "Same Service Type",
+                        definition: "A set of data processing services that share the same primary objective, data processing service model and main functionalities (Article 2(9) Data Act)"
+                    },
+                    "Data Intermediation Service": {
+                        title: "Data Intermediation Service",
+                        definition: "Data intermediation service as defined in Article 2, point (11), of Regulation (EU) 2022/868 (Article 2(10) Data Act)"
+                    },
+                    "Data Subject": {
+                        title: "Data Subject",
+                        definition: "Data subject as referred to in Article 4, point (1), of Regulation (EU) 2016/679 (Article 2(11) Data Act)"
+                    },
+                    "Connected Product": {
+                        title: "Connected Product", 
+                        definition: "An item that obtains, generates or collects data concerning its use or environment and that is able to communicate product data via an electronic communications service, physical connection or on-device access, and whose primary function is not the storing, processing or transmission of data on behalf of any party other than the user (Article 2(5) Data Act)"
+                    },
+                    "Related Service": {
+                        title: "Related Service",
+                        definition: "A digital service, other than an electronic communications service, including software, which is connected with the product at the time of the purchase, rent or lease in such a way that its absence would prevent the connected product from performing one or more of its functions, or which is subsequently connected to the product by the manufacturer or a third party to add to, update or adapt the functions of the connected product (Article 2(6) Data Act)"
+                    },
+                    "User": {
+                        title: "User",
+                        definition: "A natural or legal person that owns a connected product or to whom temporary rights to use that connected product have been contractually transferred, or that receives related services (Article 2(12) Data Act)"
+                    },
+                    "Data Holder": {
+                        title: "Data Holder",
+                        definition: "A natural or legal person that has the right or obligation, in accordance with this Regulation, applicable Union law or national legislation adopted in accordance with Union law, to use and make available data, including, where contractually agreed, product data or related service data which it has retrieved or generated during the provision of a related service (Article 2(13) Data Act)"
+                    },
+                    "Data Recipient": {
+                        title: "Data Recipient",
+                        definition: "A natural or legal person, acting for purposes which are related to that person's trade, business, craft or profession, other than the user of a connected product or related service, to whom the data holder makes data available, including a third party following a request by the user to the data holder or in accordance with a legal obligation under Union law or national legislation adopted in accordance with Union law (Article 2(14) Data Act)"
+                    },
+                    "Product Data": {
+                        title: "Product Data",
+                        definition: "Data generated by the use of a connected product that the manufacturer designed to be retrievable, via an electronic communications service, physical connection or on-device access, by a user, data holder or a third party, including, where relevant, the manufacturer (Article 2(15) Data Act)"
+                    },
+                    "Related Service Data": {
+                        title: "Related Service Data",
+                        definition: "Data representing the digitisation of user actions or of events related to the connected product, recorded intentionally by the user or generated as a by-product of the user's action during the provision of a related service by the provider (Article 2(16) Data Act)"
+                    },
+                    "Trade Secret": {
+                        title: "Trade Secret",
+                        definition: "Information which meets all of the following requirements:\n\na) it is secret in the sense that it is not, as a body or in the precise configuration and assembly of its components, generally known among or readily accessible to persons within the circles that normally deal with the kind of information in question;\n\nb) it has commercial value because it is secret;\n\nc) it has been subject to reasonable steps under the circumstances, by the person lawfully in control of the information, to keep it secret\n\n(Article 2(18) Data Act with reference to Article 2(1) of Directive (EU) 2016/943)"
+                    },
+                    "Personal Data": {
+                        title: "Personal Data",
+                        definition: "Personal data as defined in Article 4, point (1), of Regulation (EU) 2016/679 (Article 2(3) Data Act)"
+                    },
+                    "Consumer": {
+                        title: "Consumer",
+                        definition: "Any natural person who is acting for purposes which are outside that person's trade, business, craft or profession (Article 2(23) Data Act)"
+                    },
+                    "Making Available on the Market": {
+                        title: "Making Available on the Market",
+                        definition: "Any supply of a connected product for distribution, consumption or use on the Union market in the course of a commercial activity, whether in return for payment or free of charge (Article 2(21) Data Act)"
+                    },
+                    "Placing on the Market": {
+                        title: "Placing on the Market",
+                        definition: "The first making available of a connected product on the Union market (Article 2(22) Data Act)"
+                    },
+                    "Profiling": {
+                        title: "Profiling",
+                        definition: "Profiling as defined in Article 4, point (4), of Regulation (EU) 2016/679 (Article 2(20) Data Act)"
+                    },
+                    "Small Enterprise": {
+                        title: "Small Enterprise",
+                        definition: "An enterprise which employs fewer than 50 persons and whose annual turnover and/or annual balance sheet total does not exceed EUR 10 million (Article 2(25) Data Act)"
+                    },
+                    "Microenterprise": {
+                        title: "Microenterprise",
+                        definition: "An enterprise which employs fewer than 10 persons and whose annual turnover and/or annual balance sheet total does not exceed EUR 2 million (Article 2(26) Data Act)"
+                    },
+                    "Public Sector Body": {
+                        title: "Public Sector Body",
+                        definition: "National, regional or local authorities of the Member States and bodies governed by public law of the Member States, or associations formed by one or more such authorities or one or more such bodies (Article 2(28) Data Act)"
+                    },
+                    "Public Emergency": {
+                        title: "Public Emergency",
+                        definition: "An exceptional situation, limited in time, such as a public health emergency, an emergency resulting from natural disasters, a human-induced major disaster, including a major cybersecurity incident, negatively affecting the population of the Union or the whole or part of a Member State, with a risk of serious and lasting repercussions for living conditions or economic stability, financial stability, or the substantial and immediate degradation of economic assets in the Union or the relevant Member State and which is determined or officially declared in accordance with the relevant procedures under Union or national law (Article 2(29) Data Act)"
+                    },
+                    "Union Bodies": {
+                        title: "Union Bodies",
+                        definition: "The Union bodies, offices and agencies set up by or pursuant to acts adopted on the basis of the Treaty on European Union, the TFEU or the Treaty establishing the European Atomic Energy Community (Article 2(27) Data Act)"
+                    },
+                    "Customer": {
+                        title: "Customer",
+                        definition: "A natural or legal person that has entered into a contractual relationship with a provider of data processing services with the objective of using one or more data processing services (Article 2(30) Data Act)"
+                    },
+                    "Virtual Assistants": {
+                        title: "Virtual Assistants",
+                        definition: "Software that can process demands, tasks or questions including those based on audio, written input, gestures or motions, and that, based on those demands, tasks or questions, provides access to other services or controls the functions of connected products (Article 2(31) Data Act)"
+                    },
+                    "Digital Assets": {
+                        title: "Digital Assets",
+                        definition: "Elements in digital form, including applications, for which the customer has the right of use, independently from the contractual relationship with the data processing service it intends to switch from (Article 2(32) Data Act)"
+                    },
+                    "On-premises ICT Infrastructure": {
+                        title: "On-premises ICT Infrastructure",
+                        definition: "ICT infrastructure and computing resources owned, rented or leased by the customer, located in the data centre of the customer itself and operated by the customer or by a third-party (Article 2(33) Data Act)"
+                    },
+                    "Switching": {
+                        title: "Switching",
+                        definition: "The process involving a source provider of data processing services, a customer of a data processing service and, where relevant, a destination provider of data processing services, whereby the customer of a data processing service changes from using one data processing service to using another data processing service of the same service type, or other service, offered by a different provider of data processing services, or to an on-premises ICT infrastructure, including through extracting, transforming and uploading the data (Article 2(34) Data Act)"
+                    },
+                    "Data Egress Charges": {
+                        title: "Data Egress Charges",
+                        definition: "Data transfer fees charged to customers for extracting their data through the network from the ICT infrastructure of a provider of data processing services to the system of a different provider or to on-premises ICT infrastructure (Article 2(35) Data Act)"
+                    },
+                    "Switching Charges": {
+                        title: "Switching Charges",
+                        definition: "Charges, other than standard service fees or early termination penalties, imposed by a provider of data processing services on a customer for the actions mandated by this Regulation for switching to the system of a different provider or to on-premises ICT infrastructure, including data egress charges (Article 2(36) Data Act)"
+                    },
+                    "Functional Equivalence": {
+                        title: "Functional Equivalence",
+                        definition: "Re-establishing on the basis of the customer's exportable data and digital assets, a minimum level of functionality in the environment of a new data processing service of the same service type after the switching process, where the destination data processing service delivers a materially comparable outcome in response to the same input for shared features supplied to the customer under the contract (Article 2(37) Data Act)"
+                    },
+                    "Exportable Data": {
+                        title: "Exportable Data",
+                        definition: "For the purpose of Articles 23 to 31 and Article 35, the input and output data, including metadata, directly or indirectly generated, or cogenerated, by the customer's use of the data processing service, excluding any assets or data protected by intellectual property rights, or constituting a trade secret, of providers of data processing services or third parties (Article 2(38) Data Act)"
+                    },
+                    "Smart Contract": {
+                        title: "Smart Contract",
+                        definition: "A computer program used for the automated execution of an agreement or part thereof, using a sequence of electronic data records and ensuring their integrity and the accuracy of their chronological ordering (Article 2(39) Data Act)"
+                    },
+                    "Interoperability": {
+                        title: "Interoperability",
+                        definition: "The ability of two or more data spaces or communication networks, systems, connected products, applications, data processing services or components to exchange and use data in order to perform their functions (Article 2(40) Data Act)"
+                    },
+                    "Open Interoperability Specification": {
+                        title: "Open Interoperability Specification",
+                        definition: "A technical specification in the field of information and communication technologies which is performance oriented towards achieving interoperability between data processing services (Article 2(41) Data Act)"
+                    },
+                    "Common Specifications": {
+                        title: "Common Specifications",
+                        definition: "A document, other than a standard, containing technical solutions providing a means to comply with certain requirements and obligations established under this Regulation (Article 2(42) Data Act)"
+                    },
+                    "Harmonised Standard": {
+                        title: "Harmonised Standard",
+                        definition: "A harmonised standard as defined in Article 2, point (1)(c), of Regulation (EU) No 1025/2012 (Article 2(43) Data Act)"
+                    }
+                };
+
+                this.currentSection = 'core-requirements';
+                this.searchTimeout = null;
+                this.init();
+            }
+
+            init() {
+                try {
+                    this.setupNavigation();
+                    this.setupSearch();
+                    this.setupDefinitions();
+                    this.setupThemeToggle();
+                    this.setupProgressTracking();
+                    this.setupKeyboardNavigation();
+                    this.setupAccessibility();
+                    console.log('✅ Data Act Card initialized successfully');
+                } catch (error) {
+                    console.error('❌ Error initializing Data Act Card:', error);
+                    this.showError('Failed to initialize application. Please refresh the page.');
+                }
+            }
+
+            setupNavigation() {
+                const navCards = document.querySelectorAll('.nav-card');
+                const panels = document.querySelectorAll('.panel');
+                const closeButtons = document.querySelectorAll('.panel-close');
+
+                navCards.forEach(card => {
+                    card.addEventListener('click', this.handleNavClick.bind(this));
+                    card.addEventListener('keydown', this.handleNavKeydown.bind(this));
+                });
+
+                closeButtons.forEach(button => {
+                    button.addEventListener('click', this.handleCloseClick.bind(this));
+                });
+            }
+
+            handleNavClick(e) {
+                e.preventDefault();
+                const sectionId = e.currentTarget.getAttribute('data-section');
+                if (sectionId) {
+                    this.showSection(sectionId);
+                }
+            }
+
+            handleNavKeydown(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.handleNavClick(e);
+                }
+            }
+
+            handleCloseClick(e) {
+                e.preventDefault();
+                this.showSection('core-requirements');
+            }
+
+            showSection(sectionId) {
+                try {
+                    // Update navigation
+                    document.querySelectorAll('.nav-card').forEach(card => {
+                        card.classList.remove('active');
+                        card.setAttribute('aria-pressed', 'false');
+                    });
+                    
+                    const activeCard = document.querySelector(`.nav-card[data-section="${sectionId}"]`);
+                    if (activeCard) {
+                        activeCard.classList.add('active');
+                        activeCard.setAttribute('aria-pressed', 'true');
+                    }
+
+                    // Update panels
+                    document.querySelectorAll('.panel').forEach(panel => {
+                        panel.classList.remove('active');
+                        panel.setAttribute('aria-hidden', 'true');
+                    });
+                    
+                    const activePanel = document.getElementById(sectionId);
+                    if (activePanel) {
+                        activePanel.classList.add('active');
+                        activePanel.setAttribute('aria-hidden', 'false');
+                    }
+
+                    this.currentSection = sectionId;
+                    this.updateProgress();
+                    
+                    // Smooth scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                } catch (error) {
+                    console.error('Error showing section:', error);
+                    this.showError('Failed to navigate to section. Please try again.');
+                }
+            }
+
+            setupSearch() {
+                const searchInput = document.getElementById('searchInput');
+                
+                searchInput.addEventListener('input', this.handleSearchInput.bind(this));
+                searchInput.addEventListener('keydown', this.handleSearchKeydown.bind(this));
+            }
+
+            handleSearchInput(e) {
+                clearTimeout(this.searchTimeout);
+                this.searchTimeout = setTimeout(() => {
+                    this.performSearch(e.target.value);
+                }, 300);
+            }
+
+            handleSearchKeydown(e) {
+                if (e.key === 'Escape') {
+                    e.target.value = '';
+                    this.clearSearch();
+                }
+            }
+
+            performSearch(query) {
+                if (!query.trim()) {
+                    this.clearSearch();
+                    return;
+                }
+
+                try {
+                    const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 1);
+                    const allContent = document.querySelectorAll('td, th, .example-box, .implementation-box');
+                    let matches = [];
+
+                    allContent.forEach(element => {
+                        const text = element.textContent.toLowerCase();
+                        const matchCount = searchTerms.filter(term => text.includes(term)).length;
+                        
+                        if (matchCount > 0) {
+                            const panel = element.closest('.panel');
+                            matches.push({
+                                element: element,
+                                score: matchCount / searchTerms.length,
+                                section: panel ? panel.id : null
+                            });
+                        }
+                    });
+
+                    this.highlightSearchResults(matches, query);
+
+                } catch (error) {
+                    console.error('Search error:', error);
+                    this.showError('Search encountered an error. Please try again.');
+                }
+            }
+
+            highlightSearchResults(matches, query) {
+                // Clear previous highlights
+                this.clearSearch();
+                
+                if (matches.length === 0) {
+                    this.showSearchMessage('No results found. Try different search terms.');
+                    return;
+                }
+
+                // Sort by relevance
+                matches.sort((a, b) => b.score - a.score);
+
+                // Show the most relevant section
+                if (matches[0].section) {
+                    this.showSection(matches[0].section);
+                }
+
+                // Highlight matches
+                matches.forEach(match => {
+                    this.highlightText(match.element, query);
+                });
+
+                // Scroll to first match
+                if (matches[0].element) {
+                    setTimeout(() => {
+                        matches[0].element.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                        });
+                    }, 300);
+                }
+
+                this.showSearchMessage(`Found ${matches.length} result${matches.length !== 1 ? 's' : ''}`);
+            }
+
+            highlightText(element, query) {
+                // Skip elements that contain interactive terms to preserve functionality
+                if (element.querySelector('.interactive-term')) {
+                    return;
+                }
+                
+                const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 1);
+                let textContent = element.textContent;
+                let html = element.innerHTML;
+
+                searchTerms.forEach(term => {
+                    if (term.length > 2) {
+                        const regex = new RegExp(`\\b(${this.escapeRegex(term)})\\b`, 'gi');
+                        if (textContent.toLowerCase().includes(term)) {
+                            html = html.replace(regex, '<mark style="background: var(--accent-color); color: var(--primary-dark); padding: 0.1rem 0.3rem; border-radius: 0.25rem; font-weight: 500;">$1</mark>');
+                        }
+                    }
+                });
+
+                element.innerHTML = html;
+                element.classList.add('search-highlighted');
+            }
+
+            escapeRegex(string) {
+                return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            }
+
+            clearSearch() {
+                document.querySelectorAll('.search-highlighted').forEach(element => {
+                    element.innerHTML = element.innerHTML.replace(/<mark[^>]*>(.*?)<\/mark>/gi, '$1');
+                    element.classList.remove('search-highlighted');
+                });
+                this.hideSearchMessage();
+            }
+
+            showSearchMessage(message) {
+                // Implementation for showing search status messages
+                console.log(message);
+            }
+
+            hideSearchMessage() {
+                // Implementation for hiding search status messages
+            }
+
+            setupDefinitions() {
+                const interactiveTerms = document.querySelectorAll('.interactive-term');
+                const modal = document.getElementById('definitionModal');
+                const closeButton = document.getElementById('definitionClose');
+
+                interactiveTerms.forEach(term => {
+                    term.addEventListener('click', this.handleTermClick.bind(this));
+                    term.addEventListener('keydown', this.handleTermKeydown.bind(this));
+                    term.setAttribute('role', 'button');
+                    term.setAttribute('tabindex', '0');
+                    term.setAttribute('aria-label', `View definition for ${term.textContent}`);
+                });
+
+                if (closeButton) {
+                    closeButton.addEventListener('click', this.hideDefinition.bind(this));
+                }
+
+                if (modal) {
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) {
+                            this.hideDefinition();
+                        }
+                    });
+                }
+
+                // Keyboard navigation for modal
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && modal && modal.style.display === 'block') {
+                        this.hideDefinition();
+                    }
+                });
+            }
+
+            handleTermClick(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.showDefinition(e.target.getAttribute('data-term'));
+            }
+
+            handleTermKeydown(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.handleTermClick(e);
+                }
+            }
+
+            showDefinition(termKey) {
+                try {
+                    const definition = this.definitions[termKey];
+                    if (!definition) {
+                        console.warn(`Definition not found for term: ${termKey}`);
+                        return;
+                    }
+
+                    document.getElementById('definitionTitle').textContent = definition.title;
+                    document.getElementById('definitionBody').textContent = definition.definition;
+                    
+                    const modal = document.getElementById('definitionModal');
+                    modal.style.display = 'block';
+                    
+                    // Focus management for accessibility
+                    document.getElementById('definitionClose').focus();
+
+                } catch (error) {
+                    console.error('Error showing definition:', error);
+                    this.showError('Failed to show definition. Please try again.');
+                }
+            }
+
+            hideDefinition() {
+                document.getElementById('definitionModal').style.display = 'none';
+            }
+
+            setupThemeToggle() {
+                const themeToggle = document.getElementById('themeToggle');
+                const currentTheme = localStorage.getItem('theme') || 'light';
+                
+                document.documentElement.setAttribute('data-theme', currentTheme);
+                this.updateThemeToggleText(currentTheme);
+
+                themeToggle.addEventListener('click', this.handleThemeToggle.bind(this));
+            }
+
+            handleThemeToggle() {
+                try {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                    this.updateThemeToggleText(newTheme);
+
+                } catch (error) {
+                    console.error('Error toggling theme:', error);
+                    this.showError('Failed to change theme. Please try again.');
+                }
+            }
+
+            updateThemeToggleText(theme) {
+                const themeToggle = document.getElementById('themeToggle');
+                themeToggle.textContent = theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+            }
+
+            setupProgressTracking() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            this.updateProgressForSection(entry.target.id);
+                        }
+                    });
+                }, { threshold: 0.3 });
+
+                document.querySelectorAll('.panel').forEach(panel => {
+                    observer.observe(panel);
+                });
+            }
+
+            updateProgress() {
+                const sections = ['core-requirements', 'definitions', 'exemptions', 'enforcement', 'dispute-resolution', 'interaction'];
+                const currentIndex = sections.indexOf(this.currentSection);
+                const progress = ((currentIndex + 1) / sections.length) * 100;
+                
+                document.getElementById('progressFill').style.width = `${progress}%`;
+            }
+
+            updateProgressForSection(sectionId) {
+                if (sectionId && sectionId !== this.currentSection) {
+                    this.currentSection = sectionId;
+                    this.updateProgress();
+                }
+            }
+
+            setupKeyboardNavigation() {
+                document.addEventListener('keydown', this.handleGlobalKeydown.bind(this));
+            }
+
+            handleGlobalKeydown(e) {
+                // Alt + number keys for quick section navigation
+                if (e.altKey && e.key >= '1' && e.key <= '6') {
+                    e.preventDefault();
+                    const sections = ['core-requirements', 'definitions', 'exemptions', 'enforcement', 'dispute-resolution', 'interaction'];
+                    const sectionIndex = parseInt(e.key) - 1;
+                    if (sections[sectionIndex]) {
+                        this.showSection(sections[sectionIndex]);
+                    }
+                }
+
+                // Ctrl/Cmd + K for search focus
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    document.getElementById('searchInput').focus();
+                }
+            }
+
+            setupAccessibility() {
+                // Set initial ARIA attributes
+                document.querySelectorAll('.nav-card').forEach(card => {
+                    card.setAttribute('role', 'button');
+                    card.setAttribute('tabindex', '0');
+                    card.setAttribute('aria-pressed', card.classList.contains('active') ? 'true' : 'false');
+                });
+
+                document.querySelectorAll('.panel').forEach(panel => {
+                    panel.setAttribute('aria-hidden', panel.classList.contains('active') ? 'false' : 'true');
+                });
+            }
+
+            showError(message) {
+                // Implementation for showing user-friendly error messages
+                console.error(`User Error: ${message}`);
+                // In a production environment, you might want to show a toast notification
+                // or update a status area in the UI
+            }
+        }
+
+        // Initialize the application when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                window.dataActCard = new DataActCard();
+            } catch (error) {
+                console.error('❌ Critical error during initialization:', error);
+            }
+        });
+
+        // Enhanced print functionality
+        window.addEventListener('beforeprint', () => {
+            document.querySelectorAll('.panel').forEach(panel => {
+                panel.classList.add('active');
+            });
+        });
+
+        window.addEventListener('afterprint', () => {
+            document.querySelectorAll('.panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            // Restore current section
+            const currentSection = window.dataActCard?.currentSection || 'core-requirements';
+            const currentPanel = document.getElementById(currentSection);
+            if (currentPanel) {
+                currentPanel.classList.add('active');
+            }
+        });
+
+        // Service worker registration for PWA capabilities (optional enhancement)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Note: Service worker would need to be implemented separately
+                console.log('Service Worker support detected');
+            });
+        }
+    </script>
+</body>
+</html>
