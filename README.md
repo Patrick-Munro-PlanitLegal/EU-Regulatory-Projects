@@ -11,7 +11,7 @@ A collection of interactive legal compliance tools by Planit Legal.
 
 ### 2. Data Act Deal Card 2.0
 - **File**: `data-act-deal-card.html`
-- **Description**: Comprehensive EU Data Act compliance guide and requirements checker
+- **Description**: High-level EU Data Act compliance guide and requirements checker
 - **Link**: [View Data Act Deal Card](https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/data-act-deal-card.html)
 
 ## About
