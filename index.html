@@ -101,14 +101,46 @@
             opacity: 0.85;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
+        }
+
+        .header .meta-info .urgent {
+            background: rgba(220, 38, 38, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            font-weight: 600;
+        }
+
+        .header .meta-info .warning {
+            background: rgba(245, 158, 11, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            font-weight: 600;
         }
 
         .meta-item {
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+
+        .meta-item.urgent {
+            background: rgba(220, 38, 38, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            font-weight: 600;
+        }
+
+        .meta-item.warning {
+            background: rgba(245, 158, 11, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            font-weight: 600;
         }
 
         .nav-tabs {
@@ -547,9 +579,13 @@
                         <i class="fas fa-database"></i>
                         <span><span id="totalRegs">18</span> Regulations Tracked</span>
                     </div>
-                    <div class="meta-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Official Sources Only</span>
+                    <div class="meta-item urgent">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>AI Act GPAI: ACTIVE since Aug 2, 2025</span>
+                    </div>
+                    <div class="meta-item warning">
+                        <i class="fas fa-clock"></i>
+                        <span>Data Act: <span id="dataActCountdown">30 days</span></span>
                     </div>
                 </div>
             </div>
@@ -1577,6 +1613,7 @@
             updateDashboardStats();
             renderAllSections();
             updateLastUpdated();
+            updateDataActCountdown();
         }
 
         function bindEventListeners() {
@@ -1843,6 +1880,29 @@
                 month: 'long',
                 day: 'numeric'
             });
+        }
+
+        function updateDataActCountdown() {
+            const dataActDate = new Date('2025-09-12');
+            const now = new Date();
+            const diffTime = dataActDate - now;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            const countdownElement = document.getElementById('dataActCountdown');
+            if (countdownElement) {
+                if (diffDays > 0) {
+                    countdownElement.textContent = `${diffDays} days`;
+                    countdownElement.style.color = '#dd6b20';
+                } else if (diffDays === 0) {
+                    countdownElement.textContent = 'TODAY';
+                    countdownElement.style.color = '#e53e3e';
+                    countdownElement.style.fontWeight = 'bold';
+                } else {
+                    countdownElement.textContent = `${Math.abs(diffDays)} days overdue`;
+                    countdownElement.style.color = '#e53e3e';
+                    countdownElement.style.fontWeight = 'bold';
+                }
+            }
         }
 
         function formatDate(dateString) {
