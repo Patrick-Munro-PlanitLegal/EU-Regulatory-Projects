@@ -1,41 +1,100 @@
 # EU Tech Regulations Tracker
 
-Professional compliance dashboard for EU technology regulations and German implementation. Static single-page app ready for GitHub Pages.
+Professional compliance dashboard for EU technology regulations and German implementation. A comprehensive collection of interactive legal compliance tools by Planit Legal.
 
-## Quick start
+## 🚀 Quick Start
 
-- Open `index.html` in a browser.
-- Optional offline capability via `sw.js` (auto-registered on load).
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Patrick-Munro-PlanitLegal/EU-Regulatory-Projects.git
+   cd EU-Regulatory-Projects
+   ```
 
-## Deploy on GitHub Pages
+2. **Open any HTML file in your browser:**
+   - `index.html` - Main EU Tech Regulations Tracker
+   - `data-act-deal-card.html` - EU Data Act Compliance Guide
+   - `eu_regulations_tracker.html` - EU Regulations Overview
 
-1. Push this repository to GitHub.
-2. In the repository settings, enable Pages:
-   - Source: `main` branch, root.
-3. Ensure the site root contains `index.html` and `sw.js`.
-4. Your app will be available at the Pages URL.
+3. **Optional offline capability** via `sw.js` (auto-registered on load)
 
-Notes:
-- For user/org pages (username.github.io), the service worker scope `/sw.js` works as-is.
-- For project pages (username.github.io/repo), either update the registration path in `index.html` to `navigator.serviceWorker.register('./sw.js')` or set a `base` tag.
+## 📋 Available Tools
 
-## Data
+### 1. 🇪🇺 EU Tech Regulations Tracker
+- **File**: `index.html`
+- **Description**: Professional compliance dashboard for EU technology regulations and German implementation
+- **Features**: Interactive timeline, compliance matrix, export functionality
+- **Live URL**: [https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/](https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/)
 
-- Data and dates are hardcoded inside `index.html` (`regulationsData`).
-- Update `lastUpdated` and timeline items as needed.
+### 2. �� Data Act Deal Card 2.0
+- **File**: `data-act-deal-card.html`
+- **Description**: Comprehensive EU Data Act compliance guide and requirements checker
+- **Features**: Interactive compliance checker, detailed requirements, legal guidance
+- **Live URL**: [https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/data-act-deal-card.html](https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/data-act-deal-card.html)
 
-## Export formats
+### 3. 🏛️ EU Regulations Tracker
+- **File**: `eu_regulations_tracker.html`
+- **Description**: Overview and tracking of EU regulatory frameworks
+- **Features**: Regulatory overview, compliance tracking, implementation status
+- **Live URL**: [https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/eu_regulations_tracker.html](https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/eu_regulations_tracker.html)
 
-- JSON: Complete database
-- CSV: Compliance matrix (properly escapes quotes)
-- TXT: Executive summary
+## 🌐 GitHub Pages Deployment
 
-## Accessibility and UX
+This repository is configured for GitHub Pages deployment:
 
-- Keyboard shortcuts: Ctrl/Cmd+F focuses search, Esc closes modals
-- ARIA roles and `rel="noopener noreferrer"` applied where appropriate
+- **Repository**: [https://github.com/Patrick-Munro-PlanitLegal/EU-Regulatory-Projects](https://github.com/Patrick-Munro-PlanitLegal/EU-Regulatory-Projects)
+- **Live Site**: [https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/](https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/)
 
-## License
+### Deployment Notes
+- Source: `main` branch, root directory
+- Service worker (`sw.js`) provides offline capability
+- All HTML files are accessible via direct URLs
 
-- Code: MIT
-- Content: © respective rights holders; EU legal texts are public domain. This tool is for educational purposes only and not legal advice.
+## 🛠️ Technical Features
+
+- **Responsive Design**: Mobile-first approach with modern CSS
+- **Offline Support**: Service worker for offline functionality
+- **Export Options**: JSON, CSV, and TXT export capabilities
+- **Accessibility**: ARIA roles, keyboard navigation, screen reader support
+- **Cross-browser**: Compatible with modern browsers
+
+## 📁 Project Structure
+
+```
+EU-Regulatory-Projects/
+├── index.html                    # Main EU Tech Regulations Tracker
+├── data-act-deal-card.html      # Data Act Compliance Guide
+├── eu_regulations_tracker.html   # EU Regulations Overview
+├── sw.js                        # Service Worker
+├── .nojekyll                    # GitHub Pages configuration
+└── README.md                    # This file
+```
+
+## 🔧 Customization
+
+- **Data Updates**: Modify `regulationsData` in the respective HTML files
+- **Styling**: Update CSS variables in the `:root` selector
+- **Branding**: Customize colors and logos for your organization
+
+## 📚 Legal Information
+
+- **Code License**: MIT License
+- **Content**: EU legal texts are public domain
+- **Disclaimer**: This tool is for educational purposes only and not legal advice
+- **Contact**: For specific legal guidance, contact [Patrick Munro](mailto:patrick.munro.ext@planit.legal)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📞 Support
+
+- **Author**: Patrick Munro, Planit Legal
+- **Email**: patrick.munro.ext@planit.legal
+- **Repository**: [https://github.com/Patrick-Munro-PlanitLegal/EU-Regulatory-Projects](https://github.com/Patrick-Munro-PlanitLegal/EU-Regulatory-Projects)
+
+---
+
+*Created by Patrick Munro, enhanced and polished by Claude with constitutional precision.*
