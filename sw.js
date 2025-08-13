@@ -2,6 +2,8 @@ const CACHE_NAME = 'eu-tech-regs-v1';
 const URLS_TO_CACHE = [
   './',
   './index.html',
+  './data-act-deal-card.html',
+  './eu_regulations_tracker.html',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
 ];
 
