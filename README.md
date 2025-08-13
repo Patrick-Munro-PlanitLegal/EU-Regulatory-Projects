@@ -25,19 +25,24 @@ Professional compliance dashboard for EU technology regulations and German imple
 - **Features**: Interactive timeline, compliance matrix, export functionality
 - **Live URL**: [https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/](https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/)
 
-### 2. �� Data Act Deal Card 2.0
+### 2. 📊 Data Act Deal Card 2.0
 - **File**: `data-act-deal-card.html`
 - **Description**: Comprehensive EU Data Act compliance guide and requirements checker
 - **Features**: Interactive compliance checker, detailed requirements, legal guidance
 - **Live URL**: [https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/data-act-deal-card.html](https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/data-act-deal-card.html)
 
-### 3. 🏛️ EU Regulations Tracker
+### 3. 🏛️ EU Regulations Overview
 - **File**: `eu_regulations_tracker.html`
-- **Description**: Overview and tracking of EU regulatory frameworks
+- **Description**: Consolidated overview and tracking of EU regulatory frameworks
 - **Features**: Regulatory overview, compliance tracking, implementation status
 - **Live URL**: [https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/eu_regulations_tracker.html](https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/eu_regulations_tracker.html)
 
-## 🌐 GitHub Pages Deployment
+### 4. 🤖 AI Act Timeline
+- **File**: `AI Act Timeline.html`
+- **Description**: Dedicated interactive timeline for EU AI Act implementation and compliance
+- **Features**: Implementation timeline, key deadlines, compliance requirements
+- **Live URL**: [https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/AI%20Act%20Timeline.html](https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/AI%20Act%20Timeline.html)
+
 
 This repository is configured for GitHub Pages deployment:
 
@@ -63,13 +68,13 @@ This repository is configured for GitHub Pages deployment:
 EU-Regulatory-Projects/
 ├── index.html                    # Main EU Tech Regulations Tracker
 ├── data-act-deal-card.html      # Data Act Compliance Guide
-├── eu_regulations_tracker.html   # EU Regulations Overview
+├── eu_regulations_tracker.html   # EU Regulations Overview (Consolidated)
+├── AI Act Timeline.html          # Dedicated AI Act Timeline
 ├── sw.js                        # Service Worker
 ├── .nojekyll                    # GitHub Pages configuration
 └── README.md                    # This file
 ```
 
-## 🔧 Customization
 
 - **Data Updates**: Modify `regulationsData` in the respective HTML files
 - **Styling**: Update CSS variables in the `:root` selector

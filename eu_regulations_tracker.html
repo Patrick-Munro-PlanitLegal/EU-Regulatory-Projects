@@ -711,576 +711,81 @@
 
         const regulations = [
             {
-                id: 'gdpr',
-                title: 'GDPR - General Data Protection Regulation',
-                icon: '🛡️',
-                status: 'in-force',
-                priority: 'critical',
-                impact: 'high',
-                practiceAreas: ['data-protection'],
-                type: 'EU Regulation',
-                implementationDate: '2018-05-25',
-                keyDeadlines: ['Ongoing compliance'],
-                description: 'Comprehensive EU data protection framework establishing rights for individuals and obligations for data controllers.',
-                keyRequirements: ['Lawful basis for processing', 'Data subject rights', 'DPIAs', 'Privacy by design', 'Breach notification (72h)'],
-                sanctions: 'Up to €20M or 4% global turnover',
-                germanImplementation: { act: 'BDSG', details: 'German Federal Data Protection Act with national derogations.' }
+                id: "ai-act",
+                title: "🤖 EU AI Act",
+                subtitle: "Artificial Intelligence Regulation",
+                officialName: "Regulation (EU) 2024/1689",
+                eurLexId: "32024R1689",
+                status: "imminent",
+                priority: "critical",
+                implementationDate: "2024-08-01",
+                nextDeadline: "2025-08-02",
+                fullComplianceDate: "2026-08-02",
+                clientImpact: "high",
+                practiceAreas: ["AI & Algorithms", "Data Protection", "Product Liability"],
+                germanImplementation: "AI-Gesetz (in development - BMI coordination)",
+                germanAuthority: "BMI + sectoral authorities",
+                description: "Worlds first comprehensive AI regulation with risk-based approach. GPAI model obligations ACTIVE since August 2, 2025.",
+                keyRequirements: [
+                    "Risk classification of AI systems (Art. 6-8)",
+                    "Prohibited AI practices compliance (Art. 5) - ACTIVE",
+                    "High-risk system obligations (Art. 9-15)",
+                    "GPAI model requirements (Art. 51-55) - ACTIVE AS OF AUGUST 2, 2025",
+                    "Conformity assessment and CE marking (Art. 16-18)"
+                ],
+                sanctions: "Up to €35M or 7% (prohibited practices); up to €15M or 3% (other obligations); up to €7.5M or 1% (incorrect info)",
+                riskLevel: "Very High"
             },
             {
-                id: 'ai-act',
-                title: 'EU AI Act - Artificial Intelligence Regulation',
-                icon: '🤖',
-                status: 'in-force',
-                priority: 'critical',
-                impact: 'high',
-                practiceAreas: ['ai-algorithms', 'data-protection'],
-                type: 'EU Regulation',
-                implementationDate: '2024-08-01',
-                keyDeadlines: ['Feb 2025: Prohibited AI ban', 'Aug 2025: GPAI obligations', 'Aug 2026: High-risk systems'],
-                description: 'First comprehensive legal framework on AI worldwide, addressing AI risks with risk-based approach.',
-                keyRequirements: ['Prohibited AI practices ban', 'High-risk AI requirements', 'GPAI model obligations', 'AI literacy', 'Rights impact assessments'],
-                sanctions: 'Up to €35M or 7% global turnover',
-                germanImplementation: { act: 'Implementation Law (pending)', details: 'German law expected 2025 for national authorities.' }
+                id: "data-act",
+                title: "📊 Data Act",
+                subtitle: "Connected Product Data Sharing",
+                officialName: "Regulation (EU) 2023/2854",
+                eurLexId: "32023R2854",
+                status: "pending",
+                priority: "critical",
+                implementationDate: "2024-01-11",
+                nextDeadline: "2025-09-12",
+                fullComplianceDate: "2025-09-12",
+                clientImpact: "high",
+                practiceAreas: ["Data Protection", "IoT", "Product Liability", "Contract Law"],
+                germanImplementation: "Integration into BGB and product safety law",
+                germanAuthority: "BMJ + sectoral authorities",
+                description: "Comprehensive framework for data access and sharing from connected products and IoT devices. Applies September 12, 2025.",
+                keyRequirements: [
+                    "User data access rights (Art. 4)",
+                    "Third-party data sharing obligations (Art. 5)",
+                    "Cloud switching provisions (Art. 23-30)",
+                    "Public authority data access (Art. 14-18)",
+                    "Trade secret protection (Art. 4(6-8))"
+                ],
+                sanctions: "Set by Member States; penalties must be effective, proportionate, dissuasive",
+                riskLevel: "High"
             },
             {
-                id: 'dsa',
-                title: 'DSA - Digital Services Act',
-                icon: '🌐',
-                status: 'in-force',
-                priority: 'high',
-                impact: 'high',
-                practiceAreas: ['digital-services', 'consumer-protection'],
-                type: 'EU Regulation',
-                implementationDate: '2024-02-17',
-                keyDeadlines: ['Ongoing compliance'],
-                description: 'Framework for regulating digital services and online platforms for safer digital space.',
-                keyRequirements: ['Content moderation', 'Transparency reporting', 'VLOP risk assessments', 'User complaints', 'External audits'],
-                sanctions: 'Up to €6M or 6% global turnover',
-                germanImplementation: { act: 'DDG', details: 'German Digital Services Law establishing national coordinator.' }
-            },
-            {
-                id: 'dma',
-                title: 'DMA - Digital Markets Act',
-                icon: '🏛️',
-                status: 'in-force',
-                priority: 'high',
-                impact: 'medium',
-                practiceAreas: ['competition', 'digital-services'],
-                type: 'EU Regulation',
-                implementationDate: '2024-03-07',
-                keyDeadlines: ['Ongoing gatekeeper compliance'],
-                description: 'Regulation targeting large digital platforms as "gatekeepers" to ensure fair competition.',
-                keyRequirements: ['Gatekeeper designation (45M+ users)', 'Interoperability', 'Data portability', 'No self-preferencing'],
-                sanctions: 'Up to €10M or 10% global turnover (20% repeat)',
-                germanImplementation: { act: 'Directly applicable', details: 'Bundeskartellamt as competent authority.' }
-            },
-            {
-                id: 'data-act',
-                title: 'Data Act - Access to and Use of Data',
-                icon: '📊',
-                status: 'pending',
-                priority: 'high',
-                impact: 'high',
-                practiceAreas: ['data-protection', 'digital-services'],
-                type: 'EU Regulation',
-                implementationDate: '2025-09-12',
-                keyDeadlines: ['Sep 2025: Applicability', 'Sep 2026: Connected products design'],
-                description: 'Ensures fair access to data generated by connected products and related services.',
-                keyRequirements: ['User data access rights', 'Third-party sharing', 'Connected product design', 'Cloud switching'],
-                sanctions: 'Member State penalties TBD',
-                germanImplementation: { act: 'Implementation Law (pending)', details: 'German law expected for enforcement framework.' }
-            },
-            {
-                id: 'nis2',
-                title: 'NIS2 Directive - Network and Information Security',
-                icon: '🔐',
-                status: 'in-force',
-                priority: 'critical',
-                impact: 'high',
-                practiceAreas: ['cybersecurity'],
-                type: 'EU Directive',
-                implementationDate: '2024-10-17',
-                keyDeadlines: ['Ongoing compliance'],
-                description: 'Enhanced cybersecurity framework for essential and important entities across EU.',
-                keyRequirements: ['Risk management', 'Incident reporting (24h)', 'Supply chain security', 'Vulnerability handling'],
-                sanctions: 'Up to €10M or 2% global turnover',
-                germanImplementation: { act: 'NIS2UmsuCG', details: 'Strengthens BSI powers, extends to medium enterprises.' }
-            },
-            {
-                id: 'dora',
-                title: 'DORA - Digital Operational Resilience Act',
-                icon: '🏦',
-                status: 'in-force',
-                priority: 'critical',
-                impact: 'high',
-                practiceAreas: ['cybersecurity', 'fintech'],
-                type: 'EU Regulation',
-                implementationDate: '2025-01-17',
-                keyDeadlines: ['Jan 2025: Full applicability'],
-                description: 'Digital operational resilience framework for financial services sector.',
-                keyRequirements: ['ICT risk management', 'Incident reporting', 'Resilience testing', 'Third-party risk management'],
-                sanctions: 'Up to €5M or 1% turnover',
-                germanImplementation: { act: 'Directly applicable', details: 'BaFin/Bundesbank as authorities.' }
-            },
-            {
-                id: 'eprivacy-ttdsg',
-                title: 'ePrivacy Directive & TTDSG',
-                icon: '🍪',
-                status: 'in-force',
-                priority: 'high',
-                impact: 'medium',
-                practiceAreas: ['data-protection', 'digital-services'],
-                type: 'EU Directive',
-                implementationDate: '2021-12-01',
-                keyDeadlines: ['Ongoing compliance'],
-                description: 'Privacy rules for electronic communications and digital services, including cookie consent.',
-                keyRequirements: ['Cookie consent', 'Communication confidentiality', 'Traffic data protection', 'Marketing restrictions'],
-                sanctions: 'Up to €300,000 (TTDSG)',
-                germanImplementation: { act: 'TTDSG', details: 'German telecom/telemedia data protection law.' }
-            },
-            {
-                id: 'cra',
-                title: 'CRA - Cyber Resilience Act',
-                icon: '🔒',
-                status: 'development',
-                priority: 'high',
-                impact: 'high',
-                practiceAreas: ['cybersecurity', 'consumer-protection'],
-                type: 'EU Regulation',
-                implementationDate: '2027-2028',
-                keyDeadlines: ['2025: Expected adoption', '2027-28: Implementation'],
-                description: 'Cybersecurity requirements for products with digital elements throughout lifecycle.',
-                keyRequirements: ['Cybersecurity by design', 'Vulnerability handling', 'Security updates', 'CE marking'],
-                sanctions: 'Up to €15M or 2.5% global turnover',
-                germanImplementation: { act: 'Implementation Law (pending)', details: 'Market surveillance authorities designation expected.' }
-            },
-            {
-                id: 'dga',
-                title: 'DGA - Data Governance Act',
-                icon: '📋',
-                status: 'in-force',
-                priority: 'medium',
-                impact: 'medium',
-                practiceAreas: ['data-protection'],
-                type: 'EU Regulation',
-                implementationDate: '2023-09-24',
-                keyDeadlines: ['Ongoing compliance'],
-                description: 'Framework facilitating data sharing through trusted intermediaries and data altruism.',
-                keyRequirements: ['Data intermediation service registration', 'Data altruism registration', 'Public data re-use'],
-                sanctions: 'Member State specific',
-                germanImplementation: { act: 'Implementation (pending)', details: 'Competent authorities for intermediation services.' }
-            },
-            {
-                id: 'pld-reform',
-                title: 'Product Liability Directive Reform',
-                icon: '⚖️',
-                status: 'development',
-                priority: 'medium',
-                impact: 'medium',
-                practiceAreas: ['consumer-protection', 'ai-algorithms'],
-                type: 'EU Directive',
-                implementationDate: 'TBD',
-                keyDeadlines: ['Under legislative process'],
-                description: 'Reform of product liability rules addressing AI and digital technologies.',
-                keyRequirements: ['AI system liability', 'Digital product presumptions', 'Disclosure obligations', 'Software inclusion'],
-                sanctions: 'Civil liability framework',
-                germanImplementation: { act: 'ProdHaftG Amendment (pending)', details: 'German Product Liability Act alignment expected.' }
-            },
-            {
-                id: 'media-freedom-act',
-                title: 'European Media Freedom Act',
-                icon: '📺',
-                status: 'in-force',
-                priority: 'medium',
-                impact: 'low',
-                practiceAreas: ['digital-services', 'consumer-protection'],
-                type: 'EU Regulation',
-                implementationDate: '2024-05-07',
-                keyDeadlines: ['May 2025: Full applicability'],
-                description: 'Protection of media freedom and pluralism in digital environment.',
-                keyRequirements: ['Editorial independence', 'Media ownership transparency', 'Platform transparency', 'Service allocation'],
-                sanctions: 'Member State specific',
-                germanImplementation: { act: 'Implementation pending', details: 'Federal/state media law coordination expected.' }
-            },
-            {
-                id: 'eidas2',
-                title: 'eIDAS 2.0 - European Digital Identity',
-                icon: '🆔',
-                status: 'development',
-                priority: 'medium',
-                impact: 'medium',
-                practiceAreas: ['digital-services', 'cybersecurity'],
-                type: 'EU Regulation',
-                implementationDate: 'TBD',
-                keyDeadlines: ['Under legislative process'],
-                description: 'Revision creating EU Digital Identity Wallet framework.',
-                keyRequirements: ['EU Digital Identity Wallet', 'Qualified e-signatures', 'Trust service providers', 'Cross-border recognition'],
-                sanctions: 'TBD',
-                germanImplementation: { act: 'Implementation Law (pending)', details: 'Digital Identity Wallet infrastructure needed.' }
-            },
-            {
-                id: 'copyright-directive',
-                title: 'Copyright in Digital Single Market',
-                icon: '©️',
-                status: 'in-force',
-                priority: 'medium',
-                impact: 'medium',
-                practiceAreas: ['digital-services', 'consumer-protection'],
-                type: 'EU Directive',
-                implementationDate: '2021-06-07',
-                keyDeadlines: ['Ongoing compliance'],
-                description: 'Copyright rules for digital platforms and content sharing services.',
-                keyRequirements: ['Upload filters', 'Content licensing', 'User complaints', 'Creator remuneration rights'],
-                sanctions: 'Member State specific',
-                germanImplementation: { act: 'UrhDaG', details: 'German Copyright Service Provider Act.' }
-            },
-            {
-                id: 'platform-work',
-                title: 'Platform Work Directive',
-                icon: '👷',
-                status: 'consultation',
-                priority: 'medium',
-                impact: 'medium',
-                practiceAreas: ['digital-services', 'consumer-protection'],
-                type: 'EU Directive',
-                implementationDate: 'TBD',
-                keyDeadlines: ['Legislative process ongoing'],
-                description: 'Working conditions and rights for platform workers.',
-                keyRequirements: ['Employment status presumption', 'Algorithmic transparency', 'Data protection', 'Collective representation'],
-                sanctions: 'Member State specific',
-                germanImplementation: { act: 'Implementation expected', details: 'Integration with German labor law.' }
-            },
-            {
-                id: 'machinery-regulation',
-                title: 'Machinery Regulation',
-                icon: '🏭',
-                status: 'pending',
-                priority: 'medium',
-                impact: 'medium',
-                practiceAreas: ['ai-algorithms', 'consumer-protection'],
-                type: 'EU Regulation',
-                implementationDate: '2027-01-20',
-                keyDeadlines: ['Jan 2027: Applicability'],
-                description: 'Safety requirements for machinery, including AI-enabled machinery.',
-                keyRequirements: ['Essential safety requirements', 'AI system integration', 'CE marking', 'Risk assessment'],
-                sanctions: 'Market surveillance penalties',
-                germanImplementation: { act: 'Implementation via ProdSG', details: 'Product Safety Act adaptation expected.' }
-            },
-            {
-                id: 'red-directive',
-                title: 'RED - Radio Equipment Directive',
-                icon: '📡',
-                status: 'in-force',
-                priority: 'medium',
-                impact: 'medium',
-                practiceAreas: ['cybersecurity', 'consumer-protection'],
-                type: 'EU Directive',
-                implementationDate: '2016-06-12',
-                keyDeadlines: ['Ongoing compliance'],
-                description: 'Requirements for radio equipment including cybersecurity provisions.',
-                keyRequirements: ['Essential requirements', 'Cybersecurity features', 'Privacy protection', 'Fraud prevention'],
-                sanctions: 'Market surveillance penalties',
-                germanImplementation: { act: 'FTEG', details: 'German Radio Equipment Act.' }
-            },
-            {
-                id: 'political-advertising',
-                title: 'Political Advertising Regulation',
-                icon: '🗳️',
-                status: 'development',
-                priority: 'low',
-                impact: 'low',
-                practiceAreas: ['digital-services', 'consumer-protection'],
-                type: 'EU Regulation',
-                implementationDate: 'TBD',
-                keyDeadlines: ['Under legislative process'],
-                description: 'Transparency and targeting rules for political advertising.',
-                keyRequirements: ['Political ad labeling', 'Targeting transparency', 'Sponsor identification', 'Ad archives'],
-                sanctions: 'TBD',
-                germanImplementation: { act: 'Implementation pending', details: 'Electoral/media law integration expected.' }
-            },
-            {
-                id: 'medical-device-regulation',
-                title: 'MDR - Medical Device Regulation',
-                icon: '🏥',
-                status: 'in-force',
-                priority: 'high',
-                impact: 'high',
-                practiceAreas: ['ai-algorithms', 'consumer-protection'],
-                type: 'EU Regulation',
-                implementationDate: '2021-05-26',
-                keyDeadlines: ['Ongoing compliance'],
-                description: 'Safety and performance requirements for medical devices including AI/ML.',
-                keyRequirements: ['Clinical evaluation', 'Post-market surveillance', 'AI/ML specific requirements', 'Notified body assessment'],
-                sanctions: 'Market surveillance penalties',
-                germanImplementation: { act: 'Directly applicable', details: 'BfArM as competent authority.' }
-            },
-            {
-                id: 'p2b-regulation',
-                title: 'P2B - Platform-to-Business Regulation',
-                icon: '🤝',
-                status: 'in-force',
-                priority: 'medium',
-                impact: 'medium',
-                practiceAreas: ['digital-services', 'competition'],
-                type: 'EU Regulation',
-                implementationDate: '2020-07-12',
-                keyDeadlines: ['Ongoing compliance'],
-                description: 'Fairness and transparency rules for online platforms and search engines.',
-                keyRequirements: ['Terms and conditions transparency', 'Ranking transparency', 'Suspension procedures', 'Mediation access'],
-                sanctions: 'Up to 10% annual turnover',
-                germanImplementation: { act: 'Directly applicable', details: 'Bundeskartellamt enforcement.' }
-            },
-            {
-                id: 'geo-blocking',
-                title: 'Geo-blocking Regulation',
-                icon: '🌍',
-                status: 'in-force',
-                priority: 'low',
-                impact: 'low',
-                practiceAreas: ['digital-services', 'consumer-protection'],
-                type: 'EU Regulation',
-                implementationDate: '2018-12-03',
-                keyDeadlines: ['Ongoing compliance'],
-                description: 'Prohibition of unjustified geo-blocking in e-commerce.',
-                keyRequirements: ['Non-discrimination principle', 'Access to websites', 'Payment methods', 'Delivery terms'],
-                sanctions: 'Member State specific',
-                germanImplementation: { act: 'Directly applicable', details: 'Consumer protection authorities enforcement.' }
-            },
-            {
-                id: 'battery-regulation',
-                title: 'Battery Regulation',
-                icon: '🔋',
-                status: 'in-force',
-                priority: 'medium',
-                impact: 'medium',
-                practiceAreas: ['consumer-protection'],
-                type: 'EU Regulation',
-                implementationDate: '2023-08-17',
-                keyDeadlines: ['Phased implementation 2024-2030'],
-                description: 'Sustainability and circularity requirements for batteries throughout lifecycle.',
-                keyRequirements: ['Due diligence obligations', 'Carbon footprint declaration', 'Digital battery passport', 'Recycling targets'],
-                sanctions: 'Member State specific',
-                germanImplementation: { act: 'BattG Amendment', details: 'German Battery Act adaptation.' }
-            },
-            {
-                id: 'consumer-rights-directive',
-                title: 'Consumer Rights Directive',
-                icon: '🛒',
-                status: 'in-force',
-                priority: 'medium',
-                impact: 'medium',
-                practiceAreas: ['digital-services', 'consumer-protection'],
-                type: 'EU Directive',
-                implementationDate: '2014-06-13',
-                keyDeadlines: ['Ongoing compliance'],
-                description: 'Consumer protection rules for distance and off-premises contracts.',
-                keyRequirements: ['Pre-contractual information', 'Withdrawal rights', 'Digital content provisions', 'Delivery obligations'],
-                sanctions: 'Member State specific',
-                germanImplementation: { act: 'BGB Implementation', details: 'Integrated into German Civil Code.' }
-            },
-            {
-                id: 'unfair-practices-directive',
-                title: 'Unfair Commercial Practices Directive',
-                icon: '🚫',
-                status: 'in-force',
-                priority: 'medium',
-                impact: 'medium',
-                practiceAreas: ['digital-services', 'consumer-protection'],
-                type: 'EU Directive',
-                implementationDate: '2005-05-11',
-                keyDeadlines: ['Ongoing compliance'],
-                description: 'Protection against unfair business-to-consumer commercial practices.',
-                keyRequirements: ['Misleading actions prohibition', 'Aggressive practices ban', 'Material information requirements', 'Professional diligence standard'],
-                sanctions: 'Member State specific',
-                germanImplementation: { act: 'UWG', details: 'German Unfair Competition Act.' }
-            },
-            {
-                id: 'online-safety',
-                title: 'Child Safety Online Framework',
-                icon: '👶',
-                status: 'consultation',
-                priority: 'medium',
-                impact: 'medium',
-                practiceAreas: ['digital-services', 'consumer-protection'],
-                type: 'EU Initiative',
-                implementationDate: 'TBD',
-                keyDeadlines: ['Consultation ongoing'],
-                description: 'Enhanced protection measures for children in digital services.',
-                keyRequirements: ['Age verification systems', 'Child-safe design', 'Content filtering', 'Parental controls'],
-                sanctions: 'TBD',
-                germanImplementation: { act: 'JuSchG amendments expected', details: 'Youth Protection Act integration.' }
+                id: "dora",
+                title: "🛡️ DORA",
+                subtitle: "Digital Operational Resilience Act",
+                officialName: "Regulation (EU) 2022/2554",
+                eurLexId: "32022R2554",
+                status: "active",
+                priority: "critical",
+                implementationDate: "2025-01-17",
+                nextDeadline: "2025-11-30",
+                fullComplianceDate: "2025-01-17",
+                clientImpact: "high",
+                practiceAreas: ["Fintech", "Cybersecurity", "Risk Management"],
+                germanImplementation: "Integrated into BaFin supervision framework",
+                germanAuthority: "BaFin",
+                description: "Digital operational resilience framework for financial sector entities.",
+                keyRequirements: [
+                    "ICT risk management framework",
+                    "Incident reporting (4h critical, 24h non-critical)",
+                    "Digital resilience testing",
+                    "Third-party ICT risk monitoring",
+                    "Information sharing arrangements"
+                ],
+                sanctions: "Up to €5M or 3% of total annual turnover",
+                riskLevel: "High"
             }
         ];
-
-        let filteredRegulations = [...regulations];
-
-        function renderRegulations() {
-            const grid = document.getElementById('regulationsGrid');
-            const noResults = document.getElementById('noResults');
-            
-            if (filteredRegulations.length === 0) {
-                grid.style.display = 'none';
-                noResults.style.display = 'block';
-                return;
-            }
-            
-            grid.style.display = 'grid';
-            noResults.style.display = 'none';
-            
-            grid.innerHTML = filteredRegulations.map(reg => `
-                <div class="regulation-card">
-                    <div class="card-header">
-                        <div class="regulation-title">
-                            <span class="title-icon">${reg.icon}</span>
-                            <div>
-                                ${reg.title}
-                                <div class="status-badge status-${reg.status}">${formatStatus(reg.status)}</div>
-                            </div>
-                        </div>
-                        <div class="regulation-meta">
-                            <span class="meta-item">📋 ${reg.type}</span>
-                            <span class="meta-item">⚡ ${formatPriority(reg.priority)}</span>
-                            <span class="meta-item">📅 ${reg.implementationDate}</span>
-                        </div>
-                        <div class="practice-tags">
-                            ${reg.practiceAreas.map(area => `<span class="practice-tag">${formatPracticeArea(area)}</span>`).join('')}
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="content-grid">
-                            <div class="content-section">
-                                <h4>✅ Key Requirements</h4>
-                                <ul>
-                                    ${reg.keyRequirements.map(req => `<li>${req}</li>`).join('')}
-                                </ul>
-                                
-                                <h4>⚖️ Sanctions</h4>
-                                <p>${reg.sanctions}</p>
-                            </div>
-                            <div class="content-section">
-                                <h4>📝 Description</h4>
-                                <p>${reg.description}</p>
-                                
-                                ${reg.keyDeadlines.length > 0 ? `
-                                <div class="deadlines">
-                                    <h5>🗓️ Key Deadlines</h5>
-                                    ${reg.keyDeadlines.map(deadline => `<div class="deadline-item">${deadline}</div>`).join('')}
-                                </div>
-                                ` : ''}
-                                
-                                ${reg.germanImplementation ? `
-                                <div class="german-implementation">
-                                    <h5>🇩🇪 German Implementation</h5>
-                                    <p><strong>${reg.germanImplementation.act}</strong><br>
-                                    ${reg.germanImplementation.details}</p>
-                                </div>
-                                ` : ''}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function updateStats() {
-            const total = filteredRegulations.length;
-            const inForce = filteredRegulations.filter(r => r.status === 'in-force').length;
-            const pending = filteredRegulations.filter(r => r.status === 'pending').length;
-            const critical = filteredRegulations.filter(r => r.priority === 'critical').length;
-            
-            document.getElementById('totalRegulations').textContent = total;
-            document.getElementById('inForceCount').textContent = inForce;
-            document.getElementById('pendingCount').textContent = pending;
-            document.getElementById('criticalCount').textContent = critical;
-        }
-
-        function filterRegulations() {
-            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
-            const statusFilter = document.getElementById('statusFilter').value;
-            const practiceFilter = document.getElementById('practiceFilter').value;
-            
-            filteredRegulations = regulations.filter(reg => {
-                const matchesSearch = !searchTerm || 
-                    reg.title.toLowerCase().includes(searchTerm) ||
-                    reg.description.toLowerCase().includes(searchTerm) ||
-                    reg.keyRequirements.some(req => req.toLowerCase().includes(searchTerm)) ||
-                    reg.practiceAreas.some(area => formatPracticeArea(area).toLowerCase().includes(searchTerm));
-                
-                const matchesStatus = !statusFilter || reg.status === statusFilter;
-                const matchesPractice = !practiceFilter || reg.practiceAreas.includes(practiceFilter);
-                
-                return matchesSearch && matchesStatus && matchesPractice;
-            });
-            
-            renderRegulations();
-            updateStats();
-        }
-
-        function resetFilters() {
-            document.getElementById('searchBox').value = '';
-            document.getElementById('statusFilter').value = '';
-            document.getElementById('practiceFilter').value = '';
-            filteredRegulations = [...regulations];
-            renderRegulations();
-            updateStats();
-        }
-
-        function formatStatus(status) {
-            const statusMap = {
-                'in-force': 'In Force',
-                'pending': 'Pending Implementation',
-                'development': 'Under Development',
-                'consultation': 'Consultation Phase',
-                'proposed': 'Proposed'
-            };
-            return statusMap[status] || status;
-        }
-
-        function formatPriority(priority) {
-            const priorityMap = {
-                'critical': 'Critical',
-                'high': 'High',
-                'medium': 'Medium',
-                'low': 'Low'
-            };
-            return priorityMap[priority] || priority;
-        }
-
-        function formatPracticeArea(area) {
-            const areaMap = {
-                'data-protection': 'Data Protection',
-                'ai-algorithms': 'AI & Algorithms',
-                'cybersecurity': 'Cybersecurity',
-                'digital-services': 'Digital Services',
-                'fintech': 'Fintech',
-                'competition': 'Competition',
-                'consumer-protection': 'Consumer Protection'
-            };
-            return areaMap[area] || area;
-        }
-
-        // Event listeners
-        document.getElementById('searchBox').addEventListener('input', filterRegulations);
-        document.getElementById('statusFilter').addEventListener('change', filterRegulations);
-        document.getElementById('practiceFilter').addEventListener('change', filterRegulations);
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            loadTheme();
-            renderRegulations();
-            updateStats();
-        });
-
-        // Keyboard shortcuts
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && e.key === '/') {
-                e.preventDefault();
-                document.getElementById('searchBox').focus();
-            }
-            if (e.key === 'Escape') {
-                resetFilters();
-            }
-        });
-    </script>
-</body>
-</html>
