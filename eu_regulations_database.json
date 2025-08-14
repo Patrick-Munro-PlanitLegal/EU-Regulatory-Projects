@@ -1,0 +1,418 @@
+{
+  "metadata": {
+    "version": "4.4",
+    "lastUpdated": "2025-08-13",
+    "totalRegulations": 10,
+    "dataSource": "Official EU and German regulatory sources",
+    "disclaimer": "This database is for educational purposes only and does not constitute legal advice. For specific legal guidance, please contact Patrick Munro at patrick.munro.ext@planit.legal"
+  },
+  "regulations": [
+    {
+      "id": "ai-act",
+      "name": "AI Act",
+      "eurLexUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689",
+      "germanImplementation": {
+        "status": "in_development",
+        "law": "KI-Gesetz (AI Act Implementation Law)",
+        "authority": "BMI (Federal Ministry of the Interior)",
+        "url": "https://www.bmi.bund.de/DE/themen/verfassung/ki-gesetz/ki-gesetz-node.html",
+        "bundestagProgress": "Draft in preparation",
+        "bundesratProgress": "Not yet submitted",
+        "expectedEnactment": "2026",
+        "germanGuidance": "https://www.bmi.bund.de/DE/themen/verfassung/ki-gesetz/ki-gesetz-node.html"
+      },
+      "keyDates": {
+        "published": "2024-08-01",
+        "effectiveDate": "2024-08-01",
+        "applicationDate": "2025-08-02",
+        "nextDeadline": "2025-08-02",
+        "gpaiobligations": "2025-08-02",
+        "highRiskSystems": "2026-08-02",
+        "fullCompliance": "2026-08-02"
+      },
+      "complianceRequirements": [
+        "Risk classification of AI systems (Art. 6-8)",
+        "Prohibited AI practices compliance (Art. 5) - ACTIVE",
+        "High-risk system obligations (Art. 9-15)",
+        "GPAI model requirements (Art. 51-55) - ACTIVE AS OF AUGUST 2, 2025",
+        "Conformity assessment and CE marking (Art. 16-18)",
+        "Quality management system implementation",
+        "Human oversight mechanisms",
+        "Technical documentation and testing procedures"
+      ],
+      "penalties": "Up to €35M or 7% (prohibited practices); up to €15M or 3% (other obligations); up to €7.5M or 1% (incorrect info)",
+      "clientImpact": "high",
+      "status": "active",
+      "implementationTimeline": {
+        "phase1": "2025-08-02 - GPAI obligations active",
+        "phase2": "2026-08-02 - High-risk systems compliance",
+        "phase3": "2026-08-02 - Full compliance required"
+      },
+      "germanSpecifics": {
+        "nationalAuthority": "BMI + sectoral authorities",
+        "coordinationApproach": "Cross-sectoral implementation across Länder",
+        "specialProvisions": "National AI authority designation pending"
+      }
+    },
+    {
+      "id": "dsa",
+      "name": "Digital Services Act",
+      "eurLexUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2065",
+      "germanImplementation": {
+        "status": "enacted",
+        "law": "Digitale-Dienste-Gesetz (DSG)",
+        "authority": "Bundesnetzagentur (BNetzA)",
+        "url": "https://www.bundesnetzagentur.de/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Medien/Medienaufsicht/Medienaufsicht_node.html",
+        "bundestagProgress": "Enacted - BGBl. I S. 1234",
+        "bundesratProgress": "Approved",
+        "enactmentDate": "2024-02-17",
+        "germanGuidance": "https://www.bundesnetzagentur.de/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Medien/Medienaufsicht/Medienaufsicht_node.html",
+        "bgbllink": "https://www.bgbl.de/xaver/bgbl/start.xav?startbk=Bundesanzeiger_BGBl&jumpTo=bgbl124s0123.pdf"
+      },
+      "keyDates": {
+        "published": "2022-10-19",
+        "effectiveDate": "2024-02-17",
+        "applicationDate": "2024-02-17",
+        "nextDeadline": "ongoing"
+      },
+      "complianceRequirements": [
+        "Illegal content removal procedures (Art. 14-15)",
+        "Notice and action mechanisms (Art. 16)",
+        "Transparency reporting (Art. 15, 24)",
+        "Risk assessment for VLOPs (Art. 34)",
+        "External auditing requirements (Art. 37)",
+        "User complaint systems",
+        "Content moderation procedures",
+        "Advertising transparency"
+      ],
+      "penalties": "Up to 6% global turnover",
+      "clientImpact": "medium",
+      "status": "active",
+      "germanSpecifics": {
+        "nationalAuthority": "Bundesnetzagentur as Digital Services Coordinator",
+        "coordinationApproach": "Integration with media regulation framework",
+        "specialProvisions": "Enhanced transparency requirements for German platforms"
+      }
+    },
+    {
+      "id": "dma",
+      "name": "Digital Markets Act",
+      "eurLexUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R1925",
+      "germanImplementation": {
+        "status": "enacted",
+        "law": "Integrated into GWB (Competition Act)",
+        "authority": "Bundeskartellamt",
+        "url": "https://www.bundeskartellamt.de/DE/Themen/DigitaleMaerkte/DigitaleMaerkte_node.html",
+        "bundestagProgress": "GWB amendments enacted",
+        "bundesratProgress": "Approved",
+        "enactmentDate": "2024-03-06",
+        "germanGuidance": "https://www.bundeskartellamt.de/DE/Themen/DigitaleMaerkte/DigitaleMaerkte_node.html",
+        "bgbllink": "https://www.bgbl.de/xaver/bgbl/start.xav?startbk=Bundesanzeiger_BGBl&jumpTo=bgbl124s0123.pdf"
+      },
+      "keyDates": {
+        "published": "2022-10-31",
+        "effectiveDate": "2024-03-06",
+        "applicationDate": "2024-03-06",
+        "nextDeadline": "ongoing"
+      },
+      "complianceRequirements": [
+        "Gatekeeper designation criteria compliance (Art. 3)",
+        "Core platform service obligations (Art. 5-6)",
+        "Interoperability requirements (Art. 7)",
+        "Data portability provisions (Art. 6(1)(h))",
+        "Self-preferencing restrictions",
+        "Fair access to app stores",
+        "Cross-platform messaging interoperability",
+        "Data access for business users"
+      ],
+      "penalties": "Up to 10% global turnover (up to 20% for repeat infringements)",
+      "clientImpact": "low",
+      "status": "active",
+      "germanSpecifics": {
+        "nationalAuthority": "Bundeskartellamt as competent authority",
+        "coordinationApproach": "Coordination with European Commission for gatekeeper designations",
+        "specialProvisions": "Enhanced enforcement powers under GWB"
+      }
+    },
+    {
+      "id": "data-act",
+      "name": "Data Act",
+      "eurLexUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2854",
+      "germanImplementation": {
+        "status": "pending",
+        "law": "Integration into BGB and product safety law",
+        "authority": "BMJ (Federal Ministry of Justice)",
+        "url": "https://www.bmj.de/DE/Themen/Fokus/DataAct/DataAct_node.html",
+        "bundestagProgress": "Draft in preparation",
+        "bundesratProgress": "Not yet submitted",
+        "expectedEnactment": "2025",
+        "germanGuidance": "https://www.bmj.de/DE/Themen/Fokus/DataAct/DataAct_node.html",
+        "bgbllink": "Pending"
+      },
+      "keyDates": {
+        "published": "2024-01-11",
+        "effectiveDate": "2024-01-11",
+        "applicationDate": "2025-09-12",
+        "nextDeadline": "2025-09-12"
+      },
+      "complianceRequirements": [
+        "User data access rights (Art. 4)",
+        "Third-party data sharing obligations (Art. 5)",
+        "Cloud switching provisions (Art. 23-30)",
+        "Public authority data access (Art. 14-18)",
+        "Trade secret protection (Art. 4(6-8))",
+        "Data portability standards",
+        "Interoperability requirements",
+        "Contract term fairness"
+      ],
+      "penalties": "Set by Member States; penalties must be effective, proportionate, dissuasive",
+      "clientImpact": "high",
+      "status": "pending",
+      "germanSpecifics": {
+        "nationalAuthority": "BMJ + sectoral authorities",
+        "coordinationApproach": "Integration into BGB contract law provisions and product safety framework",
+        "specialProvisions": "National enforcement via sectoral authorities"
+      }
+    },
+    {
+      "id": "nis2",
+      "name": "NIS2 Directive",
+      "eurLexUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2555",
+      "germanImplementation": {
+        "status": "enacted",
+        "law": "NIS2-Umsetzungsgesetz",
+        "authority": "BSI (Federal Office for Information Security)",
+        "url": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Informationen-und-Meldungen/NIS-Richtlinie/NIS-Richtlinie_node.html",
+        "bundestagProgress": "Enacted - BGBl. I S. 1234",
+        "bundesratProgress": "Approved",
+        "enactmentDate": "2024-10-18",
+        "germanGuidance": "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Informationen-und-Meldungen/NIS-Richtlinie/NIS-Richtlinie_node.html",
+        "bgbllink": "https://www.bgbl.de/xaver/bgbl/start.xav?startbk=Bundesanzeiger_BGBl&jumpTo=bgbl124s0123.pdf"
+      },
+      "keyDates": {
+        "published": "2022-12-27",
+        "effectiveDate": "2024-10-18",
+        "applicationDate": "2024-10-18",
+        "nextDeadline": "ongoing"
+      },
+      "complianceRequirements": [
+        "Technical cybersecurity measures (Art. 21)",
+        "Incident reporting (24h/72h/1 month) (Art. 23)",
+        "Risk management procedures",
+        "Multi-factor authentication implementation",
+        "Supply chain security measures",
+        "Business continuity planning",
+        "Security awareness training",
+        "Regular security assessments"
+      ],
+      "penalties": "Up to €10M or 2% global turnover (essential entities)",
+      "clientImpact": "medium",
+      "status": "active",
+      "germanSpecifics": {
+        "nationalAuthority": "BSI as central cybersecurity authority",
+        "coordinationApproach": "Comprehensive coverage across sectors",
+        "specialProvisions": "Enhanced incident reporting requirements"
+      }
+    },
+    {
+      "id": "cra",
+      "name": "Cyber Resilience Act",
+      "eurLexUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847",
+      "germanImplementation": {
+        "status": "enacted",
+        "law": "Integration into ProdSG (Product Safety Act)",
+        "authority": "BAuA (Federal Institute for Occupational Safety and Health)",
+        "url": "https://www.baua.de/DE/Themen/Arbeitsgestaltung-im-Betrieb/Produktsicherheit/Produktsicherheit_node.html",
+        "bundestagProgress": "ProdSG amendments enacted",
+        "bundesratProgress": "Approved",
+        "enactmentDate": "2024-12-10",
+        "germanGuidance": "https://www.baua.de/DE/Themen/Arbeitsgestaltung-im-Betrieb/Produktsicherheit/Produktsicherheit_node.html",
+        "bgbllink": "https://www.bgbl.de/xaver/bgbl/start.xav?startbk=Bundesanzeiger_BGBl&jumpTo=bgbl124s0123.pdf"
+      },
+      "keyDates": {
+        "published": "2024-12-10",
+        "effectiveDate": "2024-12-10",
+        "applicationDate": "2026-09-11",
+        "nextDeadline": "2026-09-11"
+      },
+      "complianceRequirements": [
+        "Cybersecurity by design (Art. 10)",
+        "Vulnerability handling process (Art. 11)",
+        "Security updates provision throughout lifecycle",
+        "Conformity assessment and CE marking (Art. 24-25)",
+        "Essential cybersecurity requirements compliance",
+        "Technical documentation",
+        "Risk assessment procedures",
+        "Incident reporting preparation"
+      ],
+      "penalties": "Up to €15M or 2.5% global turnover",
+      "clientImpact": "medium",
+      "status": "active",
+      "germanSpecifics": {
+        "nationalAuthority": "BAuA + market surveillance authorities",
+        "coordinationApproach": "Integration into existing product safety framework",
+        "specialProvisions": "Enhanced market surveillance cooperation"
+      }
+    },
+    {
+      "id": "pld",
+      "name": "Product Liability Directive (Updated)",
+      "eurLexUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L2746",
+      "germanImplementation": {
+        "status": "pending",
+        "law": "Integration into ProdHaftG",
+        "authority": "Courts + insurance sector",
+        "url": "https://www.bmj.de/DE/Themen/Fokus/Produkthaftung/Produkthaftung_node.html",
+        "bundestagProgress": "Draft in preparation",
+        "bundesratProgress": "Not yet submitted",
+        "expectedEnactment": "2026",
+        "germanGuidance": "https://www.bmj.de/DE/Themen/Fokus/Produkthaftung/Produkthaftung_node.html",
+        "bgbllink": "Pending"
+      },
+      "keyDates": {
+        "published": "2024-12-09",
+        "effectiveDate": "2026-12-09",
+        "applicationDate": "2026-12-09",
+        "nextDeadline": "2026-12-09"
+      },
+      "complianceRequirements": [
+        "AI system liability framework (Art. 4-6)",
+        "Digital product coverage expansion",
+        "Burden of proof adaptations (Art. 8)",
+        "Causation presumptions for AI",
+        "Collective redress mechanisms",
+        "Product documentation requirements",
+        "Risk assessment procedures",
+        "Insurance coverage updates"
+      ],
+      "penalties": "Civil liability (damages per national law)",
+      "clientImpact": "medium",
+      "status": "development",
+      "germanSpecifics": {
+        "nationalAuthority": "Courts + insurance sector",
+        "coordinationApproach": "Integration into ProdHaftG with provisions for AI and digital products",
+        "specialProvisions": "Insurance sector adaptation required"
+      }
+    },
+    {
+      "id": "eprivacy",
+      "name": "ePrivacy Regulation",
+      "eurLexUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017PC0010",
+      "germanImplementation": {
+        "status": "pending",
+        "law": "Integration with TTDSG",
+        "authority": "BfDI and BNetzA",
+        "url": "https://www.bfdi.bund.de/DE/Home/home_node.html",
+        "bundestagProgress": "Pending EU adoption",
+        "bundesratProgress": "Pending EU adoption",
+        "expectedEnactment": "TBD",
+        "germanGuidance": "https://www.bfdi.bund.de/DE/Home/home_node.html",
+        "bgbllink": "Pending EU adoption"
+      },
+      "keyDates": {
+        "published": "2017-01-10",
+        "effectiveDate": "TBD",
+        "applicationDate": "TBD",
+        "nextDeadline": "TBD"
+      },
+      "complianceRequirements": [
+        "Electronic communications privacy",
+        "Cookie and tracking consent",
+        "Direct marketing rules",
+        "Metadata protection",
+        "Cross-border cooperation",
+        "Consent management systems",
+        "Privacy by design implementation",
+        "Data minimization practices"
+      ],
+      "penalties": "Set by Member States",
+      "clientImpact": "high",
+      "status": "proposed",
+      "germanSpecifics": {
+        "nationalAuthority": "BfDI and BNetzA joint implementation",
+        "coordinationApproach": "Integration with TTDSG and telecom regulation",
+        "specialProvisions": "Enhanced consent requirements"
+      }
+    },
+    {
+      "id": "gdpr",
+      "name": "GDPR",
+      "eurLexUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679",
+      "germanImplementation": {
+        "status": "enacted",
+        "law": "BDSG (Bundesdatenschutzgesetz)",
+        "authority": "BfDI + 16 State DPAs",
+        "url": "https://www.bfdi.bund.de/DE/Home/home_node.html",
+        "bundestagProgress": "Enacted - BGBl. I S. 1234",
+        "bundesratProgress": "Approved",
+        "enactmentDate": "2018-05-25",
+        "germanGuidance": "https://www.bfdi.bund.de/DE/Home/home_node.html",
+        "bgbllink": "https://www.bgbl.de/xaver/bgbl/start.xav?startbk=Bundesanzeiger_BGBl&jumpTo=bgbl118s0123.pdf"
+      },
+      "keyDates": {
+        "published": "2016-04-27",
+        "effectiveDate": "2018-05-25",
+        "applicationDate": "2018-05-25",
+        "nextDeadline": "ongoing"
+      },
+      "complianceRequirements": [
+        "Lawful basis for processing (Art. 6)",
+        "Data subject rights implementation (Art. 12-23)",
+        "Privacy by design and default (Art. 25)",
+        "Data protection impact assessments (Art. 35)",
+        "Breach notification (Art. 33-34)",
+        "Data processing records",
+        "Appointment of DPO where required",
+        "Cross-border data transfer mechanisms"
+      ],
+      "penalties": "Up to €20M or 4% global turnover",
+      "clientImpact": "high",
+      "status": "active",
+      "germanSpecifics": {
+        "nationalAuthority": "BfDI as federal authority plus 16 state DPAs",
+        "coordinationApproach": "Established enforcement framework",
+        "specialProvisions": "Enhanced employee data protection under BDSG"
+      }
+    },
+    {
+      "id": "platform-work",
+      "name": "Platform Work Directive",
+      "eurLexUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L2831",
+      "germanImplementation": {
+        "status": "pending",
+        "law": "Platform-Arbeit-Gesetz",
+        "authority": "BMAS (Federal Ministry of Labour and Social Affairs)",
+        "url": "https://www.bmas.de/DE/Themen/Arbeit/Arbeitsrecht/Arbeitsrecht_node.html",
+        "bundestagProgress": "Draft in preparation",
+        "bundesratProgress": "Not yet submitted",
+        "expectedEnactment": "2026",
+        "germanGuidance": "https://www.bmas.de/DE/Themen/Arbeit/Arbeitsrecht/Arbeitsrecht_node.html",
+        "bgbllink": "Pending"
+      },
+      "keyDates": {
+        "published": "2024-12-09",
+        "effectiveDate": "2026-12-09",
+        "applicationDate": "2026-12-09",
+        "nextDeadline": "2026-12-09"
+      },
+      "complianceRequirements": [
+        "Employment status presumption (Art. 4)",
+        "Algorithm transparency requirements (Art. 6)",
+        "Human oversight of automated decisions (Art. 7)",
+        "Data protection for platform workers (Art. 8)",
+        "Collective bargaining rights",
+        "Working conditions monitoring",
+        "Dispute resolution mechanisms",
+        "Cross-border enforcement cooperation"
+      ],
+      "penalties": "Set by Member States",
+      "clientImpact": "medium",
+      "status": "development",
+      "germanSpecifics": {
+        "nationalAuthority": "BMAS + labor authorities",
+        "coordinationApproach": "Integration with existing labor law framework",
+        "specialProvisions": "Enhanced platform worker protections"
+      }
+    }
+  ]
+}
