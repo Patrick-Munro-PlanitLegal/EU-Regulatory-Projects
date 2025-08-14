@@ -3,59 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EU Tech Regulations Tracker — Professional compliance dashboard for EU technology regulations and German implementation.">
-    <title>🇪🇺 EU Tech Regulations Tracker | Professional Compliance Dashboard</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <title>EU Regulatory Projects - Planit Legal</title>
+    <meta name="description" content="Professional compliance dashboard for EU technology regulations and German implementation by Planit Legal">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+    
     <style>
+        :root {
+            --primary-blue: #1e40af;
+            --secondary-blue: #3b82f6;
+            --accent-gold: #f59e0b;
+            --success-green: #10b981;
+            --warning-amber: #f59e0b;
+            --danger-red: #ef4444;
+            --neutral-gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --dark-gray: #1f2937;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --primary-blue: #1a365d;
-            --accent-blue: #2c5282;
-            --light-blue: #ebf8ff;
-            --eu-blue: #003399;
-            --eu-gold: #ffcc00;
-            --success-green: #38a169;
-            --warning-orange: #dd6b20;
-            --danger-red: #e53e3e;
-            --text-primary: #2d3748;
-            --text-secondary: #4a5568;
-            --text-muted: #718096;
-            --border-light: #e2e8f0;
-            --border-medium: #cbd5e0;
-            --bg-white: #ffffff;
-            --bg-gray-50: #f7fafc;
-            --bg-gray-100: #edf2f7;
-            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text-primary);
-            background: linear-gradient(135deg, #f6f9fc 0%, #eef2f6 100%);
+            color: var(--dark-gray);
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             min-height: 100vh;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
 
+        /* Header */
         .header {
-            background: linear-gradient(135deg, var(--eu-blue) 0%, var(--primary-blue) 100%);
-            color: white;
-            padding: 40px 20px;
-            margin-bottom: 30px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
@@ -64,2140 +57,587 @@
             content: '';
             position: absolute;
             top: 0;
+            left: 0;
             right: 0;
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(45deg, var(--eu-gold) 0%, transparent 70%);
-            opacity: 0.1;
-            border-radius: 50%;
-            transform: translate(25%, -25%);
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
         }
 
         .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
             position: relative;
             z-index: 1;
         }
 
-        .header h1 {
-            font-size: 2.75rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: -0.025em;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
 
-        .header .subtitle {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            margin-bottom: 12px;
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Critical Alerts */
+        .alerts-section {
+            background: var(--white);
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .alerts-title {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .alert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .alert-card {
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid;
             font-weight: 500;
         }
 
-        .header .meta-info {
-            font-size: 1rem;
-            opacity: 0.85;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+        .alert-active {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--danger-red);
+            color: var(--danger-red);
         }
 
-        .header .meta-info .urgent {
-            background: rgba(220, 38, 38, 0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid rgba(220, 38, 38, 0.3);
-            font-weight: 600;
+        .alert-upcoming {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--warning-amber);
+            color: #d97706;
         }
 
-        .header .meta-info .warning {
-            background: rgba(245, 158, 11, 0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            font-weight: 600;
+        .alert-info {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success-green);
+            color: #059669;
         }
 
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        /* Tools Grid */
+        .tools-section {
+            margin: 2rem 0;
         }
 
-        .meta-item.urgent {
-            background: rgba(220, 38, 38, 0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid rgba(220, 38, 38, 0.3);
-            font-weight: 600;
-        }
-
-        .meta-item.warning {
-            background: rgba(245, 158, 11, 0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            font-weight: 600;
-        }
-
-        .nav-tabs {
-            display: flex;
-            background: var(--bg-white);
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            margin-bottom: 30px;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-        }
-
-        .nav-tab {
-            flex: 1;
-            min-width: 140px;
-            padding: 18px 24px;
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
             text-align: center;
-            border: none;
-            background: transparent;
-            color: var(--text-secondary);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            font-size: 0.95rem;
         }
 
-        .nav-tab::after {
+        .section-subtitle {
+            text-align: center;
+            color: var(--neutral-gray);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .tool-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card::before {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: var(--primary-blue);
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
 
-        .nav-tab.active {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
-            color: white;
-        }
-
-        .nav-tab.active::after {
-            transform: scaleX(1);
-        }
-
-        .nav-tab:hover:not(.active) {
-            background: var(--bg-gray-100);
-            transform: translateY(-1px);
-        }
-
-        .dashboard-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-            margin-bottom: 30px;
-        }
-
-        .stat-card {
-            background: var(--bg-white);
-            padding: 28px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            border-left: 5px solid;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 60px;
-            height: 60px;
-            opacity: 0.1;
-            border-radius: 50%;
-            transform: translate(20px, -20px);
-        }
-
-        .stat-card:hover {
+        .tool-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
         }
 
-        .stat-card.total { border-left-color: var(--primary-blue); }
-        .stat-card.total::before { background: var(--primary-blue); }
+        .tool-card:hover::before {
+            transform: scaleX(1);
+        }
 
-        .stat-card.active { border-left-color: var(--success-green); }
-        .stat-card.active::before { background: var(--success-green); }
-
-        .stat-card.pending { border-left-color: var(--warning-orange); }
-        .stat-card.pending::before { background: var(--warning-orange); }
-
-        .stat-card.critical { border-left-color: var(--danger-red); }
-        .stat-card.critical::before { background: var(--danger-red); }
-
-        .stat-number {
+        .tool-icon {
             font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-            position: relative;
-            z-index: 1;
+            margin-bottom: 1rem;
+            display: block;
         }
 
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.875rem;
+        .tool-title {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            position: relative;
-            z-index: 1;
         }
 
-        .stat-trend {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 4px;
-            position: relative;
-            z-index: 1;
+        .tool-subtitle {
+            color: var(--neutral-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
         }
 
-        .controls {
+        .tool-description {
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .tool-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .tool-features li {
+            padding: 0.25rem 0;
+            color: var(--neutral-gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .tool-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: bold;
+        }
+
+        .tool-buttons {
             display: flex;
+            gap: 0.5rem;
             flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 30px;
-            padding: 24px;
-            background: var(--bg-white);
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-light);
-        }
-
-        .control-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            min-width: 220px;
-        }
-
-        .control-group label {
-            font-weight: 600;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .control-input {
-            padding: 12px 16px;
-            border: 2px solid var(--border-light);
-            border-radius: 8px;
-            font-size: 0.875rem;
-            transition: all 0.3s ease;
-            background: var(--bg-white);
-        }
-
-        .control-input:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
-            transform: translateY(-1px);
         }
 
         .btn {
-            padding: 12px 20px;
+            padding: 0.75rem 1.5rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.875rem;
-            position: relative;
-            overflow: hidden;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            font-size: 0.9rem;
         }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn:hover::before { left: 100%; }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
-            color: white;
-            box-shadow: var(--shadow);
+            background: var(--primary-blue);
+            color: var(--white);
         }
 
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-primary:hover {
+            background: #1e3a8a;
+            transform: translateY(-1px);
+        }
 
         .btn-secondary {
-            background: var(--bg-gray-100);
-            color: var(--text-primary);
-            border: 1px solid var(--border-medium);
+            background: var(--light-gray);
+            color: var(--dark-gray);
+            border: 1px solid #d1d5db;
         }
 
-        .btn-secondary:hover { background: var(--border-medium); transform: translateY(-1px); }
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
 
-        .content-section { display: none; animation: fadeIn 0.3s ease-in-out; }
-        .content-section.active { display: block; }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .regulation-table {
-            background: var(--bg-white);
+        /* Stats Section */
+        .stats-section {
+            background: var(--white);
+            padding: 2rem;
             border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            overflow: hidden;
-            margin-bottom: 30px;
-            border: 1px solid var(--border-light);
-        }
-
-        .table-header {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
-            color: white;
-            padding: 24px;
-            font-size: 1.25rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .table-content { overflow-x: auto; }
-
-        table { width: 100%; border-collapse: collapse; }
-
-        th {
-            background: var(--bg-gray-100);
-            padding: 16px;
-            text-align: left;
-            font-weight: 600;
-            color: var(--text-primary);
-            border-bottom: 2px solid var(--border-medium);
-            font-size: 0.875rem;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        td {
-            padding: 20px 16px;
-            border-bottom: 1px solid var(--border-light);
-            vertical-align: top;
-            font-size: 0.875rem;
-            line-height: 1.5;
-        }
-
-        tr:hover { background: var(--bg-gray-50); }
-        tr:last-child td { border-bottom: none; }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
             box-shadow: var(--shadow);
+            margin: 2rem 0;
         }
 
-        .status-active {
-            background: linear-gradient(135deg, rgba(56, 161, 105, 0.15), rgba(56, 161, 105, 0.05));
-            color: var(--success-green);
-            border: 1px solid rgba(56, 161, 105, 0.2);
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
         }
 
-        .status-imminent {
-            background: linear-gradient(135deg, rgba(229, 62, 62, 0.2), rgba(229, 62, 62, 0.1));
-            color: var(--danger-red);
-            border: 2px solid var(--danger-red);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(229, 62, 62, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(229, 62, 62, 0); }
-        }
-
-        .status-pending {
-            background: linear-gradient(135deg, rgba(221, 107, 32, 0.15), rgba(221, 107, 32, 0.05));
-            color: var(--warning-orange);
-            border: 1px solid rgba(221, 107, 32, 0.2);
-        }
-
-        .status-development {
-            background: linear-gradient(135deg, rgba(26, 54, 93, 0.15), rgba(26, 54, 93, 0.05));
+        .stat-item h3 {
+            font-size: 2.5rem;
             color: var(--primary-blue);
-            border: 1px solid rgba(26, 54, 93, 0.2);
+            margin-bottom: 0.5rem;
         }
 
-        .status-proposed {
-            background: linear-gradient(135deg, rgba(113, 128, 150, 0.15), rgba(113, 128, 150, 0.05));
-            color: var(--text-muted);
-            border: 1px solid rgba(113, 128, 150, 0.2);
+        .stat-item p {
+            color: var(--neutral-gray);
+            font-weight: 500;
         }
 
-        .priority-critical, .priority-very-high {
-            background: linear-gradient(135deg, rgba(229, 62, 62, 0.15), rgba(229, 62, 62, 0.05));
-            color: var(--danger-red);
-            border: 1px solid rgba(229, 62, 62, 0.2);
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 2rem 0;
+            margin-top: 3rem;
         }
 
-        .priority-high {
-            background: linear-gradient(135deg, rgba(221, 107, 32, 0.15), rgba(221, 107, 32, 0.05));
-            color: var(--warning-orange);
-            border: 1px solid rgba(221, 107, 32, 0.2);
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
 
-        .priority-medium, .priority-medium-high {
-            background: linear-gradient(135deg, rgba(49, 130, 206, 0.15), rgba(49, 130, 206, 0.05));
-            color: #3182ce;
-            border: 1px solid rgba(49, 130, 206, 0.2);
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
         }
 
-        .priority-low, .priority-low-medium {
-            background: linear-gradient(135deg, rgba(113, 128, 150, 0.15), rgba(113, 128, 150, 0.05));
-            color: var(--text-muted);
-            border: 1px solid rgba(113, 128, 150, 0.2);
+        .footer-section p,
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
-        .reg-title { font-weight: 600; color: var(--primary-blue); font-size: 0.95rem; margin-bottom: 4px; }
-        .reg-description { color: var(--text-secondary); font-size: 0.8rem; line-height: 1.4; }
-        .reg-link { color: var(--primary-blue); text-decoration: none; font-weight: 500; transition: all 0.2s ease; }
-        .reg-link:hover { text-decoration: underline; color: var(--accent-blue); }
-
-        .compliance-items { margin-top: 8px; }
-        .compliance-item { font-size: 0.75rem; color: var(--text-secondary); margin: 3px 0; padding-left: 8px; position: relative; }
-        .compliance-item::before { content: '▪'; position: absolute; left: 0; color: var(--primary-blue); font-weight: bold; }
-
-        .timeline-container {
-            background: var(--bg-white);
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            padding: 35px;
-            margin-bottom: 30px;
-            border: 1px solid var(--border-light);
+        .footer-section a:hover {
+            color: var(--white);
         }
 
-        .timeline-header { text-align: center; margin-bottom: 35px; }
-        .timeline-header h2 { font-size: 1.75rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
-        .timeline-header p { color: var(--text-secondary); font-size: 1rem; }
+        .disclaimer {
+            border-top: 1px solid #374151;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
 
-        .timeline { position: relative; max-width: 900px; margin: 0 auto; }
-        .timeline::after { content: ''; position: absolute; width: 3px; background: linear-gradient(to bottom, var(--primary-blue), var(--accent-blue)); top: 0; bottom: 0; left: 50%; margin-left: -1.5px; border-radius: 1.5px; }
-        .timeline-item { padding: 15px 40px; position: relative; background-color: inherit; width: 50%; }
-        .timeline-item::after { content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: var(--bg-white); border: 4px solid var(--primary-blue); top: 25px; border-radius: 50%; z-index: 1; box-shadow: var(--shadow); }
-        .timeline-item:nth-child(even) { left: 50%; }
-        .timeline-item:nth-child(even)::after { left: -10px; }
-
-        .timeline-content { padding: 20px; background: var(--bg-gray-50); border-radius: 10px; border: 1px solid var(--border-light); box-shadow: var(--shadow); transition: transform 0.3s ease; }
-        .timeline-content:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-        .timeline-date { font-weight: 700; color: var(--primary-blue); margin-bottom: 6px; font-size: 0.9rem; }
-        .timeline-title { font-weight: 600; margin-bottom: 6px; font-size: 0.95rem; color: var(--text-primary); }
-        .timeline-description { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.4; }
-
-        .footer { background: var(--bg-white); border-radius: 12px; box-shadow: var(--shadow-md); margin-top: 40px; border: 1px solid var(--border-light); overflow: hidden; }
-        .footer-header { background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%); color: white; padding: 20px 30px; font-size: 1.1rem; font-weight: 600; }
-        .footer-content { padding: 30px; }
-        .footer-section { margin-bottom: 25px; }
-        .footer-section:last-child { margin-bottom: 0; }
-        .footer-section h3 { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-        .footer-sources { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 20px; }
-        .source-category { background: var(--bg-gray-50); padding: 16px; border-radius: 8px; border-left: 4px solid var(--primary-blue); }
-        .source-category h4 { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
-        .source-list { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; }
-        .disclaimer { background: var(--light-blue); padding: 16px; border-radius: 8px; border-left: 4px solid var(--primary-blue); font-size: 0.875rem; line-height: 1.5; color: var(--text-secondary); }
-        .disclaimer strong { color: var(--text-primary); }
-
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
-        .modal-content { background-color: var(--bg-white); margin: 5% auto; padding: 35px; border-radius: 12px; width: 90%; max-width: 500px; box-shadow: var(--shadow-lg); border: 1px solid var(--border-light); }
-        .close { color: var(--text-secondary); float: right; font-size: 28px; font-weight: bold; cursor: pointer; transition: color 0.2s ease; }
-        .close:hover { color: var(--text-primary); }
-
-        .notification { position: fixed; top: 20px; right: 20px; background: var(--success-green); color: white; padding: 12px 20px; border-radius: 8px; box-shadow: var(--shadow-lg); transform: translateX(400px); transition: transform 0.3s ease; z-index: 1001; }
-        .notification.show { transform: translateX(0); }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .container { padding: 15px; }
-            .header h1 { font-size: 2.25rem; }
-            .header .meta-info { flex-direction: column; gap: 12px; }
-            .nav-tabs { flex-direction: column; border-radius: 12px; }
-            .nav-tab { border-radius: 0; border-bottom: 1px solid var(--border-light); }
-            .nav-tab:first-child { border-radius: 12px 12px 0 0; }
-            .nav-tab:last-child { border-radius: 0 0 12px 12px; border-bottom: none; }
-            .controls { flex-direction: column; }
-            .dashboard-stats { grid-template-columns: 1fr; }
-            .footer-sources { grid-template-columns: 1fr; }
-            .timeline::after { left: 30px; }
-            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
-            .timeline-item::after { left: 20px; right: auto; }
-            .timeline-item:nth-child(even) { left: 0; }
-            .timeline-item:nth-child(even)::after { left: 20px; }
-            td, th { padding: 12px 8px; font-size: 0.8rem; }
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .tool-card {
+                padding: 1.5rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
         }
 
-        .loading { display: none; text-align: center; padding: 60px; }
-        .spinner { width: 50px; height: 50px; border: 4px solid var(--border-light); border-top: 4px solid var(--primary-blue); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 20px; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tool-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .tool-card:nth-child(1) { animation-delay: 0.1s; }
+        .tool-card:nth-child(2) { animation-delay: 0.2s; }
+        .tool-card:nth-child(3) { animation-delay: 0.3s; }
+        .tool-card:nth-child(4) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
+    <header class="header">
+        <div class="container">
             <div class="header-content">
-                <h1><i class="fas fa-balance-scale"></i> EU Tech Regulations Tracker</h1>
-                <p class="subtitle">Professional compliance dashboard for EU technology regulations and German implementation</p>
-                <div class="meta-info">
-                    <div class="meta-item">
-                        <i class="fas fa-calendar"></i>
-                        <span>Last Updated: <span id="lastUpdated">August 13, 2025</span></span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="fas fa-database"></i>
-                        <span><span id="totalRegs">18</span> Regulations Tracked</span>
-                    </div>
-                    <div class="meta-item urgent">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <span>AI Act GPAI: ACTIVE since Aug 2, 2025</span>
-                    </div>
-                    <div class="meta-item warning">
-                        <i class="fas fa-clock"></i>
-                        <span>Data Act: <span id="dataActCountdown">30 days</span></span>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <nav class="nav-tabs">
-            <button class="nav-tab active" data-section="overview" onclick="showSection('overview')">
-                <i class="fas fa-chart-line"></i> Overview
-            </button>
-            <button class="nav-tab" data-section="regulations" onclick="showSection('regulations')">
-                <i class="fas fa-gavel"></i> All Regulations
-            </button>
-            <button class="nav-tab" data-section="timeline" onclick="showSection('timeline')">
-                <i class="fas fa-clock"></i> Timeline
-            </button>
-            <button class="nav-tab" data-section="implementation" onclick="showSection('implementation')">
-                <i class="fas fa-tasks"></i> Implementation
-            </button>
-            <button class="nav-tab" data-section="german" onclick="showSection('german')">
-                <i class="fas fa-flag"></i> German Acts
-            </button>
-        </nav>
-
-        <section class="dashboard-stats">
-            <div class="stat-card total">
-                <div class="stat-number" id="totalRegulations">18</div>
-                <div class="stat-label">Total Regulations</div>
-                <div class="stat-trend">Comprehensive coverage</div>
-            </div>
-            <div class="stat-card active">
-                <div class="stat-number" id="activeRegulations">13</div>
-                <div class="stat-label">Active & Enforced</div>
-                <div class="stat-trend">Including AI Act GPAI</div>
-            </div>
-            <div class="stat-card pending">
-                <div class="stat-number" id="pendingRegulations">2</div>
-                <div class="stat-label">Imminent Application</div>
-                <div class="stat-trend">Data Act in 30 days</div>
-            </div>
-            <div class="stat-card critical">
-                <div class="stat-number" id="criticalDeadlines">5</div>
-                <div class="stat-label">Critical Actions</div>
-                <div class="stat-trend">Next 90 days</div>
-            </div>
-        </section>
-
-        <section class="controls">
-            <div class="control-group">
-                <label for="searchRegulations">
-                    <i class="fas fa-search"></i> Search Regulations
-                </label>
-                <input type="text" id="searchRegulations" class="control-input" placeholder="Search by name, EUR-Lex ID, or status...">
-            </div>
-            <div class="control-group">
-                <label for="filterStatus">
-                    <i class="fas fa-filter"></i> Filter by Status
-                </label>
-                <select id="filterStatus" class="control-input">
-                    <option value="">All Statuses</option>
-                    <option value="active">Active & Enforced</option>
-                    <option value="imminent">Imminent Application</option>
-                    <option value="pending">Phased Implementation</option>
-                    <option value="development">Under Development</option>
-                    <option value="proposed">Proposed</option>
-                </select>
-            </div>
-            <div class="control-group">
-                <label for="filterPriority">
-                    <i class="fas fa-exclamation-triangle"></i> Filter by Priority
-                </label>
-                <select id="filterPriority" class="control-input">
-                    <option value="">All Priorities</option>
-                    <option value="critical">Critical</option>
-                    <option value="high">High</option>
-                    <option value="medium">Medium</option>
-                    <option value="low">Low</option>
-                </select>
-            </div>
-            <div class="control-group">
-                <label>&nbsp;</label>
-                <div style="display: flex; gap: 12px;">
-                    <button class="btn btn-primary" onclick="exportData()">
-                        <i class="fas fa-download"></i> Export
-                    </button>
-                    <button class="btn btn-secondary" onclick="resetFilters()">
-                        <i class="fas fa-rotate-right"></i> Reset
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <section id="overview" class="content-section active">
-            <div class="regulation-table">
-                <div class="table-header">
-                    <i class="fas fa-chart-line"></i>
-                    Current Status Overview - Critical Tech Regulations for EU Practice
-                </div>
-                <div class="table-content">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th style="width: 20%;">Regulation</th>
-                                <th style="width: 10%;">Status</th>
-                                <th style="width: 8%;">Priority</th>
-                                <th style="width: 12%;">Next Deadline</th>
-                                <th style="width: 10%;">Client Impact</th>
-                                <th style="width: 20%;">German Implementation</th>
-                                <th style="width: 10%;">EUR-Lex</th>
-                                <th style="width: 10%;">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="overviewTableBody"></tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section id="regulations" class="content-section">
-            <div class="regulation-table">
-                <div class="table-header">
-                    <i class="fas fa-gavel"></i>
-                    Complete EU Technology Regulations Database
-                </div>
-                <div class="table-content">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th style="width: 18%;">Regulation</th>
-                                <th style="width: 8%;">Status</th>
-                                <th style="width: 8%;">Priority</th>
-                                <th style="width: 12%;">Key Dates</th>
-                                <th style="width: 25%;">Core Requirements</th>
-                                <th style="width: 15%;">Penalties</th>
-                                <th style="width: 14%;">Resources</th>
-                            </tr>
-                        </thead>
-                        <tbody id="regulationsTableBody"></tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section id="timeline" class="content-section">
-            <div class="timeline-container">
-                <div class="timeline-header">
-                    <h2><i class="fas fa-clock"></i> Implementation Timeline 2025-2027</h2>
-                    <p>Critical deadlines and compliance milestones for EU digital regulations</p>
-                </div>
-                <div class="timeline" id="timelineContent"></div>
-            </div>
-        </section>
-
-        <section id="implementation" class="content-section">
-            <div class="regulation-table">
-                <div class="table-header">
-                    <i class="fas fa-tasks"></i>
-                    Implementation & Compliance Guide
-                </div>
-                <div class="table-content">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th style="width: 18%;">Regulation</th>
-                                <th style="width: 25%;">Immediate Actions Required</th>
-                                <th style="width: 25%;">Medium-term Preparations</th>
-                                <th style="width: 15%;">Compliance Date</th>
-                                <th style="width: 17%;">Risk Level</th>
-                            </tr>
-                        </thead>
-                        <tbody id="implementationTableBody"></tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section id="german" class="content-section">
-            <div class="regulation-table">
-                <div class="table-header">
-                    <i class="fas fa-flag"></i>
-                    German Implementation Acts & National Authorities
-                </div>
-                <div class="table-content">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th style="width: 22%;">EU Regulation</th>
-                                <th style="width: 18%;">German Implementation</th>
-                                <th style="width: 15%;">Competent Authority</th>
-                                <th style="width: 12%;">Status</th>
-                                <th style="width: 33%;">Key Differences/Additions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="germanTableBody"></tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <div class="footer-header">
-                <i class="fas fa-info-circle"></i>
-                Data Sources & Attribution
-            </div>
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3><i class="fas fa-user"></i> Created by Patrick Munro</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.875rem; line-height: 1.5;">
-                        Created by <strong>Patrick Munro</strong>, enhanced and polished by Claude with constitutional precision.
-                    </p>
-                </div>
-
-                <div class="footer-section">
-                    <h3><i class="fas fa-shield-alt"></i> Official Sources</h3>
-                    <div class="footer-sources">
-                        <div class="source-category">
-                            <h4>🇪🇺 EU Level Authorities</h4>
-                            <div class="source-list">
-                                <a href="https://eur-lex.europa.eu/" target="_blank" rel="noopener noreferrer">EUR-Lex Official Journal</a> • 
-                                <a href="https://digital-strategy.ec.europa.eu/" target="_blank" rel="noopener noreferrer">European Commission Digital Strategy</a> • 
-                                <a href="https://www.esma.europa.eu/" target="_blank" rel="noopener noreferrer">European Supervisory Authorities (EBA, EIOPA, ESMA)</a> • 
-                                <a href="https://ai-office.ec.europa.eu/" target="_blank" rel="noopener noreferrer">European AI Office</a> • 
-                                <a href="https://www.europarl.europa.eu/" target="_blank" rel="noopener noreferrer">European Parliament & Council</a>
-                            </div>
-                        </div>
-                        <div class="source-category">
-                            <h4>🇩🇪 German Authorities</h4>
-                            <div class="source-list">
-                                <a href="https://www.bafin.de/" target="_blank" rel="noopener noreferrer">BaFin (Financial Supervision)</a> • 
-                                <a href="https://www.bsi.bund.de/" target="_blank" rel="noopener noreferrer">BSI (Cybersecurity)</a> • 
-                                <a href="https://www.bundesnetzagentur.de/" target="_blank" rel="noopener noreferrer">Bundesnetzagentur (Networks)</a> • 
-                                <a href="https://www.bmi.bund.de/" target="_blank" rel="noopener noreferrer">BMI (Interior)</a> • 
-                                <a href="https://www.bmj.de/" target="_blank" rel="noopener noreferrer">BMJ (Justice)</a> • 
-                                <a href="https://www.bfdi.bund.de/" target="_blank" rel="noopener noreferrer">State Data Protection Authorities</a>
-                            </div>
-                        </div>
-                        <div class="source-category">
-                            <h4>📊 Technical Standards</h4>
-                            <div class="source-list">
-                                <a href="https://www.eba.europa.eu/regulation-and-policy/regulatory-technical-standards" target="_blank" rel="noopener noreferrer">Regulatory Technical Standards (RTS)</a> • 
-                                <a href="https://www.eba.europa.eu/regulation-and-policy/implementing-technical-standards" target="_blank" rel="noopener noreferrer">Implementing Technical Standards (ITS)</a> • 
-                                <a href="https://www.cencenelec.eu/" target="_blank" rel="noopener noreferrer">European Standards Organizations</a> • 
-                                <a href="https://ec.europa.eu/info/law/regulation_en" target="_blank" rel="noopener noreferrer">Official Guidelines & FAQs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h3><i class="fas fa-balance-scale"></i> Legal Disclaimer</h3>
-                    <div class="disclaimer">
-                        <strong>Disclaimer:</strong> This tool is for educational purposes only and does not constitute legal advice. 
-                        For specific legal guidance, please contact <strong>Patrick Munro</strong> directly at 
-                        <a href="mailto:patrick.munro.ext@planit.legal" style="color: var(--primary-blue);">patrick.munro.ext@planit.legal</a> 
-                        or reach out to our team at Planit Legal: 
-                        <a href="mailto:mail@planit.legal" style="color: var(--primary-blue);">mail@planit.legal</a>
-                        <br><br>
-                        <strong>Data Accuracy:</strong> Information current as of <strong>August 13, 2025</strong> based on official EU and German regulatory sources. 
-                        All EUR-Lex citations, implementation dates, and compliance requirements are verified against primary sources.
-                        <strong>AI Act GPAI obligations are ACTIVE since August 2, 2025. Data Act applies September 12, 2025.</strong>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h3><i class="fas fa-clock"></i> Version & Updates</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.875rem;">
-                        <strong>EU Tech Regulations Tracker v4.2</strong> | Last Updated: <strong>August 13, 2025</strong> | 
-                        Next Scheduled Review: September 13, 2025 | 
-                        <strong><span id="footerTotalRegs">18</span> Regulations Tracked</strong>
-                        <br>
-                        Professional Edition for EU Tech Law Practice
-                    </p>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <div id="exportModal" class="modal" aria-hidden="true" role="dialog" aria-label="Export Regulations Data">
-        <div class="modal-content">
-            <span class="close" aria-label="Close">&times;</span>
-            <h3><i class="fas fa-download"></i> Export Regulations Data</h3>
-            <p style="margin: 16px 0;">Choose your export format for client reports and compliance documentation:</p>
-            <div style="margin: 24px 0; display: flex; gap: 12px; flex-direction: column;">
-                <button class="btn btn-primary" onclick="exportJSON()">
-                    <i class="fas fa-code"></i> JSON (Complete Database)
-                </button>
-                <button class="btn btn-primary" onclick="exportCSV()">
-                    <i class="fas fa-table"></i> CSV (Compliance Matrix)
-                </button>
-                <button class="btn btn-primary" onclick="exportSummary()">
-                    <i class="fas fa-file-lines"></i> Summary Report
-                </button>
+                <div class="logo">⚖️</div>
+                <h1>EU Regulatory Projects</h1>
+                <p>Professional compliance dashboard for EU technology regulations and German implementation by Planit Legal</p>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div id="notification" class="notification" role="status" aria-live="polite">
-        <i class="fas fa-check-circle" aria-hidden="true"></i> <span id="notificationText"></span>
-    </div>
+    <main class="container">
+        <!-- Critical Regulatory Alerts -->
+        <section class="alerts-section">
+            <h2 class="alerts-title">
+                🚨 Critical Regulatory Updates
+            </h2>
+            <div class="alert-grid">
+                <div class="alert-card alert-active">
+                    <strong>🚨 AI Act GPAI Obligations</strong><br>
+                    ACTIVE since August 2, 2025
+                </div>
+                <div class="alert-card alert-upcoming">
+                    <strong>⏰ Data Act Implementation</strong><br>
+                    Applies September 12, 2025 (30 days remaining)
+                </div>
+                <div class="alert-card alert-info">
+                    <strong>🛡️ DORA Implementation</strong><br>
+                    Active since January 17, 2025
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section class="tools-section">
+            <h2 class="section-title">Compliance Tools & Dashboards</h2>
+            <p class="section-subtitle">Choose the right tool for your compliance needs</p>
+            
+            <div class="tools-grid">
+                <!-- Comprehensive Tracker -->
+                <div class="tool-card">
+                    <span class="tool-icon">📊</span>
+                    <h3 class="tool-title">Comprehensive Regulations Tracker</h3>
+                    <p class="tool-subtitle">Full-featured compliance dashboard</p>
+                    <p class="tool-description">
+                        Complete overview of all 18+ EU technology regulations with advanced filtering, search capabilities, and detailed German implementation timelines.
+                    </p>
+                    <ul class="tool-features">
+                        <li>Interactive timeline and compliance matrix</li>
+                        <li>Advanced filtering and search capabilities</li>
+                        <li>Export functionality (JSON, CSV, TXT)</li>
+                        <li>German implementation details</li>
+                        <li>Real-time countdown for critical deadlines</li>
+                    </ul>
+                    <div class="tool-buttons">
+                        <a href="regulations-dashboard.html" class="btn btn-primary">
+                            Launch Dashboard →
+                        </a>
+                        <a href="https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/regulations-dashboard.html" class="btn btn-secondary" target="_blank">
+                            Live Demo
+                        </a>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--neutral-gray);">
+                        <strong>Best for:</strong> Legal professionals, compliance officers, detailed analysis
+                    </p>
+                </div>
+
+                <!-- Data Act Guide -->
+                <div class="tool-card">
+                    <span class="tool-icon">📋</span>
+                    <h3 class="tool-title">EU Data Act Compliance Guide</h3>
+                    <p class="tool-subtitle">Specialized compliance checker</p>
+                    <p class="tool-description">
+                        Comprehensive EU Data Act compliance guide with interactive compliance checker, detailed requirements, and legal guidance for the September 2025 implementation.
+                    </p>
+                    <ul class="tool-features">
+                        <li>Interactive compliance checker</li>
+                        <li>Detailed Data Act requirements</li>
+                        <li>Legal guidance and interpretations</li>
+                        <li>Implementation timeline</li>
+                        <li>Compliance assessment tools</li>
+                    </ul>
+                    <div class="tool-buttons">
+                        <a href="data-act-deal-card.html" class="btn btn-primary">
+                            Open Guide →
+                        </a>
+                        <a href="https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/data-act-deal-card.html" class="btn btn-secondary" target="_blank">
+                            Live Demo
+                        </a>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--neutral-gray);">
+                        <strong>Best for:</strong> Data Act specific compliance, implementation planning
+                    </p>
+                </div>
+
+                <!-- AI Act Timeline -->
+                <div class="tool-card">
+                    <span class="tool-icon">🤖</span>
+                    <h3 class="tool-title">AI Act Implementation Timeline</h3>
+                    <p class="tool-subtitle">Dedicated AI Act tracker</p>
+                    <p class="tool-description">
+                        Interactive timeline specifically focused on EU AI Act implementation phases, key deadlines, and compliance requirements for different AI system categories.
+                    </p>
+                    <ul class="tool-features">
+                        <li>Detailed implementation timeline</li>
+                        <li>AI system categorization guide</li>
+                        <li>Key deadlines and milestones</li>
+                        <li>GPAI obligations tracker</li>
+                        <li>Compliance requirements by category</li>
+                    </ul>
+                    <div class="tool-buttons">
+                        <a href="AI Act Timeline.html" class="btn btn-primary">
+                            View Timeline →
+                        </a>
+                        <a href="https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/AI%20Act%20Timeline.html" class="btn btn-secondary" target="_blank">
+                            Live Demo
+                        </a>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--neutral-gray);">
+                        <strong>Best for:</strong> AI companies, AI Act specific compliance
+                    </p>
+                </div>
+
+                <!-- Quick Reference -->
+                <div class="tool-card">
+                    <span class="tool-icon">⚡</span>
+                    <h3 class="tool-title">Quick Reference Guide</h3>
+                    <p class="tool-subtitle">Simplified overview</p>
+                    <p class="tool-description">
+                        Streamlined, mobile-optimized view of essential regulatory information with clean card-based layout for quick access to critical compliance details.
+                    </p>
+                    <ul class="tool-features">
+                        <li>Streamlined card-based layout</li>
+                        <li>Mobile-optimized design</li>
+                        <li>Quick access to critical information</li>
+                        <li>Essential compliance details</li>
+                        <li>Fast loading and responsive</li>
+                    </ul>
+                    <div class="tool-buttons">
+                        <a href="eu_regulations_tracker.html" class="btn btn-primary">
+                            Quick View →
+                        </a>
+                        <a href="https://patrick-munro-planitlegal.github.io/EU-Regulatory-Projects/eu_regulations_tracker.html" class="btn btn-secondary" target="_blank">
+                            Live Demo
+                        </a>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--neutral-gray);">
+                        <strong>Best for:</strong> Quick reference, mobile users, simplified overview
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>18+</h3>
+                    <p>Regulations Tracked</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4</h3>
+                    <p>Specialized Tools</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Mobile Responsive</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Always Updated</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Planit Legal</h3>
+                    <p>Professional legal technology solutions focused on EU regulatory compliance and implementation guidance.</p>
+                    <a href="mailto:mail@planit.legal">mail@planit.legal</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact & Support</h3>
+                    <p>For specific legal guidance and consultation:</p>
+                    <a href="mailto:patrick.munro.ext@planit.legal">Patrick Munro</a>
+                    <a href="https://github.com/Patrick-Munro-PlanitLegal/EU-Regulatory-Projects">GitHub Repository</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Key Upcoming Deadlines</h3>
+                    <p>Data Act: September 12, 2025</p>
+                    <p>Cyber Resilience Act: September 2026</p>
+                    <p>AI Act GPAI: Already Active</p>
+                    <p>DORA: Already Active</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Technical Features</h3>
+                    <p>✓ Offline Support</p>
+                    <p>✓ Mobile Responsive</p>
+                    <p>✓ Export Capabilities</p>
+                    <p>✓ Real-time Updates</p>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <p><strong>Disclaimer:</strong> This tool is for educational purposes only and does not constitute legal advice. For specific legal guidance, please contact Patrick Munro directly or reach out to our team at Planit Legal.</p>
+                <p style="margin-top: 1rem;">Created by Patrick Munro • Enhanced by Claude • © 2025 Planit Legal</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        const regulationsData = {
-            lastUpdated: "2025-08-13",
-            version: "4.2-current-august-2025",
-            regulations: [
-                {
-                    id: "ai-act",
-                    title: "🤖 EU AI Act",
-                    subtitle: "Artificial Intelligence Regulation",
-                    officialName: "Regulation (EU) 2024/1689",
-                    eurLexId: "32024R1689",
-                    status: "imminent",
-                    priority: "critical",
-                    implementationDate: "2024-08-01",
-                    nextDeadline: "2025-08-02",
-                    fullComplianceDate: "2026-08-02",
-                    clientImpact: "high",
-                    practiceAreas: ["AI & Algorithms", "Data Protection", "Product Liability"],
-                    germanImplementation: "AI-Gesetz (in development - BMI coordination)",
-                    germanAuthority: "BMI + sectoral authorities",
-                    description: "World's first comprehensive AI regulation with risk-based approach. GPAI model obligations ACTIVE since August 2, 2025.",
-                    coreRequirements: [
-                        "Risk classification of AI systems (Art. 6-8)",
-                        "Prohibited AI practices compliance (Art. 5) - ACTIVE",
-                        "High-risk system obligations (Art. 9-15)",
-                        "GPAI model requirements (Art. 51-55) - ACTIVE AS OF AUGUST 2, 2025",
-                        "Conformity assessment and CE marking (Art. 16-18)"
-                    ],
-                    immediateActions: [
-                        "GPAI model compliance verification (threshold >10^25 FLOPs)",
-                        "AI system inventory and risk classification updates",
-                        "Code of Practice adherence or alternative compliance demonstration"
-                    ],
-                    mediumTerm: [
-                        "Quality management system for high-risk AI (by Aug 2026)",
-                        "Technical documentation and testing procedures",
-                        "Human oversight mechanisms implementation"
-                    ],
-                    maxPenalty: "Up to €35M or 7% (prohibited practices); up to €15M or 3% (other obligations); up to €7.5M or 1% (incorrect info)",
-                    riskLevel: "Very High",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689",
-                        germanAuthority: "https://www.bmi.bund.de/",
-                        implementation: "https://artificialintelligenceact.eu"
-                    }
-                },
-                {
-                    id: "data-act",
-                    title: "📊 Data Act",
-                    subtitle: "Connected Product Data Sharing",
-                    officialName: "Regulation (EU) 2023/2854",
-                    eurLexId: "32023R2854",
-                    status: "pending",
-                    priority: "critical",
-                    implementationDate: "2024-01-11",
-                    nextDeadline: "2025-09-12",
-                    fullComplianceDate: "2025-09-12",
-                    clientImpact: "high",
-                    practiceAreas: ["Data Protection", "IoT", "Product Liability", "Contract Law"],
-                    germanImplementation: "Integration into BGB and product safety law",
-                    germanAuthority: "BMJ + sectoral authorities",
-                    description: "Comprehensive framework for data access and sharing from connected products and IoT devices. Applies September 12, 2025.",
-                    coreRequirements: [
-                        "User data access rights (Art. 4)",
-                        "Third-party data sharing obligations (Art. 5)",
-                        "Cloud switching provisions (Art. 23-30)",
-                        "Public authority data access (Art. 14-18)",
-                        "Trade secret protection (Art. 4(6-8))"
-                    ],
-                    immediateActions: [
-                        "Connected product data mapping",
-                        "User access mechanism design",
-                        "Trade secret identification and protection"
-                    ],
-                    mediumTerm: [
-                        "Third-party sharing infrastructure",
-                        "Cloud switching capabilities",
-                        "Contract term fairness review"
-                    ],
-                    maxPenalty: "Set by Member States; penalties must be effective, proportionate, dissuasive",
-                    riskLevel: "High",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2854",
-                        germanAuthority: "https://www.bmj.de/",
-                        implementation: "https://digital-strategy.ec.europa.eu/en/policies/data-act"
-                    }
-                },
-                {
-                    id: "dora",
-                    title: "🛡️ DORA",
-                    subtitle: "Digital Operational Resilience Act",
-                    officialName: "Regulation (EU) 2022/2554",
-                    eurLexId: "32022R2554",
-                    status: "active",
-                    priority: "critical",
-                    implementationDate: "2025-01-17",
-                    nextDeadline: "2025-11-30",
-                    fullComplianceDate: "2025-01-17",
-                    clientImpact: "high",
-                    practiceAreas: ["Fintech", "Cybersecurity", "Risk Management"],
-                    germanImplementation: "Integrated into BaFin supervision framework",
-                    germanAuthority: "BaFin",
-                    description: "Active since January 17, 2025. Harmonized cybersecurity framework for financial services. CTPP notifications sent July 2025, objection period active.",
-                    coreRequirements: [
-                        "ICT risk management framework (Art. 5-16) - ACTIVE",
-                        "Incident reporting (24h notification) (Art. 19) - ACTIVE",
-                        "Operational resilience testing (Art. 24-27) - ACTIVE",
-                        "Third-party ICT risk management (Art. 28-44) - ACTIVE",
-                        "Critical Third-Party Provider oversight - Notifications sent July 2025"
-                    ],
-                    immediateActions: [
-                        "ACTIVE: CTPP designation response (if notified in July 2025)",
-                        "ICT register submissions and compliance verification",
-                        "Incident response procedure optimization"
-                    ],
-                    mediumTerm: [
-                        "Advanced resilience testing programs",
-                        "Enhanced third-party monitoring",
-                        "Cross-sector threat intelligence sharing"
-                    ],
-                    maxPenalty: "Set by competent authorities; periodic penalty payments possible",
-                    riskLevel: "High",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554",
-                        germanAuthority: "https://www.bafin.de/",
-                        implementation: "https://www.esma.europa.eu/policy-rules/dora"
-                    }
-                },
-                {
-                    id: "nis2",
-                    title: "🔒 NIS2 Directive",
-                    subtitle: "Network and Information Security",
-                    officialName: "Directive (EU) 2022/2555",
-                    eurLexId: "32022L2555",
-                    status: "active",
-                    priority: "high",
-                    implementationDate: "2024-10-18",
-                    nextDeadline: "ongoing",
-                    fullComplianceDate: "2024-10-18",
-                    clientImpact: "medium",
-                    practiceAreas: ["Cybersecurity", "Critical Infrastructure", "Incident Response"],
-                    germanImplementation: "NIS2-Umsetzungsgesetz (active since October 2024)",
-                    germanAuthority: "BSI + sectoral authorities",
-                    description: "Active cybersecurity requirements for essential and important entities with comprehensive incident reporting.",
-                    coreRequirements: [
-                        "Technical cybersecurity measures (Art. 21)",
-                        "Incident reporting (24h/72h/1 month) (Art. 23)",
-                        "Risk management procedures",
-                        "Multi-factor authentication implementation",
-                        "Supply chain security measures"
-                    ],
-                    immediateActions: [
-                        "Ongoing compliance monitoring",
-                        "Cybersecurity measure effectiveness review",
-                        "Incident response capability testing"
-                    ],
-                    mediumTerm: [
-                        "Advanced threat detection systems",
-                        "Supply chain resilience enhancement",
-                        "Cross-sector information sharing"
-                    ],
-                    maxPenalty: "Up to €10M or 2% global turnover (essential entities)",
-                    riskLevel: "Medium-High",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2555",
-                        germanAuthority: "https://www.bsi.bund.de/",
-                        implementation: "https://www.nis-2-directive.com/"
-                    }
-                },
-                {
-                    id: "cra",
-                    title: "⚡ Cyber Resilience Act",
-                    subtitle: "Product Cybersecurity",
-                    officialName: "Regulation (EU) 2024/2847",
-                    eurLexId: "32024R2847",
-                    status: "active",
-                    priority: "medium",
-                    implementationDate: "2024-12-10",
-                    nextDeadline: "2026-09-11",
-                    fullComplianceDate: "2027-12-11",
-                    clientImpact: "medium",
-                    practiceAreas: ["Cybersecurity", "Product Safety", "IoT"],
-                    germanImplementation: "Integration into ProdSG (Product Safety Act)",
-                    germanAuthority: "BAuA + market surveillance authorities",
-                    description: "Active since December 10, 2024. Cybersecurity requirements for products with digital elements. Incident reporting from September 2026, full application December 2027.",
-                    coreRequirements: [
-                        "Cybersecurity by design (Art. 10)",
-                        "Vulnerability handling process (Art. 11)",
-                        "Security updates provision throughout lifecycle",
-                        "Conformity assessment and CE marking (Art. 24-25)",
-                        "Essential cybersecurity requirements compliance"
-                    ],
-                    immediateActions: [
-                        "Product digital element classification and mapping",
-                        "Cybersecurity risk assessment preparation",
-                        "Incident reporting procedure development (for 2026)"
-                    ],
-                    mediumTerm: [
-                        "Cybersecurity by design implementation",
-                        "Vulnerability handling process establishment",
-                        "CE marking and conformity assessment preparation"
-                    ],
-                    maxPenalty: "Up to €15M or 2.5% global turnover",
-                    riskLevel: "Medium",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847",
-                        germanAuthority: "https://www.baua.de/",
-                        implementation: "https://cyber-resilience-act.com/"
-                    }
-                },
-                {
-                    id: "dsa",
-                    title: "📱 Digital Services Act",
-                    subtitle: "Platform Content Regulation",
-                    officialName: "Regulation (EU) 2022/2065",
-                    eurLexId: "32022R2065",
-                    status: "active",
-                    priority: "medium",
-                    implementationDate: "2024-02-17",
-                    nextDeadline: "ongoing",
-                    fullComplianceDate: "2024-02-17",
-                    clientImpact: "medium",
-                    practiceAreas: ["Platform Regulation", "Content Moderation", "Consumer Protection"],
-                    germanImplementation: "Digitale-Dienste-Gesetz (DSG)",
-                    germanAuthority: "Bundesnetzagentur",
-                    description: "Active platform regulation with comprehensive content moderation and transparency requirements.",
-                    coreRequirements: [
-                        "Illegal content removal procedures (Art. 14-15)",
-                        "Notice and action mechanisms (Art. 16)",
-                        "Transparency reporting (Art. 15, 24)",
-                        "Risk assessment for VLOPs (Art. 34)",
-                        "External auditing requirements (Art. 37)"
-                    ],
-                    immediateActions: [
-                        "Content moderation procedures optimization",
-                        "Transparency reporting compliance",
-                        "User complaint systems enhancement"
-                    ],
-                    mediumTerm: [
-                        "AI-driven content moderation improvements",
-                        "Enhanced risk mitigation measures",
-                        "Cross-platform cooperation mechanisms"
-                    ],
-                    maxPenalty: "Up to 6% global turnover",
-                    riskLevel: "Medium",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2065",
-                        germanAuthority: "https://www.bundesnetzagentur.de/",
-                        implementation: "https://digital-strategy.ec.europa.eu/en/policies/digital-services-act-package"
-                    }
-                },
-                {
-                    id: "dma",
-                    title: "🏢 Digital Markets Act",
-                    subtitle: "Gatekeeper Platform Regulation",
-                    officialName: "Regulation (EU) 2022/1925",
-                    eurLexId: "32022R1925",
-                    status: "active",
-                    priority: "medium",
-                    implementationDate: "2024-03-06",
-                    nextDeadline: "ongoing",
-                    fullComplianceDate: "2024-03-06",
-                    clientImpact: "low",
-                    practiceAreas: ["Competition Law", "Platform Regulation"],
-                    germanImplementation: "Integrated into GWB (Competition Act)",
-                    germanAuthority: "Bundeskartellamt",
-                    description: "Active gatekeeper regulation targeting large digital platforms with specific obligations.",
-                    coreRequirements: [
-                        "Gatekeeper designation criteria compliance (Art. 3)",
-                        "Core platform service obligations (Art. 5-6)",
-                        "Interoperability requirements (Art. 7)",
-                        "Data portability provisions (Art. 6(1)(h))",
-                        "Self-preferencing restrictions"
-                    ],
-                    immediateActions: [
-                        "Ongoing gatekeeper compliance monitoring",
-                        "Market position assessment updates",
-                        "Competition compliance review"
-                    ],
-                    mediumTerm: [
-                        "Enhanced interoperability measures",
-                        "Data access standardization",
-                        "Market concentration monitoring"
-                    ],
-                    maxPenalty: "Up to 10% global turnover (up to 20% for repeat infringements)",
-                    riskLevel: "Low-Medium",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R1925",
-                        germanAuthority: "https://www.bundeskartellamt.de/",
-                        implementation: "https://competition-policy.ec.europa.eu/dma_en"
-                    }
-                },
-                {
-                    id: "gdpr",
-                    title: "🔐 GDPR",
-                    subtitle: "General Data Protection Regulation",
-                    officialName: "Regulation (EU) 2016/679",
-                    eurLexId: "32016R0679",
-                    status: "active",
-                    priority: "critical",
-                    implementationDate: "2018-05-25",
-                    nextDeadline: "ongoing",
-                    fullComplianceDate: "2018-05-25",
-                    clientImpact: "high",
-                    practiceAreas: ["Data Protection", "Privacy Law"],
-                    germanImplementation: "BDSG (Bundesdatenschutzgesetz)",
-                    germanAuthority: "BfDI + 16 State DPAs",
-                    description: "Foundational data protection framework with ongoing evolution and AI-related interpretations.",
-                    coreRequirements: [
-                        "Lawful basis for processing (Art. 6)",
-                        "Data subject rights implementation (Art. 12-23)",
-                        "Privacy by design and default (Art. 25)",
-                        "Data protection impact assessments (Art. 35)",
-                        "Breach notification (Art. 33-34)"
-                    ],
-                    immediateActions: [
-                        "Ongoing compliance monitoring",
-                        "AI-GDPR intersection assessment",
-                        "Data processing record updates"
-                    ],
-                    mediumTerm: [
-                        "AI Act-GDPR alignment implementation",
-                        "Enhanced automated decision-making controls",
-                        "Cross-border data transfer optimization"
-                    ],
-                    maxPenalty: "Up to €20M or 4% global turnover",
-                    riskLevel: "Very High",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679",
-                        germanAuthority: "https://www.bfdi.bund.de/",
-                        implementation: "https://gdpr.eu/"
-                    }
-                },
-                {
-                    id: "dga",
-                    title: "🔄 Data Governance Act",
-                    subtitle: "Data Intermediation and Altruism",
-                    officialName: "Regulation (EU) 2022/868",
-                    eurLexId: "32022R0868",
-                    status: "active",
-                    priority: "medium",
-                    implementationDate: "2022-09-24",
-                    nextDeadline: "ongoing",
-                    fullComplianceDate: "2022-09-24",
-                    clientImpact: "medium",
-                    practiceAreas: ["Data Governance", "Public Sector Data"],
-                    germanImplementation: "Datengovernance-Gesetz (DGG)",
-                    germanAuthority: "BMI + sectoral authorities",
-                    description: "Active framework for data intermediation services and data altruism facilitating data sharing.",
-                    coreRequirements: [
-                        "Data intermediation service registration (Art. 11)",
-                        "Public sector data reuse (Art. 3-8)",
-                        "Data altruism organization recognition (Art. 16-25)",
-                        "Notification requirements for data intermediaries",
-                        "Quality standards for data sharing"
-                    ],
-                    immediateActions: [
-                        "Data intermediation service assessment",
-                        "Public sector data availability review",
-                        "Data altruism opportunity evaluation"
-                    ],
-                    mediumTerm: [
-                        "Data intermediation service registration",
-                        "Data sharing infrastructure development",
-                        "Cross-border data sharing mechanisms"
-                    ],
-                    maxPenalty: "Set by Member States",
-                    riskLevel: "Low-Medium",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0868",
-                        germanAuthority: "https://www.bmi.bund.de/",
-                        implementation: "https://digital-strategy.ec.europa.eu/en/policies/data-governance-act"
-                    }
-                },
-                {
-                    id: "emfa",
-                    title: "📺 European Media Freedom Act",
-                    subtitle: "Media Pluralism and Independence",
-                    officialName: "Regulation (EU) 2024/1083",
-                    eurLexId: "32024R1083",
-                    status: "active",
-                    priority: "low",
-                    implementationDate: "2025-05-08",
-                    nextDeadline: "ongoing",
-                    fullComplianceDate: "2025-08-08",
-                    clientImpact: "low",
-                    practiceAreas: ["Media Law", "Platform Regulation"],
-                    germanImplementation: "Integration into media state treaties",
-                    germanAuthority: "State media authorities",
-                    description: "Protects media freedom and pluralism with transparency requirements.",
-                    coreRequirements: [
-                        "Media ownership transparency (Art. 6-8)",
-                        "Editorial independence safeguards (Art. 4-5)",
-                        "Platform content moderation transparency (Art. 17)",
-                        "Media market concentration monitoring",
-                        "Cross-border media service protection"
-                    ],
-                    immediateActions: [
-                        "Ongoing transparency reporting",
-                        "Editorial independence compliance",
-                        "Platform transparency obligations"
-                    ],
-                    mediumTerm: [
-                        "Enhanced media market monitoring",
-                        "Cross-border cooperation mechanisms",
-                        "Digital media service innovation"
-                    ],
-                    maxPenalty: "Set by Member States",
-                    riskLevel: "Low",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1083",
-                        germanAuthority: "https://www.die-medienanstalten.de/",
-                        implementation: "https://ec.europa.eu/commission/presscorner/detail/en/ip_24_2309"
-                    }
-                },
-                {
-                    id: "gpsr",
-                    title: "🛡️ General Product Safety Regulation",
-                    subtitle: "Consumer Product Safety",
-                    officialName: "Regulation (EU) 2023/988",
-                    eurLexId: "32023R0988",
-                    status: "active",
-                    priority: "medium",
-                    implementationDate: "2024-12-13",
-                    nextDeadline: "ongoing",
-                    fullComplianceDate: "2024-12-13",
-                    clientImpact: "medium",
-                    practiceAreas: ["Product Safety", "Consumer Protection", "E-commerce"],
-                    germanImplementation: "Integration into ProdSG",
-                    germanAuthority: "Market surveillance authorities",
-                    description: "Active since December 13, 2024. Enhanced product safety with digital aspects and marketplace obligations.",
-                    coreRequirements: [
-                        "Product safety assessment obligations (Art. 6-7)",
-                        "Online marketplace due diligence (Art. 21-22)",
-                        "Product recall procedures (Art. 12-13)",
-                        "Safety information provision (Art. 8)",
-                        "Market surveillance cooperation (Art. 25-31)"
-                    ],
-                    immediateActions: [
-                        "Product safety compliance verification",
-                        "Online marketplace obligation compliance",
-                        "Safety information system updates"
-                    ],
-                    mediumTerm: [
-                        "Enhanced digital product safety measures",
-                        "Automated recall systems",
-                        "Cross-border market surveillance cooperation"
-                    ],
-                    maxPenalty: "National penalties vary by Member State",
-                    riskLevel: "Medium",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0988",
-                        germanAuthority: "https://www.baua.de/",
-                        implementation: "https://ec.europa.eu/safety-gate-alerts/screen/home"
-                    }
-                },
-                {
-                    id: "pld",
-                    title: "⚖️ Product Liability Directive",
-                    subtitle: "AI and Digital Product Liability",
-                    officialName: "Directive (EU) 2024/2826",
-                    eurLexId: "32024L2826",
-                    status: "development",
-                    priority: "medium",
-                    implementationDate: "2026-12-09",
-                    nextDeadline: "2026-12-09",
-                    fullComplianceDate: "2026-12-09",
-                    clientImpact: "medium",
-                    practiceAreas: ["Product Liability", "AI & Algorithms", "Insurance"],
-                    germanImplementation: "Integration into ProdHaftG",
-                    germanAuthority: "Courts + insurance sector",
-                    description: "Updated product liability covering AI systems and digital products with enhanced liability rules.",
-                    coreRequirements: [
-                        "AI system liability framework (Art. 4-6)",
-                        "Digital product coverage expansion",
-                        "Burden of proof adaptations (Art. 8)",
-                        "Causation presumptions for AI",
-                        "Collective redress mechanisms"
-                    ],
-                    immediateActions: [
-                        "Product liability risk assessment",
-                        "Insurance coverage review and update",
-                        "AI documentation standards preparation"
-                    ],
-                    mediumTerm: [
-                        "Liability documentation systems",
-                        "Insurance policy updates",
-                        "Risk management integration"
-                    ],
-                    maxPenalty: "Civil liability (damages per national law)",
-                    riskLevel: "Medium-High",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L2826",
-                        germanAuthority: "https://www.bmj.de/",
-                        implementation: "https://ec.europa.eu/commission/presscorner/detail/en/ip_24_4761"
-                    }
-                },
-                {
-                    id: "ehds",
-                    title: "🏥 European Health Data Space",
-                    subtitle: "Health Data Regulation",
-                    officialName: "European Health Data Space Regulation",
-                    eurLexId: "TBD",
-                    status: "active",
-                    priority: "medium",
-                    implementationDate: "2025-03-26",
-                    nextDeadline: "2027-03-26",
-                    fullComplianceDate: "2029-03-26",
-                    clientImpact: "medium",
-                    practiceAreas: ["Health Tech", "Data Protection", "Digital Health"],
-                    germanImplementation: "Health data governance integration",
-                    germanAuthority: "BMG + data protection authorities",
-                    description: "Active since March 26, 2025. Framework for cross-border health data sharing and digital health services in the EU.",
-                    coreRequirements: [
-                        "Health data access rights",
-                        "Electronic health record interoperability",
-                        "Health data altruism framework",
-                        "Digital health services certification",
-                        "Cross-border data sharing mechanisms"
-                    ],
-                    immediateActions: [
-                        "Health data holder identification and registration",
-                        "Digital health authority designation compliance",
-                        "GDPR-EHDS intersection compliance review"
-                    ],
-                    mediumTerm: [
-                        "Health data sharing infrastructure development",
-                        "Electronic health record interoperability preparation",
-                        "Secondary use authorization procedures implementation"
-                    ],
-                    maxPenalty: "Set by Member States",
-                    riskLevel: "Medium",
-                    resources: {
-                        eurLex: "https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space_en",
-                        germanAuthority: "https://www.bundesgesundheitsministerium.de/",
-                        implementation: "https://health.ec.europa.eu/ehealth-digital-health-and-care_en"
-                    }
-                },
-                {
-                    id: "eprivacy",
-                    title: "🔒 ePrivacy Regulation",
-                    subtitle: "Electronic Communications Privacy",
-                    officialName: "Regulation (EU) — proposed",
-                    eurLexId: "Proposed",
-                    status: "development",
-                    priority: "high",
-                    implementationDate: "TBD",
-                    nextDeadline: "TBD",
-                    fullComplianceDate: "TBD",
-                    clientImpact: "high",
-                    practiceAreas: ["Privacy Law", "Electronic Communications", "Cookies"],
-                    germanImplementation: "Integration into TTDSG",
-                    germanAuthority: "BfDI + BNetzA",
-                    description: "Comprehensive privacy rules for electronic communications complementing GDPR.",
-                    coreRequirements: [
-                        "Electronic communications confidentiality",
-                        "Cookie and tracking consent requirements",
-                        "Terminal equipment access rules",
-                        "Direct marketing restrictions",
-                        "Metadata protection obligations"
-                    ],
-                    immediateActions: [
-                        "Current ePrivacy compliance review",
-                        "Cookie consent mechanism assessment",
-                        "Electronic communications audit"
-                    ],
-                    mediumTerm: [
-                        "Enhanced consent management systems",
-                        "Metadata protection implementation",
-                        "Direct marketing compliance update"
-                    ],
-                    maxPenalty: "Expected: set by Member States",
-                    riskLevel: "High",
-                    resources: {
-                        eurLex: "https://digital-strategy.ec.europa.eu/en/policies/eprivacy-regulation",
-                        germanAuthority: "https://www.bfdi.bund.de/",
-                        implementation: "https://edpb.europa.eu/"
-                    }
-                },
-                {
-                    id: "ffd-regulation",
-                    title: "📡 Free Flow of Data Regulation",
-                    subtitle: "Non-Personal Data Mobility",
-                    officialName: "Regulation (EU) 2018/1807",
-                    eurLexId: "32018R1807",
-                    status: "active",
-                    priority: "low",
-                    implementationDate: "2018-05-28",
-                    nextDeadline: "ongoing",
-                    fullComplianceDate: "2018-05-28",
-                    clientImpact: "low",
-                    practiceAreas: ["Cloud Services", "Data Governance"],
-                    germanImplementation: "Direct application",
-                    germanAuthority: "BMI + sectoral authorities",
-                    description: "Ensures free movement of non-personal data within EU and prevents data localization restrictions.",
-                    coreRequirements: [
-                        "Data localization restriction prohibition (Art. 4)",
-                        "Cloud service portability (Art. 6)",
-                        "Professional user information requirements",
-                        "Data availability for authorities (Art. 5)",
-                        "Self-regulatory codes promotion"
-                    ],
-                    immediateActions: [
-                        "Data localization restrictions audit",
-                        "Cloud portability assessment",
-                        "Authority access procedures verification"
-                    ],
-                    mediumTerm: [
-                        "Enhanced data portability mechanisms",
-                        "Cross-border data governance",
-                        "Vendor lock-in prevention measures"
-                    ],
-                    maxPenalty: "National penalties vary",
-                    riskLevel: "Low",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1807",
-                        germanAuthority: "https://www.bmi.bund.de/",
-                        implementation: "https://digital-strategy.ec.europa.eu/en/policies/free-flow-non-personal-data"
-                    }
-                },
-                {
-                    id: "batteries-regulation",
-                    title: "🔋 Batteries Regulation",
-                    subtitle: "Sustainable Battery Lifecycle",
-                    officialName: "Regulation (EU) 2023/1542",
-                    eurLexId: "32023R1542",
-                    status: "pending",
-                    priority: "low",
-                    implementationDate: "2023-08-17",
-                    nextDeadline: "2025-02-18",
-                    fullComplianceDate: "2031-12-31",
-                    clientImpact: "low",
-                    practiceAreas: ["Product Regulation", "Sustainability", "Supply Chain"],
-                    germanImplementation: "BattG2 (Battery Act 2)",
-                    germanAuthority: "UBA + market surveillance authorities",
-                    description: "Comprehensive battery lifecycle regulation with sustainability and digital requirements.",
-                    coreRequirements: [
-                        "Digital battery passport (Art. 61-65)",
-                        "Due diligence obligations (Art. 45-49)",
-                        "Sustainability reporting (Art. 7-10)",
-                        "Recycling and waste management (Art. 58-60)",
-                        "Supply chain transparency requirements"
-                    ],
-                    immediateActions: [
-                        "Battery product scope assessment",
-                        "Supply chain due diligence preparation",
-                        "Digital passport system planning"
-                    ],
-                    mediumTerm: [
-                        "Digital battery passport implementation",
-                        "Sustainability reporting systems",
-                        "Recycling compliance infrastructure"
-                    ],
-                    maxPenalty: "National penalties vary by Member State",
-                    riskLevel: "Low",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
-                        germanAuthority: "https://www.umweltbundesamt.de/",
-                        implementation: "https://ec.europa.eu/environment/topics/waste-and-recycling/batteries-and-accumulators"
-                    }
-                },
-                {
-                    id: "machinery-regulation",
-                    title: "⚙️ Machinery Regulation",
-                    subtitle: "AI-Enhanced Machinery Safety",
-                    officialName: "Regulation (EU) 2023/1230",
-                    eurLexId: "32023R1230",
-                    status: "pending",
-                    priority: "medium",
-                    implementationDate: "2027-01-20",
-                    nextDeadline: "2027-01-20",
-                    fullComplianceDate: "2027-01-20",
-                    clientImpact: "medium",
-                    practiceAreas: ["Product Safety", "AI & Algorithms", "Industrial IoT"],
-                    germanImplementation: "Integration into Maschinenverordnung",
-                    germanAuthority: "BAuA + market surveillance authorities",
-                    description: "Updated machinery safety regulation covering AI-driven machinery and partially completed machinery.",
-                    coreRequirements: [
-                        "AI safety integration requirements (Annex I)",
-                        "Essential health and safety requirements update",
-                        "Conformity assessment procedures (Art. 24-26)",
-                        "CE marking obligations",
-                        "Technical documentation for AI components"
-                    ],
-                    immediateActions: [
-                        "Machinery AI component assessment",
-                        "Safety requirement gap analysis",
-                        "Conformity assessment preparation"
-                    ],
-                    mediumTerm: [
-                        "AI safety integration implementation",
-                        "Enhanced technical documentation",
-                        "Market surveillance cooperation"
-                    ],
-                    maxPenalty: "National penalties vary by Member State",
-                    riskLevel: "Medium",
-                    resources: {
-                        eurLex: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1230",
-                        germanAuthority: "https://www.baua.de/",
-                        implementation: "https://ec.europa.eu/growth/sectors/mechanical-engineering_en"
-                    }
-                }
-            ],
-            timelineEvents: [
-                { date: "2025-08-02", title: "AI Act GPAI Obligations ACTIVE", description: "ACTIVE NOW: General-Purpose AI model requirements in force", regulation: "AI Act", type: "active" },
-                { date: "2025-09-12", title: "Data Act Application - 30 DAYS", description: "IMMINENT: Data Act core obligations become applicable", regulation: "Data Act", type: "deadline" },
-                { date: "2025-11-30", title: "DORA CTPP Final Designations", description: "Final CTPP designations and oversight commencement", regulation: "DORA", type: "deadline" },
-                { date: "2026-08-02", title: "AI Act High-Risk Systems", description: "Full compliance required for high-risk AI systems", regulation: "AI Act", type: "deadline" },
-                { date: "2026-09-11", title: "CRA Incident Reporting", description: "Vulnerability and incident reporting obligations begin", regulation: "CRA", type: "deadline" },
-                { date: "2026-09-12", title: "Data Act Design Requirements", description: "Connected products must be designed for data access", regulation: "Data Act", type: "deadline" },
-                { date: "2026-12-09", title: "Product Liability Directive", description: "Member States transpose updated liability rules", regulation: "PLD", type: "deadline" },
-                { date: "2027-01-20", title: "Machinery Regulation", description: "AI-enhanced machinery safety requirements become applicable", regulation: "Machinery", type: "deadline" },
-                { date: "2027-03-26", title: "EHDS Implementation", description: "Key EHDS implementing acts deadline", regulation: "EHDS", type: "deadline" },
-                { date: "2027-08-02", title: "AI Act Product Integration", description: "Extended compliance for AI in regulated products", regulation: "AI Act", type: "milestone" },
-                { date: "2027-12-11", title: "CRA Full Application", description: "Complete Cyber Resilience Act enforcement", regulation: "CRA", type: "deadline" },
-                { date: "2029-03-26", title: "EHDS Full Implementation", description: "Primary and secondary use of health data operational", regulation: "EHDS", type: "deadline" }
-            ]
-        };
-
-        let currentSection = 'overview';
-        let currentFilters = { search: '', status: '', priority: '' };
-
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeApp();
-            bindEventListeners();
-        });
-
-        function initializeApp() {
-            updateDashboardStats();
-            renderAllSections();
-            updateLastUpdated();
-            updateDataActCountdown();
-        }
-
-        function bindEventListeners() {
-            const debouncedSearch = debounce(handleSearch, 300);
-            document.getElementById('searchRegulations').addEventListener('input', debouncedSearch);
-            document.getElementById('filterStatus').addEventListener('change', handleStatusFilter);
-            document.getElementById('filterPriority').addEventListener('change', handlePriorityFilter);
-
-            const modal = document.getElementById('exportModal');
-            const closeBtn = modal.querySelector('.close');
-            closeBtn.addEventListener('click', () => modal.style.display = 'none');
-            window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
-        }
-
-        function showSection(sectionId) {
-            document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
-            const activeTab = document.querySelector(`.nav-tab[data-section="${sectionId}"]`);
-            if (activeTab) activeTab.classList.add('active');
-
-            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-            const sectionEl = document.getElementById(sectionId);
-            if (sectionEl) sectionEl.classList.add('active');
-
-            currentSection = sectionId;
-        }
-
-        function updateDashboardStats() {
-            const stats = calculateStats();
-            document.getElementById('totalRegulations').textContent = stats.total;
-            document.getElementById('activeRegulations').textContent = stats.active;
-            document.getElementById('pendingRegulations').textContent = stats.pending;
-            document.getElementById('criticalDeadlines').textContent = stats.criticalDeadlines;
-            const totalRegsMeta = document.getElementById('totalRegs');
-            if (totalRegsMeta) totalRegsMeta.textContent = stats.total;
-            const footerTotal = document.getElementById('footerTotalRegs');
-            if (footerTotal) footerTotal.textContent = stats.total;
-        }
-
-        function calculateStats() {
-            const regulations = regulationsData.regulations;
-            const now = new Date();
-            const ninetyDaysFromNow = new Date(now.getTime() + 90 * 24 * 60 * 60 * 1000);
-
-            return {
-                total: regulations.length,
-                active: regulations.filter(r => r.status === 'active').length,
-                pending: regulations.filter(r => r.status === 'pending' || r.status === 'imminent').length,
-                criticalDeadlines: regulations.filter(r => {
-                    if (r.nextDeadline === 'ongoing' || r.nextDeadline === 'TBD') return false;
-                    const deadline = new Date(r.nextDeadline);
-                    return deadline <= ninetyDaysFromNow && deadline >= now;
-                }).length
-            };
-        }
-
-        function renderAllSections() {
-            renderOverview();
-            renderRegulations();
-            renderTimeline();
-            renderImplementation();
-            renderGerman();
-        }
-
-        function renderOverview() {
-            const tbody = document.getElementById('overviewTableBody');
-            const filteredRegs = filterRegulations().slice(0, 12);
-
-            tbody.innerHTML = filteredRegs.map(reg => `
-                <tr>
-                    <td>
-                        <div class="reg-title">${reg.title}</div>
-                        <div class="reg-description">${reg.subtitle}</div>
-                    </td>
-                    <td>
-                        <span class="status-badge status-${reg.status}">
-                            ${getStatusIcon(reg.status)} ${formatStatus(reg.status)}
-                        </span>
-                    </td>
-                    <td>
-                        <span class="status-badge priority-${reg.priority}">${reg.priority.charAt(0).toUpperCase()}</span>
-                    </td>
-                    <td>
-                        <strong>${formatDate(reg.nextDeadline)}</strong>
-                        ${reg.nextDeadline !== 'ongoing' && reg.nextDeadline !== 'TBD' ? 
-                            `<div style="font-size: 0.75rem; color: var(--text-muted);">${getDaysUntil(reg.nextDeadline)}</div>` : ''}
-                    </td>
-                    <td>
-                        <span class="status-badge priority-${reg.clientImpact}">
-                            ${reg.clientImpact.toUpperCase()}
-                        </span>
-                    </td>
-                    <td>
-                        <div style="font-size: 0.8rem; font-weight: 500;">${reg.germanImplementation || 'Direct application'}</div>
-                        <div style="font-size: 0.75rem; color: var(--text-muted);">${reg.germanAuthority}</div>
-                    </td>
-                    <td>
-                        <a href="${reg.resources.eurLex}" target="_blank" rel="noopener noreferrer" class="reg-link">${reg.eurLexId}</a>
-                    </td>
-                    <td>
-                        <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.75rem;" onclick="showRegulationDetails('${reg.id}')">
-                            <i class="fas fa-info-circle"></i> Details
-                        </button>
-                    </td>
-                </tr>
-            `).join('');
-        }
-
-        function renderRegulations() {
-            const tbody = document.getElementById('regulationsTableBody');
-            const filteredRegs = filterRegulations();
-
-            tbody.innerHTML = filteredRegs.map(reg => `
-                <tr>
-                    <td>
-                        <div class="reg-title">${reg.title}</div>
-                        <div class="reg-description">${reg.description}</div>
-                    </td>
-                    <td>
-                        <span class="status-badge status-${reg.status}">${formatStatus(reg.status)}</span>
-                    </td>
-                    <td>
-                        <span class="status-badge priority-${reg.priority}">${reg.priority.charAt(0).toUpperCase()}</span>
-                    </td>
-                    <td>
-                        <div><strong>Next:</strong> ${formatDate(reg.nextDeadline)}</div>
-                        <div><strong>Full:</strong> ${formatDate(reg.fullComplianceDate)}</div>
-                    </td>
-                    <td>
-                        <div class="compliance-items">
-                            ${reg.coreRequirements.slice(0, 3).map(req => `<div class="compliance-item">${req}</div>`).join('')}
-                        </div>
-                    </td>
-                    <td>
-                        <div style="font-weight: 600; color: var(--danger-red); font-size: 0.8rem;">${reg.maxPenalty}</div>
-                        <div style="font-size: 0.75rem; margin-top: 4px;">Risk: ${reg.riskLevel}</div>
-                    </td>
-                    <td>
-                        <div style="display: flex; flex-direction: column; gap: 4px;">
-                            <a href="${reg.resources.eurLex}" target="_blank" rel="noopener noreferrer" class="reg-link" style="font-size: 0.75rem;">EUR-Lex</a>
-                            <a href="${reg.resources.germanAuthority}" target="_blank" rel="noopener noreferrer" class="reg-link" style="font-size: 0.75rem;">Authority</a>
-                        </div>
-                    </td>
-                </tr>
-            `).join('');
-        }
-
-        function renderImplementation() {
-            const tbody = document.getElementById('implementationTableBody');
-            const filteredRegs = filterRegulations();
-
-            tbody.innerHTML = filteredRegs.map(reg => `
-                <tr>
-                    <td>
-                        <div class="reg-title">${reg.title}</div>
-                        <div style="font-size: 0.75rem; color: var(--text-muted);">${reg.eurLexId}</div>
-                    </td>
-                    <td>
-                        <div class="compliance-items">
-                            ${reg.immediateActions?.map(action => `<div class="compliance-item">${action}</div>`).join('') || '<em>No immediate actions required</em>'}
-                        </div>
-                    </td>
-                    <td>
-                        <div class="compliance-items">
-                            ${reg.mediumTerm?.map(action => `<div class="compliance-item">${action}</div>`).join('') || '<em>No medium-term actions required</em>'}
-                        </div>
-                    </td>
-                    <td><strong>${formatDate(reg.fullComplianceDate)}</strong></td>
-                    <td>
-                        <span class="status-badge priority-${reg.riskLevel.toLowerCase().replace(/[^a-z]+/g, '-').replace(/(^-|-$)/g, '')}">${reg.riskLevel}</span>
-                    </td>
-                </tr>
-            `).join('');
-        }
-
-        function renderGerman() {
-            const tbody = document.getElementById('germanTableBody');
-            const filteredRegs = filterRegulations();
-
-            tbody.innerHTML = filteredRegs.map(reg => `
-                <tr>
-                    <td>
-                        <div class="reg-title">${reg.title}</div>
-                        <div style="font-size: 0.75rem; color: var(--text-muted);">${reg.eurLexId}</div>
-                    </td>
-                    <td>
-                        <div style="font-weight: 600; font-size: 0.85rem;">${reg.germanImplementation || 'Direct application'}</div>
-                    </td>
-                    <td>
-                        <div style="font-weight: 600; font-size: 0.85rem;">${reg.germanAuthority}</div>
-                    </td>
-                    <td>
-                        <span class="status-badge status-${reg.status}">${formatStatus(reg.status)}</span>
-                    </td>
-                    <td>
-                        <div style="font-size: 0.8rem; line-height: 1.4;">${getGermanSpecifics(reg.id)}</div>
-                    </td>
-                </tr>
-            `).join('');
-        }
-
-        function renderTimeline() {
-            const container = document.getElementById('timelineContent');
-            const timelineEvents = regulationsData.timelineEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
-
-            container.innerHTML = timelineEvents.map(event => `
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">${formatDate(event.date)}</div>
-                        <div class="timeline-title">${event.title}</div>
-                        <div class="timeline-description">${event.description}</div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function filterRegulations() {
-            return regulationsData.regulations.filter(regulation => {
-                const search = currentFilters.search.toLowerCase();
-                const matchesSearch = search === '' || 
-                    regulation.title.toLowerCase().includes(search) ||
-                    regulation.subtitle.toLowerCase().includes(search) ||
-                    regulation.eurLexId.toLowerCase().includes(search) ||
-                    regulation.status.toLowerCase().includes(search) ||
-                    regulation.description.toLowerCase().includes(search);
-
-                const matchesStatus = currentFilters.status === '' || regulation.status === currentFilters.status;
-                const matchesPriority = currentFilters.priority === '' || regulation.priority === currentFilters.priority;
-
-                return matchesSearch && matchesStatus && matchesPriority;
-            });
-        }
-
-        function handleSearch(event) {
-            currentFilters.search = event.target.value;
-            renderAllSections();
-            updateDashboardStats();
-        }
-
-        function handleStatusFilter(event) {
-            currentFilters.status = event.target.value;
-            renderAllSections();
-            updateDashboardStats();
-        }
-
-        function handlePriorityFilter(event) {
-            currentFilters.priority = event.target.value;
-            renderAllSections();
-            updateDashboardStats();
-        }
-
-        function resetFilters() {
-            currentFilters = { search: '', status: '', priority: '' };
-            document.getElementById('searchRegulations').value = '';
-            document.getElementById('filterStatus').value = '';
-            document.getElementById('filterPriority').value = '';
-            renderAllSections();
-            updateDashboardStats();
-            showNotification('Filters reset successfully');
-        }
-
-        function updateLastUpdated() {
-            document.getElementById('lastUpdated').textContent = new Date(regulationsData.lastUpdated).toLocaleDateString('en-GB', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-        }
-
-        function updateDataActCountdown() {
-            const dataActDate = new Date('2025-09-12');
-            const now = new Date();
-            const diffTime = dataActDate - now;
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            
-            const countdownElement = document.getElementById('dataActCountdown');
-            if (countdownElement) {
-                if (diffDays > 0) {
-                    countdownElement.textContent = `${diffDays} days`;
-                    countdownElement.style.color = '#dd6b20';
-                } else if (diffDays === 0) {
-                    countdownElement.textContent = 'TODAY';
-                    countdownElement.style.color = '#e53e3e';
-                    countdownElement.style.fontWeight = 'bold';
-                } else {
-                    countdownElement.textContent = `${Math.abs(diffDays)} days overdue`;
-                    countdownElement.style.color = '#e53e3e';
-                    countdownElement.style.fontWeight = 'bold';
-                }
-            }
-        }
-
-        function formatDate(dateString) {
-            if (dateString === 'ongoing') return 'Ongoing';
-            if (dateString === 'TBD') return 'TBD';
-            const date = new Date(dateString);
-            if (isNaN(date.getTime())) return 'TBD';
-            return date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
-        }
-
-        function formatStatus(status) {
-            const statusMap = { active: 'Active', pending: 'Pending', imminent: 'Imminent', development: 'Development', proposed: 'Proposed' };
-            return statusMap[status] || status;
-        }
-
-        function getStatusIcon(status) {
-            const iconMap = { active: '✓', pending: '⟳', imminent: '🚨', development: '⚡', proposed: '📋' };
-            return iconMap[status] || '?';
-        }
-
-        function getDaysUntil(dateString) {
-            if (dateString === 'ongoing' || dateString === 'TBD') return '';
-            const now = new Date();
-            const target = new Date(dateString);
-            const diffTime = target - now;
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            if (diffDays > 0) return `${diffDays} days`;
-            if (diffDays === 0) return 'Today';
-            return `${Math.abs(diffDays)} days overdue`;
-        }
-
-        function getGermanSpecifics(regId) {
-            const specifics = {
-                'ai-act': 'National AI authority designation pending; coordination via BMI with sectoral implementation approach across Länder',
-                'data-act': 'Integration into BGB contract law provisions and product safety framework; national enforcement via sectoral authorities',
-                'dora': 'BaFin as lead financial authority; integration with MaRisk and BAIT frameworks',
-                'nis2': 'BSI as central cybersecurity authority; comprehensive coverage across sectors',
-                'dsa': 'Bundesnetzagentur as Digital Services Coordinator; integration with media regulation framework',
-                'dma': 'Bundeskartellamt as competent authority; coordination with European Commission for gatekeeper designations',
-                'gdpr': 'BfDI as federal authority plus 16 state DPAs; established enforcement framework',
-                'dga': 'BMI coordination with sectoral implementation; focus on public sector data reuse and intermediation services',
-                'cra': 'BAuA integration into product safety framework; coordination with CE marking and market surveillance',
-                'emfa': 'State media authorities implementation via media state treaties; platform transparency obligations',
-                'gpsr': 'Integration into existing product safety framework; enhanced market surveillance cooperation',
-                'pld': 'Integration into ProdHaftG with provisions for AI and digital products; insurance sector adaptation',
-                'ehds': 'BMG coordination with federal and state health authorities; integration with health data frameworks',
-                'eprivacy': 'BfDI and BNetzA joint implementation; integration with TTDSG and telecom regulation',
-                'ffd-regulation': 'Direct application with BMI oversight; prevention of data localization restrictions',
-                'batteries-regulation': 'UBA implementation via BattG2; coordination with circular economy frameworks',
-                'machinery-regulation': 'BAuA integration into machinery safety framework; focus on AI-enhanced machinery'
-            };
-            return specifics[regId] || 'Standard EU regulation implementation without specific German adaptations';
-        }
-
-        function showRegulationDetails(regId) {
-            const regulation = regulationsData.regulations.find(r => r.id === regId);
-            if (!regulation) return;
-
-            const detailsHtml = `
-                <div style="max-height: 400px; overflow-y: auto;">
-                    <h3>${regulation.title}</h3>
-                    <p><strong>Official Name:</strong> ${regulation.officialName}</p>
-                    <p><strong>EUR-Lex ID:</strong> ${regulation.eurLexId}</p>
-                    <p><strong>Description:</strong> ${regulation.description}</p>
-                    <h4>Core Requirements:</h4>
-                    <ul>${regulation.coreRequirements.map(req => `<li>${req}</li>`).join('')}</ul>
-                    <h4>Implementation Timeline:</h4>
-                    <p><strong>Implementation Date:</strong> ${formatDate(regulation.implementationDate)}</p>
-                    <p><strong>Next Deadline:</strong> ${formatDate(regulation.nextDeadline)}</p>
-                    <p><strong>Full Compliance:</strong> ${formatDate(regulation.fullComplianceDate)}</p>
-                    <h4>German Implementation:</h4>
-                    <p><strong>Implementation:</strong> ${regulation.germanImplementation}</p>
-                    <p><strong>Authority:</strong> ${regulation.germanAuthority}</p>
-                    <h4>Resources:</h4>
-                    <p><a href="${regulation.resources.eurLex}" target="_blank" rel="noopener noreferrer">EUR-Lex Document</a></p>
-                    <p><a href="${regulation.resources.germanAuthority}" target="_blank" rel="noopener noreferrer">German Authority</a></p>
-                </div>
-            `;
-
-            const modal = document.createElement('div');
-            modal.className = 'modal';
-            modal.style.display = 'block';
-            modal.innerHTML = `
-                <div class="modal-content">
-                    <span class="close" onclick="this.closest('.modal').remove()" aria-label="Close">&times;</span>
-                    ${detailsHtml}
-                </div>
-            `;
-            document.body.appendChild(modal);
-            modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
-        }
-
-        function exportData() {
-            document.getElementById('exportModal').style.display = 'block';
-        }
-
-        function exportJSON() {
-            const dataStr = JSON.stringify(regulationsData, null, 2);
-            const dataBlob = new Blob([dataStr], {type: 'application/json'});
-            const url = URL.createObjectURL(dataBlob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = `eu-tech-regulations-${new Date().toISOString().split('T')[0]}.json`;
-            document.body.appendChild(link);
-            link.click();
-            link.remove();
-            URL.revokeObjectURL(url);
-            document.getElementById('exportModal').style.display = 'none';
-            showNotification('JSON export completed successfully');
-        }
-
-        function exportCSV() {
-            const headers = [
-                'Title', 'Official Name', 'EUR-Lex ID', 'Status', 'Priority', 
-                'Implementation Date', 'Next Deadline', 'Full Compliance Date',
-                'Client Impact', 'German Implementation', 'German Authority',
-                'Max Penalty', 'Risk Level'
-            ];
-
-            const csvData = regulationsData.regulations.map(reg => [
-                reg.title,
-                reg.officialName,
-                reg.eurLexId,
-                reg.status,
-                reg.priority,
-                reg.implementationDate,
-                reg.nextDeadline,
-                reg.fullComplianceDate,
-                reg.clientImpact,
-                reg.germanImplementation || 'Direct application',
-                reg.germanAuthority,
-                reg.maxPenalty,
-                reg.riskLevel
-            ]);
-
-            const csvContent = [
-                headers.join(','),
-                ...csvData.map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(','))
-            ].join('\n');
-
-            const dataBlob = new Blob([csvContent], {type: 'text/csv'});
-            const url = URL.createObjectURL(dataBlob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = `eu-tech-regulations-compliance-matrix-${new Date().toISOString().split('T')[0]}.csv`;
-            document.body.appendChild(link);
-            link.click();
-            link.remove();
-            URL.revokeObjectURL(url);
-            document.getElementById('exportModal').style.display = 'none';
-            showNotification('CSV export completed successfully');
-        }
-
-        function exportSummary() {
-            const stats = calculateStats();
-            const upcomingDeadlines = regulationsData.regulations
-                .filter(r => r.nextDeadline !== 'ongoing' && r.nextDeadline !== 'TBD')
-                .sort((a, b) => new Date(a.nextDeadline) - new Date(b.nextDeadline))
-                .slice(0, 10);
-
-            const summaryContent = `EU TECH REGULATIONS COMPLIANCE SUMMARY\n\nGenerated: ${new Date().toLocaleDateString('en-GB')}\nData Version: ${regulationsData.version}\n\n# OVERVIEW STATISTICS\n\nTotal Regulations Tracked: ${stats.total}\nActive & Enforced: ${stats.active}\nPhased Implementation: ${stats.pending}\nCritical Deadlines (Next 12 Months): ${stats.criticalDeadlines}\n\n# UPCOMING CRITICAL DEADLINES\n\n${upcomingDeadlines.map(reg => `${formatDate(reg.nextDeadline)} - ${reg.title} (${reg.subtitle})`).join('\n')}\n\n# HIGH-PRIORITY REGULATIONS REQUIRING IMMEDIATE ATTENTION\n\n${regulationsData.regulations
-                .filter(r => r.priority === 'critical' && (r.status === 'pending' || r.status === 'active' || r.status === 'imminent'))
-                .map(reg => `${reg.title} (${reg.eurLexId})\nStatus: ${formatStatus(reg.status)}\nNext Deadline: ${formatDate(reg.nextDeadline)}\nRisk Level: ${reg.riskLevel}\nGerman Implementation: ${reg.germanImplementation}\nAuthority: ${reg.germanAuthority}\nMax Penalty: ${reg.maxPenalty}\n\nImmediate Actions Required:\n${(reg.immediateActions?.map(action => `• ${action}`).join('\n') || 'No immediate actions specified')}`).join('\n\n')}\n\n# DATA SOURCES\n\n• EUR-Lex Official Journal\n• European Commission Digital Strategy\n• German Federal Ministries (BMI, BMJ, etc.)\n• BaFin, BSI, Bundesnetzagentur\n• State Data Protection Authorities\n• European Supervisory Authorities\n\n# DISCLAIMER\n\nThis summary is based on official EU and German regulatory sources.\nFor legal advice, consult qualified practitioners.\nLast updated: ${new Date(regulationsData.lastUpdated).toLocaleDateString('en-GB')}`.trim();
-
-            const dataBlob = new Blob([summaryContent], {type: 'text/plain'});
-            const url = URL.createObjectURL(dataBlob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = `eu-tech-regulations-summary-${new Date().toISOString().split('T')[0]}.txt`;
-            document.body.appendChild(link);
-            link.click();
-            link.remove();
-            URL.revokeObjectURL(url);
-            document.getElementById('exportModal').style.display = 'none';
-            showNotification('Summary report exported successfully');
-        }
-
-        function showNotification(message) {
-            const notification = document.getElementById('notification');
-            const notificationText = document.getElementById('notificationText');
-            notificationText.textContent = message;
-            notification.classList.add('show');
-            setTimeout(() => { notification.classList.remove('show'); }, 3000);
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
-                e.preventDefault();
-                const input = document.getElementById('searchRegulations');
-                if (input) input.focus();
-            }
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal').forEach(modal => { if (modal.style.display === 'block') modal.style.display = 'none'; });
-            }
-        });
-
-        setInterval(() => {
-            console.log('Auto-refresh triggered - checking for regulation updates');
-        }, 30 * 60 * 1000);
-
-        function debounce(func, wait) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => { clearTimeout(timeout); func(...args); };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
-        }
-
+        // Service Worker Registration for Offline Support
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                    .then(registration => { console.log('SW registered: ', registration); })
-                    .catch(registrationError => { console.log('SW registration failed: ', registrationError); });
+            navigator.serviceWorker.register('./sw.js')
+                .then(registration => console.log('SW registered'))
+                .catch(error => console.log('SW registration failed'));
+        }
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
-        }
+        });
 
-        function printReport() {
-            const printWindow = window.open('', '_blank');
-            const printContent = `
-                <!DOCTYPE html>
-                <html>
-                <head>
-                    <title>EU Tech Regulations Report</title>
-                    <style>
-                        body { font-family: Arial, sans-serif; margin: 20px; }
-                        h1 { color: #1a365d; border-bottom: 2px solid #1a365d; padding-bottom: 10px; }
-                        h2 { color: #2c5282; margin-top: 25px; }
-                        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
-                        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-                        th { background-color: #f5f5f5; font-weight: bold; }
-                        .status-badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
-                        .status-active { background: #e6fffa; color: #38a169; }
-                        .status-pending { background: #fef5e7; color: #dd6b20; }
-                        .priority-critical { background: #fed7d7; color: #e53e3e; }
-                        @media print { body { margin: 0; } }
-                    </style>
-                </head>
-                <body>
-                    <h1>🇪🇺 EU Tech Regulations Compliance Report</h1>
-                    <p>Generated: ${new Date().toLocaleDateString('en-GB')}</p>
-                    <p>Data Version: ${regulationsData.version}</p>
-                    <h2>Summary Statistics</h2>
-                    <ul>
-                        <li>Total Regulations: ${calculateStats().total}</li>
-                        <li>Active & Enforced: ${calculateStats().active}</li>
-                        <li>Pending Implementation: ${calculateStats().pending}</li>
-                        <li>Critical Deadlines: ${calculateStats().criticalDeadlines}</li>
-                    </ul>
-                    <h2>All Regulations</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Regulation</th>
-                                <th>Status</th>
-                                <th>Priority</th>
-                                <th>Next Deadline</th>
-                                <th>Max Penalty</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${regulationsData.regulations.map(reg => `
-                                <tr>
-                                    <td><strong>${reg.title}</strong><br><small>${reg.subtitle}</small></td>
-                                    <td><span class="status-badge status-${reg.status}">${formatStatus(reg.status)}</span></td>
-                                    <td><span class="status-badge priority-${reg.priority}">${reg.priority.toUpperCase()}</span></td>
-                                    <td>${formatDate(reg.nextDeadline)}</td>
-                                    <td>${reg.maxPenalty}</td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
-                    <footer style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 12px; color: #666;">
-                        <p>This report contains information from official EU and German regulatory sources.</p>
-                        <p>For professional legal advice, consult qualified practitioners.</p>
-                    </footer>
-                </body>
-                </html>
-            `;
-            printWindow.document.write(printContent);
-            printWindow.document.close();
-            printWindow.focus();
-            setTimeout(() => { printWindow.print(); printWindow.close(); }, 250);
-        }
-
-        const printBtn = document.getElementById('printReport');
-        if (printBtn) { printBtn.addEventListener('click', printReport); }
-
-        console.log('🇪🇺 EU Tech Regulations Tracker v4.2 - August 2025 Current Status');
-        console.log(`📊 Tracking ${regulationsData.regulations.length} regulations as of ${regulationsData.lastUpdated}`);
-        console.log('🚨 CRITICAL: AI Act GPAI obligations ACTIVE since Aug 2, 2025');
-        console.log('⏰ URGENT: Data Act applies September 12, 2025 (30 days)');
+        // Add loading states to external links
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.addEventListener('click', function() {
+                this.style.opacity = '0.7';
+                this.innerHTML = this.innerHTML.replace('Live Demo', 'Loading...');
+                setTimeout(() => {
+                    this.style.opacity = '1';
+                    this.innerHTML = this.innerHTML.replace('Loading...', 'Live Demo');
+                }, 2000);
+            });
+        });
     </script>
 </body>
 </html>

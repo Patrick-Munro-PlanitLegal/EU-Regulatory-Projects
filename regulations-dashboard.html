@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EU Regulations Comprehensive Dashboard - Planit Legal</title>
+    <meta name="description" content="Complete overview of all EU technology regulations with advanced filtering, search capabilities, and detailed German implementation timelines">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+    
+    <style>
+        :root {
+            --primary-blue: #1e40af;
+            --secondary-blue: #3b82f6;
+            --accent-gold: #f59e0b;
+            --success-green: #10b981;
+            --warning-amber: #f59e0b;
+            --danger-red: #ef4444;
+            --neutral-gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --dark-gray: #1f2937;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Controls Section */
+        .controls-section {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            align-items: end;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .control-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+
+        .control-group select,
+        .control-group input {
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .search-box {
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            font-size: 0.9rem;
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn:hover {
+            background: #1e3a8a;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--light-gray);
+            color: var(--dark-gray);
+            border: 1px solid #d1d5db;
+        }
+
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+
+        /* Critical Alerts */
+        .alerts-section {
+            background: var(--white);
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .alerts-title {
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .alert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .alert-card {
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid;
+            font-weight: 500;
+        }
+
+        .alert-active {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--danger-red);
+            color: var(--danger-red);
+        }
+
+        .alert-upcoming {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--warning-amber);
+            color: #d97706;
+        }
+
+        .alert-info {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success-green);
+            color: #059669;
+        }
+
+        /* Regulations Grid */
+        .regulations-section {
+            margin: 2rem 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .regulations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .regulation-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .regulation-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .regulation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .regulation-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            flex: 1;
+        }
+
+        .regulation-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-active {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success-green);
+        }
+
+        .status-pending {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning-amber);
+        }
+
+        .status-development {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--secondary-blue);
+        }
+
+        .status-draft {
+            background: rgba(107, 114, 128, 0.1);
+            color: var(--neutral-gray);
+        }
+
+        .regulation-details {
+            margin-bottom: 1rem;
+        }
+
+        .regulation-details p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .regulation-details strong {
+            color: var(--dark-gray);
+        }
+
+        .regulation-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .countdown {
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        /* Export Section */
+        .export-section {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .export-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .controls-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .regulations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .regulation-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .export-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Animations */
+        .regulation-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .regulation-card:nth-child(1) { animation-delay: 0.1s; }
+        .regulation-card:nth-child(2) { animation-delay: 0.2s; }
+        .regulation-card:nth-child(3) { animation-delay: 0.3s; }
+        .regulation-card:nth-child(4) { animation-delay: 0.4s; }
+        .regulation-card:nth-child(5) { animation-delay: 0.5s; }
+        .regulation-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🇪🇺 EU Regulations Comprehensive Dashboard</h1>
+            <p>Complete overview of all EU technology regulations with advanced filtering, search capabilities, and detailed German implementation timelines</p>
+        </header>
+
+        <a href="index.html" class="back-link">← Back to Landing Page</a>
+
+        <!-- Critical Regulatory Alerts -->
+        <section class="alerts-section">
+            <h2 class="alerts-title">
+                🚨 Critical Regulatory Updates
+            </h2>
+            <div class="alert-grid">
+                <div class="alert-card alert-active">
+                    <strong>🚨 AI Act GPAI Obligations</strong><br>
+                    ACTIVE since August 2, 2025
+                </div>
+                <div class="alert-card alert-upcoming">
+                    <strong>⏰ Data Act Implementation</strong><br>
+                    Applies September 12, 2025 (<span id="data-act-countdown">calculating...</span>)
+                </div>
+                <div class="alert-card alert-info">
+                    <strong>🛡️ DORA Implementation</strong><br>
+                    Active since January 17, 2025
+                </div>
+            </div>
+        </section>
+
+        <!-- Controls Section -->
+        <section class="controls-section">
+            <div class="controls-grid">
+                <div class="control-group">
+                    <label for="status-filter">Filter by Status:</label>
+                    <select id="status-filter">
+                        <option value="">All Statuses</option>
+                        <option value="active">Active</option>
+                        <option value="pending">Pending</option>
+                        <option value="development">In Development</option>
+                        <option value="draft">Draft</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="category-filter">Filter by Category:</label>
+                    <select id="category-filter">
+                        <option value="">All Categories</option>
+                        <option value="ai">AI & Machine Learning</option>
+                        <option value="data">Data Protection</option>
+                        <option value="cybersecurity">Cybersecurity</option>
+                        <option value="digital">Digital Services</option>
+                        <option value="financial">Financial Services</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="search-input">Search Regulations:</label>
+                    <input type="text" id="search-input" class="search-box" placeholder="Search by name, description, or keywords...">
+                </div>
+                <div class="control-group">
+                    <button id="reset-filters" class="btn btn-secondary">Reset Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regulations Grid -->
+        <section class="regulations-section">
+            <h2 class="section-title">EU Technology Regulations Overview</h2>
+            <div class="regulations-grid" id="regulations-container">
+                <!-- Regulations will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Export Section -->
+        <section class="export-section">
+            <h3>Export Regulations Data</h3>
+            <p>Download the complete regulations data in various formats for offline analysis and reporting.</p>
+            <div class="export-buttons">
+                <button id="export-json" class="btn">Export as JSON</button>
+                <button id="export-csv" class="btn">Export as CSV</button>
+                <button id="export-txt" class="btn">Export as TXT</button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>Created by <a href="mailto:patrick.munro.ext@planit.legal">Patrick Munro</a> • Enhanced by Claude • © 2025 Planit Legal</p>
+        <p><strong>Disclaimer:</strong> This tool is for educational purposes only and does not constitute legal advice.</p>
+    </footer>
+
+    <script>
+        // Comprehensive EU Regulations Data
+        const regulationsData = [
+            {
+                id: 1,
+                name: "AI Act",
+                category: "ai",
+                status: "active",
+                description: "Regulation on Artificial Intelligence - Comprehensive AI regulation framework",
+                euStatus: "Fully implemented",
+                nextDeadline: "August 2, 2025",
+                fullCompliance: "August 2, 2025",
+                germanStatus: "Enacted",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0006",
+                critical: true,
+                countdown: "2025-08-02"
+            },
+            {
+                id: 2,
+                name: "Data Act",
+                category: "data",
+                status: "pending",
+                description: "Regulation on harmonised rules on fair access to and use of data",
+                euStatus: "Implementation pending",
+                nextDeadline: "September 12, 2025",
+                fullCompliance: "September 12, 2025",
+                germanStatus: "In development",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2853",
+                critical: true,
+                countdown: "2025-09-12"
+            },
+            {
+                id: 3,
+                name: "DORA",
+                category: "financial",
+                status: "active",
+                description: "Digital Operational Resilience Act for financial sector",
+                euStatus: "Fully implemented",
+                nextDeadline: "January 17, 2025",
+                fullCompliance: "January 17, 2025",
+                germanStatus: "Enacted",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554",
+                critical: false,
+                countdown: "2025-01-17"
+            },
+            {
+                id: 4,
+                name: "GDPR",
+                category: "data",
+                status: "active",
+                description: "General Data Protection Regulation",
+                euStatus: "Fully implemented",
+                nextDeadline: "Ongoing compliance",
+                fullCompliance: "May 25, 2018",
+                germanStatus: "Enacted (BDSG)",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679",
+                critical: false,
+                countdown: "2018-05-25"
+            },
+            {
+                id: 5,
+                name: "Digital Services Act",
+                category: "digital",
+                status: "active",
+                description: "Regulation on digital services and online platforms",
+                euStatus: "Fully implemented",
+                nextDeadline: "February 17, 2024",
+                fullCompliance: "February 17, 2024",
+                germanStatus: "Enacted",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2065",
+                critical: false,
+                countdown: "2024-02-17"
+            },
+            {
+                id: 6,
+                name: "Digital Markets Act",
+                category: "digital",
+                status: "active",
+                description: "Regulation on contestable and fair markets in the digital sector",
+                euStatus: "Fully implemented",
+                nextDeadline: "May 2, 2023",
+                fullCompliance: "May 2, 2023",
+                germanStatus: "Enacted",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R1925",
+                critical: false,
+                countdown: "2023-05-02"
+            },
+            {
+                id: 7,
+                name: "NIS2 Directive",
+                category: "cybersecurity",
+                status: "development",
+                description: "Directive on measures for a high common level of cybersecurity",
+                euStatus: "Implementation ongoing",
+                nextDeadline: "October 17, 2024",
+                fullCompliance: "October 17, 2024",
+                germanStatus: "In development",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2555",
+                critical: false,
+                countdown: "2024-10-17"
+            },
+            {
+                id: 8,
+                name: "Cyber Resilience Act",
+                category: "cybersecurity",
+                status: "pending",
+                description: "Regulation on cybersecurity requirements for products with digital elements",
+                euStatus: "Pending implementation",
+                nextDeadline: "September 2026",
+                fullCompliance: "September 2026",
+                germanStatus: "Pending",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52022PC0454",
+                critical: false,
+                countdown: "2026-09-01"
+            },
+            {
+                id: 9,
+                name: "ePrivacy Regulation",
+                category: "data",
+                status: "draft",
+                description: "Regulation on privacy and electronic communications",
+                euStatus: "In draft",
+                nextDeadline: "TBD",
+                fullCompliance: "TBD",
+                germanStatus: "Pending",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52017PC0010",
+                critical: false,
+                countdown: null
+            },
+            {
+                id: 10,
+                name: "Data Governance Act",
+                category: "data",
+                status: "active",
+                description: "Regulation on data governance and reuse of public sector data",
+                euStatus: "Fully implemented",
+                nextDeadline: "September 24, 2023",
+                fullCompliance: "September 24, 2023",
+                germanStatus: "Enacted",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0868",
+                critical: false,
+                countdown: "2023-09-24"
+            },
+            {
+                id: 11,
+                name: "eIDAS Regulation",
+                category: "digital",
+                status: "active",
+                description: "Regulation on electronic identification and trust services",
+                euStatus: "Fully implemented",
+                nextDeadline: "Ongoing compliance",
+                fullCompliance: "July 1, 2016",
+                germanStatus: "Enacted",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0910",
+                critical: false,
+                countdown: "2016-07-01"
+            },
+            {
+                id: 12,
+                name: "Platform-to-Business Regulation",
+                category: "digital",
+                status: "active",
+                description: "Regulation on promoting fairness and transparency for business users",
+                euStatus: "Fully implemented",
+                nextDeadline: "July 12, 2020",
+                fullCompliance: "July 12, 2020",
+                germanStatus: "Enacted",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R1150",
+                critical: false,
+                countdown: "2020-07-12"
+            },
+            {
+                id: 13,
+                name: "Whistleblower Directive",
+                category: "digital",
+                status: "active",
+                description: "Directive on the protection of persons reporting breaches of Union law",
+                euStatus: "Fully implemented",
+                nextDeadline: "December 17, 2021",
+                fullCompliance: "December 17, 2021",
+                germanStatus: "Enacted",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L1937",
+                critical: false,
+                countdown: "2021-12-17"
+            },
+            {
+                id: 14,
+                name: "Network and Information Security Directive",
+                category: "cybersecurity",
+                status: "active",
+                description: "Directive on security of network and information systems",
+                euStatus: "Fully implemented",
+                nextDeadline: "May 9, 2018",
+                fullCompliance: "May 9, 2018",
+                germanStatus: "Enacted",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016L1148",
+                critical: false,
+                countdown: "2018-05-09"
+            },
+            {
+                id: 15,
+                name: "Critical Infrastructure Directive",
+                category: "cybersecurity",
+                status: "development",
+                description: "Directive on the resilience of critical entities",
+                euStatus: "Implementation ongoing",
+                nextDeadline: "October 17, 2024",
+                fullCompliance: "October 17, 2024",
+                germanStatus: "In development",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2557",
+                critical: false,
+                countdown: "2024-10-17"
+            },
+            {
+                id: 16,
+                name: "Digital Finance Package",
+                category: "financial",
+                status: "development",
+                description: "Comprehensive framework for digital finance and crypto-assets",
+                euStatus: "Implementation ongoing",
+                nextDeadline: "December 30, 2024",
+                fullCompliance: "December 30, 2024",
+                germanStatus: "In development",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1114",
+                critical: false,
+                countdown: "2024-12-30"
+            },
+            {
+                id: 17,
+                name: "Sustainable Finance Disclosure Regulation",
+                category: "financial",
+                status: "active",
+                description: "Regulation on sustainability-related disclosures in the financial services sector",
+                euStatus: "Fully implemented",
+                nextDeadline: "Ongoing compliance",
+                fullCompliance: "March 10, 2021",
+                germanStatus: "Enacted",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
+                critical: false,
+                countdown: "2021-03-10"
+            },
+            {
+                id: 18,
+                name: "Consumer Rights Directive",
+                category: "digital",
+                status: "active",
+                description: "Directive on consumer rights in distance contracts",
+                euStatus: "Fully implemented",
+                nextDeadline: "Ongoing compliance",
+                fullCompliance: "June 13, 2014",
+                germanStatus: "Enacted",
+                euSource: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32011L0083",
+                critical: false,
+                countdown: "2014-06-13"
+            }
+        ];
+
+        // Filter and display regulations
+        let filteredRegulations = [...regulationsData];
+
+        function displayRegulations(regulations) {
+            const container = document.getElementById('regulations-container');
+            container.innerHTML = '';
+
+            regulations.forEach(regulation => {
+                const card = document.createElement('div');
+                card.className = 'regulation-card';
+                
+                const countdownHtml = regulation.countdown ? 
+                    `<div class="countdown">⏰ ${getCountdownText(regulation.countdown)}</div>` : '';
+
+                card.innerHTML = `
+                    <div class="regulation-header">
+                        <div class="regulation-title">${regulation.name}</div>
+                        <div class="regulation-status status-${regulation.status}">${getStatusText(regulation.status)}</div>
+                    </div>
+                    ${countdownHtml}
+                    <div class="regulation-details">
+                        <p><strong>Category:</strong> ${getCategoryText(regulation.category)}</p>
+                        <p><strong>Description:</strong> ${regulation.description}</p>
+                        <p><strong>EU Status:</strong> ${regulation.euStatus}</p>
+                        <p><strong>Next Deadline:</strong> ${regulation.nextDeadline}</p>
+                        <p><strong>Full Compliance:</strong> ${regulation.fullCompliance}</p>
+                        <p><strong>German Status:</strong> ${regulation.germanStatus}</p>
+                    </div>
+                    <div class="regulation-actions">
+                        <a href="${regulation.euSource}" class="btn btn-secondary" target="_blank">EU Source</a>
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        function getStatusText(status) {
+            const statusMap = {
+                'active': 'Active',
+                'pending': 'Pending',
+                'development': 'In Development',
+                'draft': 'Draft'
+            };
+            return statusMap[status] || status;
+        }
+
+        function getCategoryText(category) {
+            const categoryMap = {
+                'ai': 'AI & Machine Learning',
+                'data': 'Data Protection',
+                'cybersecurity': 'Cybersecurity',
+                'digital': 'Digital Services',
+                'financial': 'Financial Services'
+            };
+            return categoryMap[category] || category;
+        }
+
+        function getCountdownText(targetDate) {
+            if (!targetDate) return 'No deadline';
+            
+            const target = new Date(targetDate);
+            const now = new Date();
+            const diff = target - now;
+            
+            if (diff <= 0) {
+                return 'Deadline passed';
+            }
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            
+            if (days > 0) {
+                return `${days} days, ${hours} hours remaining`;
+            } else {
+                return `${hours} hours remaining`;
+            }
+        }
+
+        function filterRegulations() {
+            const statusFilter = document.getElementById('status-filter').value;
+            const categoryFilter = document.getElementById('category-filter').value;
+            const searchQuery = document.getElementById('search-input').value.toLowerCase();
+
+            filteredRegulations = regulationsData.filter(regulation => {
+                const statusMatch = !statusFilter || regulation.status === statusFilter;
+                const categoryMatch = !categoryFilter || regulation.category === categoryFilter;
+                const searchMatch = !searchQuery || 
+                    regulation.name.toLowerCase().includes(searchQuery) ||
+                    regulation.description.toLowerCase().includes(searchQuery) ||
+                    regulation.category.toLowerCase().includes(searchQuery);
+
+                return statusMatch && categoryMatch && searchMatch;
+            });
+
+            displayRegulations(filteredRegulations);
+        }
+
+        // Event listeners
+        document.getElementById('status-filter').addEventListener('change', filterRegulations);
+        document.getElementById('category-filter').addEventListener('change', filterRegulations);
+        document.getElementById('search-input').addEventListener('input', filterRegulations);
+        document.getElementById('reset-filters').addEventListener('click', () => {
+            document.getElementById('status-filter').value = '';
+            document.getElementById('category-filter').value = '';
+            document.getElementById('search-input').value = '';
+            filteredRegulations = [...regulationsData];
+            displayRegulations(filteredRegulations);
+        });
+
+        // Export functionality
+        document.getElementById('export-json').addEventListener('click', () => {
+            const dataStr = JSON.stringify(filteredRegulations, null, 2);
+            downloadFile(dataStr, 'eu-regulations.json', 'application/json');
+        });
+
+        document.getElementById('export-csv').addEventListener('click', () => {
+            const csvContent = convertToCSV(filteredRegulations);
+            downloadFile(csvContent, 'eu-regulations.csv', 'text/csv');
+        });
+
+        document.getElementById('export-txt').addEventListener('click', () => {
+            const txtContent = convertToTXT(filteredRegulations);
+            downloadFile(txtContent, 'eu-regulations.txt', 'text/plain');
+        });
+
+        function convertToCSV(data) {
+            const headers = ['Name', 'Category', 'Status', 'Description', 'EU Status', 'Next Deadline', 'Full Compliance', 'German Status'];
+            const csvRows = [headers.join(',')];
+            
+            data.forEach(item => {
+                const row = [
+                    `"${item.name}"`,
+                    `"${getCategoryText(item.category)}"`,
+                    `"${getStatusText(item.status)}"`,
+                    `"${item.description}"`,
+                    `"${item.euStatus}"`,
+                    `"${item.nextDeadline}"`,
+                    `"${item.fullCompliance}"`,
+                    `"${item.germanStatus}"`
+                ];
+                csvRows.push(row.join(','));
+            });
+            
+            return csvRows.join('\n');
+        }
+
+        function convertToTXT(data) {
+            let content = 'EU Technology Regulations Report\n';
+            content += 'Generated on: ' + new Date().toLocaleDateString() + '\n\n';
+            
+            data.forEach((item, index) => {
+                content += `${index + 1}. ${item.name}\n`;
+                content += `   Category: ${getCategoryText(item.category)}\n`;
+                content += `   Status: ${getStatusText(item.status)}\n`;
+                content += `   Description: ${item.description}\n`;
+                content += `   EU Status: ${item.euStatus}\n`;
+                content += `   Next Deadline: ${item.nextDeadline}\n`;
+                content += `   Full Compliance: ${item.fullCompliance}\n`;
+                content += `   German Status: ${item.germanStatus}\n\n`;
+            });
+            
+            return content;
+        }
+
+        function downloadFile(content, filename, contentType) {
+            const blob = new Blob([content], { type: contentType });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Update countdown for Data Act
+        function updateDataActCountdown() {
+            const countdownElement = document.getElementById('data-act-countdown');
+            if (countdownElement) {
+                const targetDate = new Date('2025-09-12');
+                const now = new Date();
+                const diff = targetDate - now;
+                
+                if (diff <= 0) {
+                    countdownElement.textContent = 'Deadline passed';
+                } else {
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    countdownElement.textContent = `${days} days, ${hours} hours remaining`;
+                }
+            }
+        }
+
+        // Initialize
+        displayRegulations(filteredRegulations);
+        updateDataActCountdown();
+        setInterval(updateDataActCountdown, 3600000); // Update every hour
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+                .then(registration => console.log('SW registered'))
+                .catch(error => console.log('SW registration failed'));
+        }
+    </script>
+</body>
+</html>
